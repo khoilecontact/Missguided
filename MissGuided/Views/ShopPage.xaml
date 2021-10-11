@@ -9,7 +9,11 @@
         <Label Text="ShopPage" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"></Label>
     </ContentPage.Content>
 
-     <Shell.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <Shell.TitleView>
         <Image Source="app_logo.jpg" Scale="0.8"></Image>
     </Shell.TitleView>
 </ContentPage>

@@ -16,7 +16,7 @@ namespace MissGuided.Views
             //}));
         }
 
-        void add_to_cart_clicked(object sender, System.EventArgs e)
+        void cart_clicked(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new CartPage());
         }

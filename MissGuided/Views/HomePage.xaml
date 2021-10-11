@@ -11,7 +11,7 @@
 <xct:AvatarView />
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="shopping_bag.png" Clicked="add_to_cart_clicked"/>
+        <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
     </ContentPage.ToolbarItems>
 
     <Shell.TitleView>
