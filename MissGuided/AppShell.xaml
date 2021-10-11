@@ -12,15 +12,17 @@
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
 
+    
+
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.BackgroundColor" Value="Black" />
+                <Setter Property="Shell.ForegroundColor" Value="Black" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Black" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
@@ -31,7 +33,7 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="home" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent Title="home" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:HomePage}"/>
         <ShellContent Title="shop" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ShopPage}" />
         <ShellContent Title="swipe..." Icon="icon_feed.png" ContentTemplate="{DataTemplate local:SwipePage}" />
         <ShellContent Title="wishlist" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:WishlistPage}" />

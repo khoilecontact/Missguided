@@ -10,6 +10,16 @@ namespace MissGuided.Views
         public HomePage()
         {
             InitializeComponent();
+            //ToolbarItems.Add(new ToolbarItem("Cart","shopping_bag.png", () =>
+            //{
+            //    Navigation.PushAsync(new CartPage());
+            //}));
         }
+
+        void add_to_cart_clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CartPage());
+        }
+
     }
 }
