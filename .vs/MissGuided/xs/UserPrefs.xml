@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/WishlistPage.xaml.cs">
     <Files>
       <File FileName="MissGuided/Views/HomePage.xaml" Line="19" Column="23" />
-      <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="22" Column="10" />
-      <File FileName="MissGuided/Views/WishlistPage.xaml" Line="12" Column="5" />
+      <File FileName="MissGuided/Views/HomePage.xaml.cs" />
+      <File FileName="MissGuided/Views/WishlistPage.xaml" />
       <File FileName="MissGuided/Views/WishlistPage.xaml.cs" Line="18" Column="10" />
     </Files>
     <Pads>
