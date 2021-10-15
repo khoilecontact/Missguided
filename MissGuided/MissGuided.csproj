@@ -12,5 +12,9 @@
   <ItemGroup>
     <None Remove="Xamarin.CommunityToolkit" />
     <None Remove="Xamarin.CommunityToolkit.Markup" />
+    <None Remove="Models\Authentication_Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Authentication_Model\" />
   </ItemGroup>
 </Project>
