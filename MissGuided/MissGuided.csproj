@@ -6,8 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="MLToolkit.Forms.SwipeCardView" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.CommunityToolkit" />
@@ -16,5 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Authentication_Model\" />
+    <None Remove="MLToolkit.Forms.SwipeCardView" />
   </ItemGroup>
 </Project>
