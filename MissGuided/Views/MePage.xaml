@@ -14,6 +14,18 @@
     </ContentPage.ToolbarItems>
 
      <Shell.TitleView>
-        <Image Source="app_logo.jpg" Scale="0.8"></Image>
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="app_logo.jpg" Scale="0.8" Grid.Column="1" Grid.Row="0"
+                   HorizontalOptions="Center"></Image>
+        </Grid>
     </Shell.TitleView>
 </ContentPage>

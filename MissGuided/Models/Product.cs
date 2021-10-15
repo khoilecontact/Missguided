@@ -13,6 +13,8 @@ namespace MissGuided.Models
         public string[] sizes { get; set; }
         public string description { get; set; }
         public string[] categories { get; set; }
+
+       
     }
 }
 

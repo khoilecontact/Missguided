@@ -1,17 +1,21 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/SwipePage.xaml">
     <Files>
-      <File FileName="MissGuided/AppShell.xaml" Line="40" Column="84" />
-      <File FileName="MissGuided/Views/SwipePage.xaml" Line="7" Column="59" />
+      <File FileName="MissGuided/Views/SwipePage.xaml" Line="10" Column="42" />
+      <File FileName="MissGuided/Views/SwipePage.xaml.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MissGuided" expanded="True">
             <Node name="MissGuided" expanded="True">
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="SwipePage.xaml" selected="True" />
+                <Node name="SwipePage.xaml" expanded="True" selected="True" />
               </Node>
+            </Node>
+            <Node name="MissGuided.Android" expanded="True">
+              <Node name="Resources" expanded="True" />
             </Node>
           </Node>
         </State>

@@ -8,7 +8,7 @@
     <ContentPage.Content >
          <StackLayout>
              <swipeCardView:SwipeCardView
-                 x:Name="SwipeView" ItemsSource="{Binding _Products}" HorizontalOptions="FillAndExpand"
+                 x:Name="SwipeView" ItemsSource="{Binding Products}" HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand" Padding="10" SupportedSwipeDirections="Left, Right"
                  Swiped="OnSwiped" >
 
@@ -22,12 +22,9 @@
                                            AbsoluteLayout.LayoutFlags="All"></Image>
                                 </AbsoluteLayout>
                             </Frame>
-
-                           
                         </StackLayout>
                     </DataTemplate>
                 </swipeCardView:SwipeCardView.ItemTemplate>
-
              </swipeCardView:SwipeCardView>
 
              <Grid>
@@ -55,7 +52,7 @@
                     HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="1" Grid.Column="0"
                         Grid.ColumnSpan="2"></Label>
 
-                 <Label x:Name="lbl_price" Text="Unkown Price" FontSize="22" TextColor="Black" 
+                 <Label x:Name="lbl_price" Text="Unkown Price" FontSize="20" TextColor="Black" 
                     HorizontalTextAlignment="Center" HorizontalOptions="Center" Grid.Row="2" Grid.Column="0"
                         Grid.ColumnSpan="2">
 
