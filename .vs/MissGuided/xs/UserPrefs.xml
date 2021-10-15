@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/HomePage.xaml">
     <Files>
       <File FileName="MissGuided/AppShell.xaml" Line="14" Column="1" />
-      <File FileName="MissGuided/Views/HomePage.xaml" Line="19" Column="1" />
+      <File FileName="MissGuided/Views/HomePage.xaml" Line="17" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,6 +28,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.MissGuided.Android PreferredExecutionTarget="Android.Pixel_3a_API_30" />
+  <MonoDevelop.Ide.ItemProperties.MissGuided.Android PreferredExecutionTarget="Android.Pixel_3_API_30" />
   <MonoDevelop.Ide.ItemProperties.MissGuided.iOS FirstBuild="True" />
 </Properties>
