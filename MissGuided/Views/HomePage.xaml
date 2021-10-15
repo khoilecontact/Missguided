@@ -6,6 +6,7 @@
     Title="HomePage"
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="White" >
+
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
     </ContentPage.ToolbarItems>
@@ -13,6 +14,124 @@
     <Shell.TitleView>
         <Image Source="app_logo.jpg" Scale="0.8"></Image>
     </Shell.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="maunut">Black</Color>
+            <Color x:Key="mauchu">White</Color>
+            <x:String x:Key="marginbtn">10,20,10,20</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>            
+                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image
+                        x:Name="Img2"
+                    Aspect="AspectFill"
+                    HeightRequest="500"
+                    HorizontalOptions="FillAndExpand"
+                    ></Image>
+                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
+                            BackgroundColor="{StaticResource maunut}"
+                            Text="shop now"></Button>
+                </StackLayout>
+                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image
+                        x:Name="Img3"
+                    Aspect="AspectFill"
+                    HeightRequest="500"
+                    HorizontalOptions="FillAndExpand"
+                    ></Image>
+                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
+                            BackgroundColor="{StaticResource maunut}"
+                            Text="shop now"></Button>
+                </StackLayout>
+                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image
+                        x:Name="Img4"
+                    Aspect="AspectFill"
+                    HeightRequest="500"
+                    HorizontalOptions="FillAndExpand"
+                    ></Image>
+                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
+                            BackgroundColor="{StaticResource maunut}"
+                            Text="shop now"></Button>
+                </StackLayout>
+                <Grid ColumnSpacing="20" RowSpacing="20" Padding="20,35,20,35">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Image x:Name="Grid1"
+                        Aspect="AspectFit"
+                        HorizontalOptions="FillAndExpand"
+                           HeightRequest="200" WidthRequest="150"
+                        Grid.Column="0" Grid.Row="0"
+                        ></Image>
+                    <Image x:Name="Grid2"
+                        Aspect="AspectFit"
+                        HorizontalOptions="FillAndExpand"
+                           HeightRequest="200" WidthRequest="150"
+                        Grid.Column="0" Grid.Row="1"
+                        ></Image>
+                    <Image x:Name="Grid3"
+                        Aspect="AspectFit"
+                        HorizontalOptions="FillAndExpand"
+                           HeightRequest="200" WidthRequest="150"
+                        Grid.Column="1" Grid.Row="0"
+                        ></Image>
+                    <Image x:Name="Grid4"
+                        Aspect="AspectFit"
+                        HorizontalOptions="FillAndExpand"
+                           HeightRequest="200" WidthRequest="150"
+                        Grid.Column="1" Grid.Row="1"
+                        ></Image>
+                </Grid>
+                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image
+                        x:Name="Img5"
+                    Aspect="AspectFill"
+                    Source="https://media.missguided.com/i/missguided/Party_UK_13_10_mobile.webp?w=767%26qlt=70"
+                        HeightRequest="500"
+                        HorizontalOptions="FillAndExpand"
+                    ></Image>
+                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
+                            BackgroundColor="{StaticResource maunut}"
+                            Text="shop now"></Button>
+                </StackLayout>
+                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image
+                        x:Name="Img6"
+                    Aspect="AspectFill"
+                    HeightRequest="500"
+                    HorizontalOptions="FillAndExpand"
+                    ></Image>
+                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
+                            BackgroundColor="{StaticResource maunut}"
+                            Text="shop now"></Button>
+                </StackLayout>
+                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image
+                        x:Name="Img7"
+                    Aspect="AspectFill"
+                    HeightRequest="500"
+                    HorizontalOptions="FillAndExpand"
+                    ></Image>
+                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
+                            BackgroundColor="{StaticResource maunut}"
+                            Text="shop now"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
 
 
