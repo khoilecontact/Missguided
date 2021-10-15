@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
+    x:Class="MissGuided.Views.SwipePage"
+    Shell.NavBarIsVisible="False" BackgroundColor="#FFF3F1">
+    <ContentPage.Content >
+         <StackLayout>
+             <swipeCardView:SwipeCardView
+                 x:Name="SwipeView" ItemsSource="{Binding Products}" HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand" Padding="10" SupportedSwipeDirections="Left, Right"
+                 Swiped="OnSwiped" >
+
+                <swipeCardView:SwipeCardView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Frame CornerRadius="10" Padding="8" HorizontalOptions="Center" VerticalOptions="Start">
+                                <AbsoluteLayout>
+                                    <Image Source="{Binding images[0]}" Aspect="AspectFill"
+                                           AbsoluteLayout.LayoutBounds=".5, 0.5, 1, 1"
+                                           AbsoluteLayout.LayoutFlags="All"></Image>
+                                </AbsoluteLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </swipeCardView:SwipeCardView.ItemTemplate>
+             </swipeCardView:SwipeCardView>
+
+             <Grid>
+                 <Grid.RowDefinitions>
+                     <RowDefinition Height="50"></RowDefinition>
+                     <RowDefinition Height="50"></RowDefinition>
+                     <RowDefinition Height="50"></RowDefinition>
+                 </Grid.RowDefinitions>
+
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*"></ColumnDefinition>
+                     <ColumnDefinition Width="*"></ColumnDefinition>
+                 </Grid.ColumnDefinitions>
+
+                 
+                 <Label Text="nah"  HorizontalOptions="Start" FontAttributes="Bold"
+                                       FontSize="28" Grid.Row="0" Grid.Column="0" Margin="25, 0, 10, 10"
+                        TextColor="Black"></Label>
+
+                 <Label Text="love" HorizontalOptions="End" FontAttributes="Bold"
+                                       FontSize="28" Grid.Row="0" Grid.Column="1" Margin="0, 0, 25, 10"
+                        TextColor="Black"></Label>
+
+                 <Label x:Name="lbl_name" Text="None" FontSize="22" TextColor="Black" FontAttributes="Bold"
+                    HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="1" Grid.Column="0"
+                        Grid.ColumnSpan="2"></Label>
+
+                 <Label x:Name="lbl_price" Text="Unkown Price" FontSize="20" TextColor="Black" 
+                    HorizontalTextAlignment="Center" HorizontalOptions="Center" Grid.Row="2" Grid.Column="0"
+                        Grid.ColumnSpan="2">
+
+                 </Label>
+             </Grid>
+
+         </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

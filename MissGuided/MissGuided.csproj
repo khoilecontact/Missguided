@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="MLToolkit.Forms.SwipeCardView" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Xamarin.CommunityToolkit" />
+    <None Remove="Xamarin.CommunityToolkit.Markup" />
+    <None Remove="Models\Authentication_Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Authentication_Model\" />
+    <None Remove="MLToolkit.Forms.SwipeCardView" />
+  </ItemGroup>
+</Project>

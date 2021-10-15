@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MissGuided.Views.WishlistPage"
+    Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+    Shell.BackgroundColor="white">
+    <ContentPage.Content>
+        <Label Text="WishList Page" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"></Label>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <Shell.TitleView>
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="app_logo.jpg" Scale="0.8" Grid.Column="1" Grid.Row="0"
+                   HorizontalOptions="Center"></Image>
+        </Grid>
+    </Shell.TitleView>
+</ContentPage>
