@@ -4,13 +4,19 @@
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MissGuided.Views.HomePage"
-    Shell.NavBarIsVisible="True">
+    Title="HomePage"
+    Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+    Shell.BackgroundColor="White" >
 
-    <xct:AvatarView />
-    
+<xct:AvatarView />
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
+    </ContentPage.ToolbarItems>
+
     <Shell.TitleView>
-        <StackLayout HorizontalOptions="StartAndExpand" BackgroundColor="Red" Spacing="0" Padding="0" Margin="0">
-            <Label Margin="10" Padding="0" Text="MissGuided" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"></Label>
-        </StackLayout>
+        <Image Source="app_logo.jpg" Scale="0.8"></Image>
     </Shell.TitleView>
 </ContentPage>
+
+
