@@ -21,5 +21,10 @@ namespace MissGuided.Views
             Navigation.PushAsync(new CartPage());
         }
 
+        string[] listBanner = new string[]
+        {
+            "https://media.missguided.com/i/missguided/Cold_Weather_UK_12_10_mobile.webp?w=767&qlt=70",
+            "https://media.missguided.com/i/missguided/Party_UK_13_10_mobile.webp?w=767&qlt=70",
+        };
     }
 }
