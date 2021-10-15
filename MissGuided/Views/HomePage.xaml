@@ -33,6 +33,9 @@
                     HeightRequest="500"
                     HorizontalOptions="FillAndExpand"
                     ></Image>
+                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           ></Label>
                     <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
                             BackgroundColor="{StaticResource maunut}"
                             Text="shop now"></Button>
@@ -44,6 +47,9 @@
                     HeightRequest="500"
                     HorizontalOptions="FillAndExpand"
                     ></Image>
+                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           ></Label>
                     <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
                             BackgroundColor="{StaticResource maunut}"
                             Text="shop now"></Button>
@@ -55,6 +61,9 @@
                     HeightRequest="500"
                     HorizontalOptions="FillAndExpand"
                     ></Image>
+                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           ></Label>
                     <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
                             BackgroundColor="{StaticResource maunut}"
                             Text="shop now"></Button>
@@ -67,7 +76,9 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Image x:Name="Grid1"
@@ -76,24 +87,40 @@
                            HeightRequest="200" WidthRequest="150"
                         Grid.Column="0" Grid.Row="0"
                         ></Image>
+                    <Label Text="dresses" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="0" Grid.Row="1"
+                           ></Label>
                     <Image x:Name="Grid2"
-                        Aspect="AspectFit"
-                        HorizontalOptions="FillAndExpand"
-                           HeightRequest="200" WidthRequest="150"
-                        Grid.Column="0" Grid.Row="1"
-                        ></Image>
-                    <Image x:Name="Grid3"
                         Aspect="AspectFit"
                         HorizontalOptions="FillAndExpand"
                            HeightRequest="200" WidthRequest="150"
                         Grid.Column="1" Grid.Row="0"
                         ></Image>
+                    <Label Text="jackets" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="1" Grid.Row="1"
+                           ></Label>
+                    <Image x:Name="Grid3"
+                        Aspect="AspectFit"
+                        HorizontalOptions="FillAndExpand"
+                           HeightRequest="200" WidthRequest="150"
+                        Grid.Column="0" Grid.Row="2"
+                        ></Image>
+                    <Label Text="pants" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="0" Grid.Row="3"
+                           ></Label>
                     <Image x:Name="Grid4"
                         Aspect="AspectFit"
                         HorizontalOptions="FillAndExpand"
                            HeightRequest="200" WidthRequest="150"
-                        Grid.Column="1" Grid.Row="1"
+                        Grid.Column="1" Grid.Row="2"
                         ></Image>
+                    <Label Text="tops" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="1" Grid.Row="3"
+                           ></Label>
                 </Grid>
                 <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <Image
@@ -103,6 +130,9 @@
                         HeightRequest="500"
                         HorizontalOptions="FillAndExpand"
                     ></Image>
+                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           ></Label>
                     <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
                             BackgroundColor="{StaticResource maunut}"
                             Text="shop now"></Button>
@@ -114,6 +144,9 @@
                     HeightRequest="500"
                     HorizontalOptions="FillAndExpand"
                     ></Image>
+                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           ></Label>
                     <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
                             BackgroundColor="{StaticResource maunut}"
                             Text="shop now"></Button>
@@ -125,6 +158,9 @@
                     HeightRequest="500"
                     HorizontalOptions="FillAndExpand"
                     ></Image>
+                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           ></Label>
                     <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
                             BackgroundColor="{StaticResource maunut}"
                             Text="shop now"></Button>
