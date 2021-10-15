@@ -8,7 +8,7 @@
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="White" >
 
-<xct:AvatarView />
+
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
