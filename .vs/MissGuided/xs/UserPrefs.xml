@@ -17,7 +17,9 @@
                 <Node name="SwipePage.xaml" expanded="True" selected="True" />
                 <Node name="WishlistPage.xaml" expanded="True" />
               </Node>
-              <Node name="AppShell.xaml" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True" />
+              <Node name="AppShell.xaml" selected="True" />
             </Node>
             <Node name="MissGuided.Android" expanded="True">
               <Node name="Resources" expanded="True">
@@ -35,6 +37,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MissGuided.Android PreferredExecutionTarget="Android.Pixel_3_API_30" />
   <MonoDevelop.Ide.ItemProperties.MissGuided.Android PreferredExecutionTarget="Android.pixel_3_q_10_0_-_api_29" />
   <MonoDevelop.Ide.ItemProperties.MissGuided.iOS FirstBuild="True" />
 </Properties>
