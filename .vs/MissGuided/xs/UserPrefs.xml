@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/SwipePage.xaml.cs">
     <Files>
       <File FileName="MissGuided/Views/SwipePage.xaml" Line="10" Column="42" />
-      <File FileName="MissGuided/Views/SwipePage.xaml.cs" Line="111" Column="1" />
+      <File FileName="MissGuided/Views/SwipePage.xaml.cs" Line="85" Column="156" />
+      <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="42" Column="127" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,13 +12,16 @@
             <Node name="MissGuided" expanded="True">
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="HomePage.xaml" expanded="True" />
                 <Node name="SwipePage.xaml" expanded="True">
                   <Node name="SwipePage.xaml.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
             <Node name="MissGuided.Android" expanded="True">
-              <Node name="Resources" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
