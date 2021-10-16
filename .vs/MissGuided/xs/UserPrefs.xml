@@ -3,7 +3,7 @@
     <Files>
       <File FileName="MissGuided/Views/SwipePage.xaml" Line="10" Column="42" />
       <File FileName="MissGuided/Views/SwipePage.xaml.cs" Line="85" Column="156" />
-      <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="42" Column="127" />
+      <File FileName="MissGuided/Views/HomePage.xaml.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
