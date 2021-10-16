@@ -15,9 +15,6 @@ namespace MissGuided.Views
         {
             InitializeComponent();
             CardBinding();
-            SwipeView.ItemsSource = _Products;
-            BindingContext = this;
-
         }
 
         public void CardBinding()
@@ -87,6 +84,20 @@ namespace MissGuided.Views
                 sizes = new String[2] { "15", "20" },
                 images = new string[1] { "app_logo.jpg" }
             });
+
+            SwipeView.ItemsSource = _Products;
+            BindingContext = this;
+
+            var item = (Product)SwipeView.TopItem;
+            lbl_name.Text = item.name;
+            if (item.salePrice != null)
+            {
+                lbl_price.Text = "US" + item.salePrice + " " + "US" + item.price;
+            }
+            else
+            {
+                lbl_price.Text = "US" + item.price;
+            }
         }
 
         public ObservableCollection<Product> Product
@@ -100,13 +111,23 @@ namespace MissGuided.Views
 
         void OnSwiped(object sender, SwipedCardEventArgs e)
         {
+
+            var item = (Product)SwipeView.TopItem;
+            lbl_name.Text = item.name;
+            if (item.salePrice != null)
+            {
+                lbl_price.Text = "US" + item.salePrice + " " + "US" + item.price;
+            } else
+            {
+                lbl_price.Text = "US" + item.price;
+            }
+            
+
             switch (e.Direction)
             {
                 case SwipeCardDirection.Right:
-                    lbl_name.Text = "Right";
                     break;
                 case SwipeCardDirection.Left:
-                    lbl_name.Text = "Left";
                     break;
             }
         }
