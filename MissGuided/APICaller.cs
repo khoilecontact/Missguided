@@ -52,8 +52,6 @@ namespace MissGuided
                     products = jsonContent.products;
                     return products;
                 }
-
-                return products;
             } catch(Exception error)
             {
                 Console.WriteLine(error);

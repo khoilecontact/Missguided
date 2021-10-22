@@ -33,5 +33,7 @@ namespace MissGuided.Models
     {
         public List<Product> products { get; set; }
     }
+
+
 }
 
