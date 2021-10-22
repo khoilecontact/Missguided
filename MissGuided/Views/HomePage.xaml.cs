@@ -10,13 +10,14 @@ namespace MissGuided.Views
         public HomePage()
         {
             InitializeComponent();
-            //ToolbarItems.Add(new ToolbarItem("Cart","shopping_bag.png", () =>
-            //{
-            //    Navigation.PushAsync(new CartPage());
-            //}));
+            ToolbarItems.Add(new ToolbarItem("Cart", "shopping_bag.png", () =>
+             {
+                 Navigation.PushAsync(new CartPage());
+             }));
             addBanner();
             addBannerGrid();
             addBannerBottom();
+            testAPI();
         }
 
         List<Banner> bannerListTop = new List<Banner>();
@@ -130,6 +131,21 @@ namespace MissGuided.Views
             Img5.Source = bannerListBottom[0].src;
             Img6.Source = bannerListBottom[1].src;
             Img7.Source = bannerListBottom[2].src;
+        }
+
+        async void testAPI()
+        {
+            List<Product> content = await APICaller.shared.FetchProducts();
+
+            if (content != null)
+            {
+                await DisplayAlert("Có rồi", content.ToString(), "OK");
+                Console.WriteLine("Phát có data nè mày", content);
+            } else
+            {
+                await DisplayAlert("Ngu rồi", "Ngu", "Chịu");
+                Console.WriteLine("Phát ngu rồi");
+            }
         }
     }
 }

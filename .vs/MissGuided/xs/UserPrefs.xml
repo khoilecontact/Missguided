@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/SwipePage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/APICaller.cs">
     <Files>
-      <File FileName="MissGuided/Views/SwipePage.xaml" Line="10" Column="42" />
-      <File FileName="MissGuided/Views/SwipePage.xaml.cs" Line="85" Column="156" />
-      <File FileName="MissGuided/Views/HomePage.xaml.cs" />
+      <File FileName="MissGuided/APICaller.cs" Line="20" Column="42" />
+      <File FileName="MissGuided/IRestService.cs" Line="8" Column="30" />
+      <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="138" Column="27" />
+      <File FileName="MissGuided/Models/Product.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,10 +14,9 @@
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="HomePage.xaml" expanded="True" />
-                <Node name="SwipePage.xaml" expanded="True">
-                  <Node name="SwipePage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="SwipePage.xaml" expanded="True" />
               </Node>
+              <Node name="APICaller.cs" selected="True" />
             </Node>
             <Node name="MissGuided.Android" expanded="True">
               <Node name="Resources" expanded="True">
@@ -26,6 +26,9 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
@@ -34,5 +37,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.MissGuided.Android PreferredExecutionTarget="Android.pixel_3_q_10_0_-_api_29" />
+  <MonoDevelop.Ide.ItemProperties.MissGuided.Android Xamarin.HotReload.DebuggerTimeoutException.MissGuided.Android.HideInfoBar="True" PreferredExecutionTarget="Android.pixel_3_q_10_0_-_api_29" />
 </Properties>

@@ -19,71 +19,71 @@ namespace MissGuided.Views
             
         public void CardBinding()
         {
-            _Products.Add(new Product()
-            {
-                name = "Phat",
-                price = "$30",
-                salePrice = "$10",
-                categories = new String[2] { "pant", "lower body" },
-                description = "Description",
-                sizes = new String[2] { "15", "20" },
-                images = new string[1] { "https://media.missguided.com/i/missguided/Party_UK_13_10_mobile.webp?w=767&qlt=70" }
-            });
+            //_Products.Add(new Product()
+            //{
+            //    name = "Phat",
+            //    price = "$30",
+            //    salePrice = "$10",
+            //    categories = new String[2] { "pant", "lower body" },
+            //    description = "Description",
+            //    sizes = new String[2] { "15", "20" },
+            //    images = new string[1] { "https://media.missguided.com/i/missguided/Party_UK_13_10_mobile.webp?w=767&qlt=70" }
+            //});
 
-            _Products.Add(new Product()
-            {
-                name = "Ngu",
-                price = "$20",
-                salePrice = "$9",
-                categories = new String[2] { "pant", "lower body" },
-                description = "Description",
-                sizes = new String[2] { "15", "20" },
-                images = new string[1] { "https://media.missguided.com/i/missguided/Cold_Weather_UK_12_10_mobile.webp?w=767&qlt=70" }
-            });
+            //_Products.Add(new Product()
+            //{
+            //    name = "Ngu",
+            //    price = "$20",
+            //    salePrice = "$9",
+            //    categories = new String[2] { "pant", "lower body" },
+            //    description = "Description",
+            //    sizes = new String[2] { "15", "20" },
+            //    images = new string[1] { "https://media.missguided.com/i/missguided/Cold_Weather_UK_12_10_mobile.webp?w=767&qlt=70" }
+            //});
 
-            _Products.Add(new Product()
-            {
-                name = "Khoi Ng",
-                price = "$10",
-                salePrice = "$5",
-                categories = new String[2] { "pant", "lower body" },
-                description = "Description",
-                sizes = new String[2] { "15", "20" },
-                images = new string[1] { "https://media.missguided.com/i/missguided/Cold_Weather_UK_12_10_mobile.webp?w=767&qlt=70" }
-            });
+            //_Products.Add(new Product()
+            //{
+            //    name = "Khoi Ng",
+            //    price = "$10",
+            //    salePrice = "$5",
+            //    categories = new String[2] { "pant", "lower body" },
+            //    description = "Description",
+            //    sizes = new String[2] { "15", "20" },
+            //    images = new string[1] { "https://media.missguided.com/i/missguided/Cold_Weather_UK_12_10_mobile.webp?w=767&qlt=70" }
+            //});
 
-            _Products.Add(new Product()
-            {
-                name = "Phat",
-                price = "$30",
-                salePrice = "$10",
-                categories = new String[2] { "pant", "lower body" },
-                description = "Description",
-                sizes = new String[2] { "15", "20" },
-                images = new string[1] { "https://media.missguided.com/i/missguided/DD930356_01?fmt=jpeg&fmt.jpeg.interlaced=true&$product-page__main--1x$" }
-            });
+            //_Products.Add(new Product()
+            //{
+            //    name = "Phat",
+            //    price = "$30",
+            //    salePrice = "$10",
+            //    categories = new String[2] { "pant", "lower body" },
+            //    description = "Description",
+            //    sizes = new String[2] { "15", "20" },
+            //    images = new string[1] { "https://media.missguided.com/i/missguided/DD930356_01?fmt=jpeg&fmt.jpeg.interlaced=true&$product-page__main--1x$" }
+            //});
 
-            _Products.Add(new Product()
-            {
-                name = "Ngu",
-                price = "$20",
-                salePrice = "$9",
-                categories = new String[2] { "pant", "lower body" },
-                description = "Description",
-                sizes = new String[2] { "15", "20" },
-                images = new string[1] { "https://media.missguided.com/i/missguided/VX1788335_01?fmt=jpeg&fmt.jpeg.interlaced=true&$product-page__main--1x$" }
-            });
+            //_Products.Add(new Product()
+            //{
+            //    name = "Ngu",
+            //    price = "$20",
+            //    salePrice = "$9",
+            //    categories = new String[2] { "pant", "lower body" },
+            //    description = "Description",
+            //    sizes = new String[2] { "15", "20" },
+            //    images = new string[1] { "https://media.missguided.com/i/missguided/VX1788335_01?fmt=jpeg&fmt.jpeg.interlaced=true&$product-page__main--1x$" }
+            //});
 
-            _Products.Add(new Product()
-            {
-                name = "Khoi Ng",
-                price = "$10",
-                salePrice = "$5",
-                categories = new String[2] { "pant", "lower body" },
-                description = "Description",
-                sizes = new String[2] { "15", "20" },
-                images = new string[1] { "https://media.missguided.com/i/missguided/R9347415_01?fmt=jpeg&fmt.jpeg.interlaced=true&$product-page__main--1x$" }
-            });
+            //_Products.Add(new Product()
+            //{
+            //    name = "Khoi Ng",
+            //    price = "$10",
+            //    salePrice = "$5",
+            //    categories = new String[2] { "pant", "lower body" },
+            //    description = "Description",
+            //    sizes = new String[2] { "15", "20" },
+            //    images = new string[1] { "https://media.missguided.com/i/missguided/R9347415_01?fmt=jpeg&fmt.jpeg.interlaced=true&$product-page__main--1x$" }
+            //});
 
             SwipeView.ItemsSource = _Products;
             BindingContext = this;
