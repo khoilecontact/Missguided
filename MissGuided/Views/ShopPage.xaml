@@ -16,19 +16,18 @@
     <Shell.TitleView>
          <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="30"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
             <Image Source="app_logo.jpg" Scale="0.8" Grid.Column="1" Grid.Row="0"
                    HorizontalOptions="Center"></Image>
 
-             <SearchBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></SearchBar>
+             <!--<SearchBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></SearchBar>-->
         </Grid>
     </Shell.TitleView>
 </ContentPage>
