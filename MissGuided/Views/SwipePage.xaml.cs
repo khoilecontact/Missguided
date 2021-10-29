@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using MissGuided.Models;
 using MLToolkit.Forms.SwipeCardView.Core;
 using Xamarin.Forms;
@@ -9,34 +10,29 @@ namespace MissGuided.Views
 {
     public partial class SwipePage : ContentPage
     {
-        public ObservableCollection<Product> _Products = new ObservableCollection<Product>();
+        public List<Product> _Products = new List<Product>();
+        int noProduct = 1;
 
         public SwipePage()
         {
             InitializeComponent();
-            CardBinding();
+            CardBindingAsync();
         }
             
-        public void CardBinding()
+        async void CardBindingAsync()
         {
-            
+            _Products = await APICaller.shared.FetchProducts(1);
 
             SwipeView.ItemsSource = _Products;
             BindingContext = this;
 
             var item = (Product)SwipeView.TopItem;
             lbl_name.Text = item.name;
-            if (item.salePrice != null)
-            {
-                lbl_price.Text = "US" + item.salePrice + " " + "US" + item.price;
-            }
-            else
-            {
-                lbl_price.Text = "US" + item.price;
-            }
+            lbl_price.Text = item.price;
+            lbl_sale_price.Text = item.salePrice;
         }
 
-        public ObservableCollection<Product> Product
+        public List<Product> Product
         {
             get => _Products;
             set
@@ -45,18 +41,23 @@ namespace MissGuided.Views
             }
         }
 
-        void OnSwiped(object sender, SwipedCardEventArgs e)
+        async void OnSwiped(object sender, SwipedCardEventArgs e)
         {
-
+            noProduct++;
+            if (noProduct % 7 == 0)
+            {
+                var newSwipePage = new SwipePage();
+                Navigation.InsertPageBefore(newSwipePage, this);
+                Navigation.PopAsync();
+                _Products = await APICaller.shared.FetchProducts(noProduct % 8);
+                
+                SwipeView.ItemsSource = _Products;
+            }
+            
             var item = (Product)SwipeView.TopItem;
             lbl_name.Text = item.name;
-            if (item.salePrice != null)
-            {
-                lbl_price.Text = "US" + item.salePrice + " " + "US" + item.price;
-            } else
-            {
-                lbl_price.Text = "US" + item.price;
-            }
+            lbl_price.Text = item.price;
+            lbl_sale_price.Text = item.salePrice;
             
 
             switch (e.Direction)

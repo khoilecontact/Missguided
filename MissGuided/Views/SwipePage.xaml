@@ -6,7 +6,7 @@
     x:Class="MissGuided.Views.SwipePage"
     Shell.NavBarIsVisible="False" BackgroundColor="#FFF3F1">
     <ContentPage.Content >
-         <StackLayout>
+         <StackLayout BackgroundColor="#ffe9e5" HeightRequest="100">
              <swipeCardView:SwipeCardView
                  x:Name="SwipeView" ItemsSource="{Binding Products}" HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand" Padding="10" SupportedSwipeDirections="Left, Right"
@@ -14,8 +14,9 @@
 
                 <swipeCardView:SwipeCardView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                            <Frame CornerRadius="10" Padding="8" HorizontalOptions="Center" VerticalOptions="Start">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                            <Frame Padding="2" HorizontalOptions="Center" VerticalOptions="Start" 
+                                   Background="white" HeightRequest="900" WidthRequest="330" IsClippedToBounds="True">
                                 <AbsoluteLayout>
                                     <Image Source="{Binding images[0]}" Aspect="AspectFill"
                                            AbsoluteLayout.LayoutBounds=".5, 0.5, 1, 1"
@@ -52,10 +53,11 @@
                     HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="1" Grid.Column="0"
                         Grid.ColumnSpan="2"></Label>
 
-                 <Label x:Name="lbl_price" Text="Unkown Price" FontSize="20" TextColor="Black" 
-                    HorizontalTextAlignment="Center" HorizontalOptions="Center" Grid.Row="2" Grid.Column="0"
-                        Grid.ColumnSpan="2">
+                 <Label x:Name="lbl_sale_price" Text="0€" FontSize="20" TextColor="#ffa5b8"
+                    HorizontalTextAlignment="End" Grid.Row="2" Grid.Column="0"></Label>
 
+                 <Label x:Name="lbl_price" Text="0€" FontSize="20" TextColor="Black" 
+                    HorizontalTextAlignment="Start" Grid.Row="2" Grid.Column="1">
                  </Label>
              </Grid>
 

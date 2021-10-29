@@ -131,17 +131,9 @@ namespace MissGuided.Views
 
         async void testAPI()
         {
-            List<Product> content = await APICaller.shared.FetchProducts();
+            List<Product> content = await APICaller.shared.FetchProducts(1);
             Product product_one = content[0];
-            if (content != null)
-            {
-                await DisplayAlert("Có rồi", content.ToString(), "OK");
-                Console.WriteLine("Phát có data nè mày", content);
-            } else
-            {
-                await DisplayAlert("Ngu rồi", "Ngu", "Chịu");
-                Console.WriteLine("Phát ngu rồi");
-            }
+           
         }
     }
 }
