@@ -6,7 +6,7 @@
     x:Class="MissGuided.Views.SwipePage"
     Shell.NavBarIsVisible="False" BackgroundColor="#FFF3F1">
     <ContentPage.Content >
-         <StackLayout BackgroundColor="#ffe9e5" HeightRequest="100">
+         <StackLayout BackgroundColor="#ffe9e5">
              <swipeCardView:SwipeCardView
                  x:Name="SwipeView" HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand" Padding="10" SupportedSwipeDirections="Left, Right"
@@ -18,7 +18,7 @@
                             <Frame Padding="2" HorizontalOptions="Center" VerticalOptions="Start" 
                                    Background="white" HeightRequest="900" WidthRequest="330" IsClippedToBounds="True">
                                 <AbsoluteLayout>
-                                    <Image Source="{Binding images[0]}" Aspect="AspectFill"
+                                    <Image Source="{Binding images[0]}" Aspect="AspectFit"
                                            AbsoluteLayout.LayoutBounds=".5, 0.5, 1, 1"
                                            AbsoluteLayout.LayoutFlags="All"></Image>
                                 </AbsoluteLayout>

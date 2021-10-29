@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using MissGuided.Models;
 using Xamarin.Forms;
 
@@ -13,7 +15,7 @@ namespace MissGuided.Views
             addBanner();
             addBannerGrid();
             addBannerBottom();
-            testAPI();
+            //testAPI();
         }
 
         List<Banner> bannerListTop = new List<Banner>();
@@ -27,9 +29,9 @@ namespace MissGuided.Views
 
         string[] bannerSrc = new string[]
         {
-            "https://media.missguided.com/i/missguided/Party_UK_13_10_mobile.webp?w=767&qlt=70",
-            "https://media.missguided.com/i/missguided/Cold_Weather_UK_12_10_mobile.webp?w=767&qlt=70",
-            "https://media.missguided.com/i/missguided/Cold_Weather_UK_12_10_mobile.webp?w=767&qlt=70",
+            "https://media.missguided.com/i/missguided/Kids_28_10_mobile.webp?w=767&qlt=70",
+            "https://media.missguided.com/i/missguided/Carli_Bybel_26_10_mobile.webp?w=767&qlt=70",
+            "https://media.missguided.com/i/missguided/Party_UK_26_10_mobile.webp?w=767&qlt=70",
         };
 
         string[] gridBanner = new string[]
@@ -134,6 +136,17 @@ namespace MissGuided.Views
             List<Product> content = await APICaller.shared.FetchProducts(1);
             Product product_one = content[0];
            
+        }
+
+        async void refreshView_Refreshing(System.Object sender, System.EventArgs e)
+        {
+            await Task.Delay(3000);
+            refreshView.IsRefreshing = false;
+        }
+
+        void searchBar_SearchButtonPressed(System.Object sender, System.EventArgs e)
+        {
+            Debug.WriteLine("Pressed SearchBar");
         }
     }
 }

@@ -36,150 +36,172 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <SearchBar Placeholder="Search" HeightRequest="50"></SearchBar>
-                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Image
-                        x:Name="Img2"
-                    Aspect="AspectFill"
-                    HeightRequest="500"
-                    HorizontalOptions="FillAndExpand"
-                    ></Image>
-                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           ></Label>
-                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
-                            BackgroundColor="{StaticResource maunut}"
-                            Text="shop now"></Button>
-                </StackLayout>
-                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Image
-                        x:Name="Img3"
-                    Aspect="AspectFill"
-                    HeightRequest="500"
-                    HorizontalOptions="FillAndExpand"
-                    ></Image>
-                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           ></Label>
-                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
-                            BackgroundColor="{StaticResource maunut}"
-                            Text="shop now"></Button>
-                </StackLayout>
-                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Image
-                        x:Name="Img4"
-                    Aspect="AspectFill"
-                    HeightRequest="500"
-                    HorizontalOptions="FillAndExpand"
-                    ></Image>
-                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           ></Label>
-                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
-                            BackgroundColor="{StaticResource maunut}"
-                            Text="shop now"></Button>
-                </StackLayout>
-                <Grid ColumnSpacing="20" RowSpacing="20" Padding="20,35,20,35">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="40"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="40"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Image x:Name="Grid1"
-                        Aspect="AspectFit"
-                        HorizontalOptions="FillAndExpand"
-                           HeightRequest="200" WidthRequest="150"
-                        Grid.Column="0" Grid.Row="0"
-                        ></Image>
-                    <Label Text="dresses" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           Grid.Column="0" Grid.Row="1"
-                           ></Label>
-                    <Image x:Name="Grid2"
-                        Aspect="AspectFit"
-                        HorizontalOptions="FillAndExpand"
-                           HeightRequest="200" WidthRequest="150"
-                        Grid.Column="1" Grid.Row="0"
-                        ></Image>
-                    <Label Text="jackets" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           Grid.Column="1" Grid.Row="1"
-                           ></Label>
-                    <Image x:Name="Grid3"
-                        Aspect="AspectFit"
-                        HorizontalOptions="FillAndExpand"
-                           HeightRequest="200" WidthRequest="150"
-                        Grid.Column="0" Grid.Row="2"
-                        ></Image>
-                    <Label Text="pants" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           Grid.Column="0" Grid.Row="3"
-                           ></Label>
-                    <Image x:Name="Grid4"
-                        Aspect="AspectFit"
-                        HorizontalOptions="FillAndExpand"
-                           HeightRequest="200" WidthRequest="150"
-                        Grid.Column="1" Grid.Row="2"
-                        ></Image>
-                    <Label Text="tops" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           Grid.Column="1" Grid.Row="3"
-                           ></Label>
-                </Grid>
-                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Image
-                        x:Name="Img5"
-                    Aspect="AspectFill"
-                    Source="https://media.missguided.com/i/missguided/Party_UK_13_10_mobile.webp?w=767%26qlt=70"
+        <RefreshView x:Name="refreshView" RefreshColor="Gray" Refreshing="refreshView_Refreshing">
+            <ScrollView>
+                <StackLayout>
+                    <SearchBar x:Name="searchBar" CancelButtonColor="Gray" SearchButtonPressed="searchBar_SearchButtonPressed" Placeholder="Search" HeightRequest="50"></SearchBar>
+                    <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image
+                            x:Name="Img2"
+                        Aspect="AspectFill"
                         HeightRequest="500"
                         HorizontalOptions="FillAndExpand"
-                    ></Image>
-                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           ></Label>
-                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
-                            BackgroundColor="{StaticResource maunut}"
-                            Text="shop now"></Button>
+                        ></Image>
+                        <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Body"
+                               ></Label>
+                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                                BackgroundColor="{StaticResource maunut}"
+                                Text="shop now"></Button>
+                    </StackLayout>
+                    <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image
+                            x:Name="Img3"
+                        Aspect="AspectFill"
+                        HeightRequest="500"
+                        HorizontalOptions="FillAndExpand"
+                        ></Image>
+                        <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Body"
+                               ></Label>
+                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                                BackgroundColor="{StaticResource maunut}"
+                                Text="shop now"></Button>
+                    </StackLayout>
+                    <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image
+                            x:Name="Img4"
+                        Aspect="AspectFill"
+                        HeightRequest="500"
+                        HorizontalOptions="FillAndExpand"
+                        ></Image>
+                        <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Body"
+                               ></Label>
+                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                                BackgroundColor="{StaticResource maunut}"
+                                Text="shop now"></Button>
+                    </StackLayout>
+                    <Grid ColumnSpacing="20" RowSpacing="20" Padding="20,35,20,35">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image x:Name="Grid1"
+                            Aspect="AspectFit"
+                            HorizontalOptions="FillAndExpand"
+                               HeightRequest="200" WidthRequest="150"
+                            Grid.Column="0" Grid.Row="0"
+                            ></Image>
+                        <Label Text="dresses" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               Grid.Column="0" Grid.Row="1"
+                               ></Label>
+                        <Image x:Name="Grid2"
+                            Aspect="AspectFit"
+                            HorizontalOptions="FillAndExpand"
+                               HeightRequest="200" WidthRequest="150"
+                            Grid.Column="1" Grid.Row="0"
+                            ></Image>
+                        <Label Text="jackets" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               Grid.Column="1" Grid.Row="1"
+                               ></Label>
+                        <Image x:Name="Grid3"
+                            Aspect="AspectFit"
+                            HorizontalOptions="FillAndExpand"
+                               HeightRequest="200" WidthRequest="150"
+                            Grid.Column="0" Grid.Row="2"
+                            ></Image>
+                        <Label Text="pants" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               Grid.Column="0" Grid.Row="3"
+                               ></Label>
+                        <Image x:Name="Grid4"
+                            Aspect="AspectFit"
+                            HorizontalOptions="FillAndExpand"
+                               HeightRequest="200" WidthRequest="150"
+                            Grid.Column="1" Grid.Row="2"
+                            ></Image>
+                        <Label Text="tops" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               Grid.Column="1" Grid.Row="3"
+                               ></Label>
+                    </Grid>
+                    <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image
+                            x:Name="Img5"
+                        Aspect="AspectFill"
+                        Source="https://media.missguided.com/i/missguided/Party_UK_13_10_mobile.webp?w=767%26qlt=70"
+                            HeightRequest="500"
+                            HorizontalOptions="FillAndExpand"
+                        ></Image>
+                        <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Body"
+                               ></Label>
+                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                                BackgroundColor="{StaticResource maunut}"
+                                Text="shop now"></Button>
+                    </StackLayout>
+                    <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image
+                            x:Name="Img6"
+                        Aspect="AspectFill"
+                        HeightRequest="500"
+                        HorizontalOptions="FillAndExpand"
+                        ></Image>
+                        <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Body"
+                               ></Label>
+                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                                BackgroundColor="{StaticResource maunut}"
+                                Text="shop now"></Button>
+                    </StackLayout>
+                    <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image
+                            x:Name="Img7"
+                        Aspect="AspectFill"
+                        HeightRequest="500"
+                        HorizontalOptions="FillAndExpand"
+                        ></Image>
+                        <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               FontSize="Body"
+                               ></Label>
+                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                                BackgroundColor="{StaticResource maunut}"
+                                Text="shop now"></Button>
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Image
-                        x:Name="Img6"
-                    Aspect="AspectFill"
-                    HeightRequest="500"
-                    HorizontalOptions="FillAndExpand"
-                    ></Image>
-                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           ></Label>
-                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
-                            BackgroundColor="{StaticResource maunut}"
-                            Text="shop now"></Button>
-                </StackLayout>
-                <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Image
-                        x:Name="Img7"
-                    Aspect="AspectFill"
-                    HeightRequest="500"
-                    HorizontalOptions="FillAndExpand"
-                    ></Image>
-                    <Label Text="Your warm wardobe heroes, just landed" TextColor="Black"
-                           HorizontalTextAlignment="Center"
-                           ></Label>
-                    <Button Margin="100,20,100,20" TextColor="{StaticResource mauchu}"
-                            BackgroundColor="{StaticResource maunut}"
-                            Text="shop now"></Button>
-                </StackLayout>
-            </StackLayout>
-        </ScrollView>
+            </ScrollView>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>
 
