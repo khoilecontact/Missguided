@@ -44,13 +44,12 @@ namespace MissGuided.Views
         async void OnSwiped(object sender, SwipedCardEventArgs e)
         {
             noProduct++;
-            if (noProduct % 7 == 0)
+            if (noProduct % 8 == 0)
             {
-                var newSwipePage = new SwipePage();
-                Navigation.InsertPageBefore(newSwipePage, this);
-                Navigation.PopAsync();
-                _Products = await APICaller.shared.FetchProducts(noProduct % 8);
-                
+                int page = noProduct / 8 + 1;
+               
+                _Products = await APICaller.shared.FetchProducts(page);
+
                 SwipeView.ItemsSource = _Products;
             }
             

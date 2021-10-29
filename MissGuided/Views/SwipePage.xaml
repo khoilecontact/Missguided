@@ -8,7 +8,7 @@
     <ContentPage.Content >
          <StackLayout BackgroundColor="#ffe9e5" HeightRequest="100">
              <swipeCardView:SwipeCardView
-                 x:Name="SwipeView" ItemsSource="{Binding Products}" HorizontalOptions="FillAndExpand"
+                 x:Name="SwipeView" HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand" Padding="10" SupportedSwipeDirections="Left, Right"
                  Swiped="OnSwiped" >
 

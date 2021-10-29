@@ -2,8 +2,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/SwipePage.xaml.cs">
     <Files>
       <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="136" Column="12" />
-      <File FileName="MissGuided/Views/SwipePage.xaml" Line="10" Column="29" />
-      <File FileName="MissGuided/Views/SwipePage.xaml.cs" Line="49" Column="17" />
+      <File FileName="MissGuided/Views/SwipePage.xaml" Line="11" Column="35" />
+      <File FileName="MissGuided/Views/SwipePage.xaml.cs" Line="49" Column="81" />
+      <File FileName="MissGuided/Services/APICaller.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

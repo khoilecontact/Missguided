@@ -41,7 +41,8 @@ namespace MissGuided
             {
                 List<Product> products = new List<Product>();
                 //var content = new StringContent(JsonConvert.SerializeObject(products), Encoding.UTF8, "application/json");
-                var response = await client.GetAsync("/product/" + page);
+                string strPage = page.ToString();
+                var response = await client.GetAsync("/product/" + strPage);
 
                 response.EnsureSuccessStatusCode();
                 using (var stream = await response.Content.ReadAsStreamAsync())
