@@ -10,7 +10,7 @@
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
     </ContentPage.ToolbarItems>
 
     <Shell.TitleView>

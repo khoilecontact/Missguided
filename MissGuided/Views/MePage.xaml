@@ -6,11 +6,84 @@
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="white">
     <ContentPage.Content>
-        <Label Text="MePage" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"></Label>
+        <ScrollView>
+            <StackLayout>
+                <RelativeLayout>
+                    <Image x:Name="Img"
+                           Aspect="AspectFill"
+                           WidthRequest="408"
+                           HeightRequest="580"
+                           RelativeLayout.XConstraint="0"
+                           RelativeLayout.YConstraint="0"></Image>
+                    <Button Text="signin"
+                            TextColor="White"
+                            WidthRequest="380"
+                            BackgroundColor="Black"
+                            RelativeLayout.XConstraint="15"
+                            RelativeLayout.YConstraint="430"
+                            Clicked="Signin_Clicked"></Button>
+                    <Button Text="register"
+                            BorderWidth="2"
+                            BorderColor="Black"
+                            WidthRequest="380"
+                            TextColor="Black"
+                            BackgroundColor="White"
+                            RelativeLayout.XConstraint="15"
+                            RelativeLayout.YConstraint="500"
+                            Clicked="Register_Clicked"></Button>
+                </RelativeLayout>
+                
+                <Button Margin="0,0,0,0"
+                        WidthRequest="415"
+                        Padding="0,0,0,0"
+                        Text="Settings"
+                        TextColor="Gray"
+                        Background="LightGray" 
+                        HorizontalOptions="Start"
+                        FontSize="Large"
+                        FontAttributes="Bold"></Button>
+                <Button WidthRequest="415"
+                        BorderColor="LightGray"
+                        BorderWidth="1"
+                        Text="FAQ"
+                        TextColor="Black" 
+                        Background="White" 
+                        HorizontalOptions="Start"
+                        FontSize="Large"
+                        FontAttributes="Bold"></Button>
+                <Button WidthRequest="415"
+                        BorderColor="LightGray"
+                        BorderWidth="1"
+                        Text="Term and Conditions" 
+                        TextColor="Black" 
+                        Background="White" 
+                        HorizontalOptions="Start"
+                        FontSize="Large"
+                        FontAttributes="Bold"></Button>
+                <Button WidthRequest="415"
+                        BorderColor="LightGray"
+                        BorderWidth="1"
+                        Text="Privacy Policy" 
+                        TextColor="Black" 
+                        Background="White" 
+                        HorizontalOptions="Start"
+                        FontSize="Large"
+                        FontAttributes="Bold"></Button>
+                <Button WidthRequest="415"
+                        BorderColor="LightGray"
+                        BorderWidth="1"
+                        Text="Change Country" 
+                        TextColor="Black" 
+                        Background="White" 
+                        HorizontalOptions="Start"
+                        FontSize="Large"
+                        FontAttributes="Bold"></Button>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked"/>
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
     </ContentPage.ToolbarItems>
 
      <Shell.TitleView>

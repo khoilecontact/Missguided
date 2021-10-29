@@ -10,10 +10,6 @@ namespace MissGuided.Views
         public HomePage()
         {
             InitializeComponent();
-            ToolbarItems.Add(new ToolbarItem("Cart", "shopping_bag.png", () =>
-             {
-                 Navigation.PushAsync(new CartPage());
-             }));
             addBanner();
             addBannerGrid();
             addBannerBottom();
@@ -136,7 +132,7 @@ namespace MissGuided.Views
         async void testAPI()
         {
             List<Product> content = await APICaller.shared.FetchProducts();
-
+            Product product_one = content[0];
             if (content != null)
             {
                 await DisplayAlert("Có rồi", content.ToString(), "OK");

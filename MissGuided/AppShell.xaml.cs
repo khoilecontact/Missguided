@@ -17,7 +17,8 @@ namespace MissGuided
             Routing.RegisterRoute(nameof(SwipePage), typeof(SwipePage));
             Routing.RegisterRoute(nameof(WishlistPage), typeof(WishlistPage));
             Routing.RegisterRoute(nameof(MePage), typeof(MePage));
+            Routing.RegisterRoute(nameof(SigninPage), typeof(SigninPage));
+            Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
         }
-
     }
 }

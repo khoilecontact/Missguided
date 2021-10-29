@@ -7,7 +7,7 @@
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="White" >
     <ContentPage.ToolbarItems>
-        <!--<ToolbarItem IconImageSource="shopping_bag.png" Clicked="cart_clicked" />-->
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked" />
     </ContentPage.ToolbarItems>
 
     <Shell.TitleView>
