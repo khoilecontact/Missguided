@@ -19,4 +19,15 @@
     <Folder Include="Models\Authentication_Model\" />
     <None Remove="MLToolkit.Forms.SwipeCardView" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\CartPageBlank.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RegisterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SigninPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

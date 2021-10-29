@@ -33,11 +33,11 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffe9e5 " Title="home" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:HomePage}" />
-        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffe9e5 " Title="shop" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ShopPage}" />
-        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffe9e5 " Title="swipe..." Icon="icon_feed.png" ContentTemplate="{DataTemplate local:SwipePage}" />
-        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffe9e5 " Title="wishlist" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:WishlistPage}" />
-        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffe9e5" Title="me" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:MePage}" />
+        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffa5b8" Title="home" Icon="home.png" ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffa5b8" Title="shop" Icon="shop.png" ContentTemplate="{DataTemplate local:ShopPage}" />
+        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffa5b8" Title="swipe..." Icon="swipe.png" ContentTemplate="{DataTemplate local:SwipePage}" />
+        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffa5b8" Title="wishlist" Icon="wishlist.png" ContentTemplate="{DataTemplate local:WishlistPage}" />
+        <ShellContent Shell.UnselectedColor="White" Shell.TabBarTitleColor="#ffa5b8" Title="me" Icon="me.png" ContentTemplate="{DataTemplate local:MePage}" />
     </TabBar>
 
     <!--
