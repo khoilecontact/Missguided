@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using MissGuided.Models;
+using MissGuided.Services;
 using Xamarin.Forms;
 
 namespace MissGuided.Views
@@ -137,9 +138,13 @@ namespace MissGuided.Views
             refreshView.IsRefreshing = false;
         }
 
-        void searchBar_SearchButtonPressed(System.Object sender, System.EventArgs e)
+        async void searchBar_SearchButtonPressed(System.Object sender, System.EventArgs e)
         {
-            Debug.WriteLine("Pressed SearchBar");
+            SearchBar searchBar = (SearchBar)sender;
+            List<Product> searchResult = await SearchAPI.shared.FetchProducts(1, searchBar.Text.ToString());
+
+            /// Product product_one = content[0];
+            /// PushAsync to ShopUI
         }
     }
 }

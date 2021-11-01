@@ -16,7 +16,8 @@
                     <DataTemplate>
                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,14,0,0">
                             <Frame Padding="2" HorizontalOptions="Center" VerticalOptions="Center" 
-                                   Background="white" HeightRequest="900" WidthRequest="300">
+                                   Background="white" HeightRequest="900" WidthRequest="300"
+                                   Margin="0,20,0,0" >
                                 <AbsoluteLayout>
                                     <Image Source="{Binding images[0]}" Aspect="AspectFill"
                                            AbsoluteLayout.LayoutBounds=".5, 0.5, 1, 1"
