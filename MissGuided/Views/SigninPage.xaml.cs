@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace MissGuided.Views
 {
@@ -16,5 +17,6 @@ namespace MissGuided.Views
         {
             InitializeComponent();
         }
+ 
     }
 }
