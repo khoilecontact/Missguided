@@ -35,14 +35,14 @@ namespace MissGuided
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<Product>> FetchProducts(int page)
+        public async Task<List<Product>> FetchProductsSwipe(int page)
         {
             try
             {
                 List<Product> products = new List<Product>();
                 //var content = new StringContent(JsonConvert.SerializeObject(products), Encoding.UTF8, "application/json");
                 string strPage = page.ToString();
-                var response = await client.GetAsync("/product/" + strPage);
+                var response = await client.GetAsync("/product/swipe/" + strPage);
 
                 response.EnsureSuccessStatusCode();
                 using (var stream = await response.Content.ReadAsStreamAsync())

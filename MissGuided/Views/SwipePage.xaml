@@ -9,16 +9,16 @@
          <StackLayout BackgroundColor="#ffe9e5">
              <swipeCardView:SwipeCardView
                  x:Name="SwipeView" HorizontalOptions="FillAndExpand"
-                 VerticalOptions="FillAndExpand" Padding="10" SupportedSwipeDirections="Left, Right"
+                 VerticalOptions="FillAndExpand" SupportedSwipeDirections="Left, Right"
                  Swiped="OnSwiped" >
 
                 <swipeCardView:SwipeCardView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <Frame Padding="2" HorizontalOptions="Center" VerticalOptions="Start" 
-                                   Background="white" HeightRequest="900" WidthRequest="330" IsClippedToBounds="True">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,14,0,0">
+                            <Frame Padding="2" HorizontalOptions="Center" VerticalOptions="Center" 
+                                   Background="white" HeightRequest="900" WidthRequest="300">
                                 <AbsoluteLayout>
-                                    <Image Source="{Binding images[0]}" Aspect="AspectFit"
+                                    <Image Source="{Binding images[0]}" Aspect="AspectFill"
                                            AbsoluteLayout.LayoutBounds=".5, 0.5, 1, 1"
                                            AbsoluteLayout.LayoutFlags="All"></Image>
                                 </AbsoluteLayout>

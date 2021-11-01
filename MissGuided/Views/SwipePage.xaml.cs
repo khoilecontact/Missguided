@@ -21,7 +21,7 @@ namespace MissGuided.Views
             
         async void CardBindingAsync()
         {
-            _Products = await APICaller.shared.FetchProducts(1);
+            _Products = await APICaller.shared.FetchProductsSwipe(1);
 
             SwipeView.ItemsSource = _Products;
             BindingContext = this;
@@ -44,11 +44,11 @@ namespace MissGuided.Views
         async void OnSwiped(object sender, SwipedCardEventArgs e)
         {
             noProduct++;
-            if (noProduct % 8 == 0)
+            if (noProduct % 20 == 0)
             {
-                int page = noProduct / 8 + 1;
+                int page = noProduct / 20 + 1;
                
-                _Products = await APICaller.shared.FetchProducts(page);
+                _Products = await APICaller.shared.FetchProductsSwipe(page);
 
                 SwipeView.ItemsSource = _Products;
             }

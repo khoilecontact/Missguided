@@ -131,13 +131,6 @@ namespace MissGuided.Views
             Img7.Source = bannerListBottom[2].src;
         }
 
-        async void testAPI()
-        {
-            List<Product> content = await APICaller.shared.FetchProducts(1);
-            Product product_one = content[0];
-           
-        }
-
         async void refreshView_Refreshing(System.Object sender, System.EventArgs e)
         {
             await Task.Delay(3000);
