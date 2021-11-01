@@ -23,13 +23,13 @@
                 <ColumnDefinition Width="208"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Entry Placeholder="FIRSTNAME"
-                   Grid.Column="0"></Entry>
+                   Grid.Column="0" x:Name="lbl_firstName"></Entry>
             <Entry Placeholder="LASTNAME"
-                   Grid.Column="1"></Entry>
+                   Grid.Column="1" x:Name="lbl_lastName"></Entry>
         </Grid>
-        <Entry Placeholder="EMAIL"></Entry>
+        <Entry Placeholder="EMAIL" x:Name="lbl_email"></Entry>
         <Entry Placeholder="PASSWORD"
-               IsPassword="True"></Entry>
+               IsPassword="True" x:Name="lbl_password"></Entry>
         <Grid>
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="300"></ColumnDefinition>
@@ -48,6 +48,6 @@
         <Button Text="register"
                 TextColor="LightGray"
                 BackgroundColor="Gray"
-                Margin="0,40,0,0"></Button>
+                Margin="0,40,0,0" Clicked="Button_Clicked"></Button>
     </StackLayout>
 </ContentPage>

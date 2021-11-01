@@ -18,10 +18,10 @@
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"
                Padding="30"></Label>
-        <Entry Placeholder="EMAIL"></Entry>
-        <Entry Placeholder="PASSWORD" IsPassword="True"></Entry>
+        <Entry Placeholder="EMAIL" x:Name="lbl_email"></Entry>
+        <Entry Placeholder="PASSWORD" IsPassword="True" x:Name="lbl_password"></Entry>
         <Button Text="sign in"
                 TextColor="LightSlateGray"
-                BackgroundColor="LightGray"></Button>
+                BackgroundColor="LightGray" Clicked="Button_Clicked"></Button>
     </StackLayout>
 </ContentPage>

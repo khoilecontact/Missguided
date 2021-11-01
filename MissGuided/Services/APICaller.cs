@@ -8,6 +8,7 @@ using MissGuided.Models;
 using System.Net.Http.Headers;
 using System.Text;
 using System.IO;
+using Xamarin.Essentials;
 
 namespace MissGuided
 {
@@ -57,6 +58,68 @@ namespace MissGuided
             {
                 Console.WriteLine(error);
                 return null;
+            }
+        }
+
+        public async Task<bool> Login(string email, string password)
+        {
+            try
+            {
+                var info = new
+                {
+                    email = email,
+                    password = password
+                };
+
+                var content = new StringContent(
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("/me/loginUser", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Preferences.Set("userEmail", email);
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            } catch(Exception error)
+            {
+                Console.WriteLine(error);
+                return false;
+            }
+        }
+
+        public async Task<bool> Register(string firstName, string lastName, string email, string password)
+        {
+            try
+            {
+                var info = new
+                {
+                    firstName = firstName,
+                    lastName = lastName,
+                    email = email,
+                    password = password
+                };
+
+                var content = new StringContent(
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");;
+
+                var response = await client.PostAsync("/me/registerUser", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Preferences.Set("userEmail", email);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+                return false;
             }
         }
     }

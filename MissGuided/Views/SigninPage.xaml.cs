@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using MissGuided.Services;
 
 namespace MissGuided.Views
 {
@@ -17,6 +18,23 @@ namespace MissGuided.Views
         {
             InitializeComponent();
         }
- 
+
+        async void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            string email = lbl_email.Text;
+            string password = lbl_password.Text;
+
+            bool result = await APICaller.shared.Login(email, password);
+
+            if (result)
+            {
+                var userId = Preferences.Get("userEmail", string.Empty);
+                DisplayAlert("Logged In", userId, "OK"); 
+            } else
+            {
+                DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
+            }
+           
+        }
     }
 }
