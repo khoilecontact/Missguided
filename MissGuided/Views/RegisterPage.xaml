@@ -38,7 +38,8 @@
             <Label Text="i'd like to receive exclusive offers and style advice by email and sms from missguided"
                    FontSize="20"
                    TextColor="Black"
-                   Grid.Column="0"></Label>
+                   Grid.Column="0"
+                   Padding="10,0,0,0"></Label>
             <Switch IsToggled="True"
                     Grid.Column="1"
                     OnColor="Green"
@@ -46,6 +47,8 @@
                     HorizontalOptions="Center"></Switch>
         </Grid>
         <Button Text="register"
+                TextTransform="Lowercase"
+                FontSize="Medium"
                 TextColor="LightGray"
                 BackgroundColor="Gray"
                 Margin="0,40,0,0"></Button>

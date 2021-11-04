@@ -7,46 +7,60 @@
     Shell.BackgroundColor="white">
 
     <ContentPage.Content>
-        <Grid>
+        
+        <ListView x:Name="CartLst" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                        <Grid Margin="20">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
 
-            <Image Source="bag.png"
-                   Grid.Column="0"
-                   Grid.Row="0"
-                   Grid.RowSpan="2"
-                   HeightRequest="100"
-                   WidthRequest="100"
-                   VerticalOptions="Start"></Image>
-            <Label Text="This is the bag, where u put your items in. Just click 'add to bag'"
-                   Grid.Column="1"
-                   Grid.Row="0"
-                   FontSize="Large"
-                   TextColor="Black"></Label>
-            <Label Text="1 x 43.00 USS"
-                   Grid.Column="1"
-                   Grid.Row="1"
-                   FontSize="Large"
-                   TextColor="LightGray"></Label>
-            <Label Text="23.00 USS"
-                   Grid.Column="2"
-                   Grid.Row="1"
-                   FontSize="Large"
-                   FontAttributes="Bold"></Label>
-        </Grid>
+                            <Image Source="{Binding Img}"
+                                   Grid.Column="0"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="2"
+                                   HeightRequest="100"
+                                   WidthRequest="100"
+                                   VerticalOptions="Start"></Image>
+                            <Label Text="{Binding Description}"
+                                   Grid.Column="1"
+                                   Grid.Row="0"
+                                   FontSize="Large"
+                                   TextColor="Black"></Label>
+                            <Label Text="{Binding SalePrice}"
+                                   Grid.Column="1"
+                                   Grid.Row="1"
+                                   FontSize="Large"
+                                   TextColor="LightGray"></Label>
+                            <Label Text="43.00 USS"
+                                   Grid.Column="2"
+                                   Grid.Row="1"
+                                   FontSize="Large"
+                                   FontAttributes="Bold"></Label>
+                            
+                        </Grid>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="edit"></ToolbarItem>
+        <ToolbarItem Text="edit"
+                     Clicked="edit_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <Shell.TitleView>
