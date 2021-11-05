@@ -19,14 +19,7 @@
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"
                Padding="30"></Label>
-<<<<<<< HEAD
         <Entry Placeholder="EMAIL" x:Name="lbl_email"></Entry>
-        <Entry Placeholder="PASSWORD" IsPassword="True" x:Name="lbl_password"></Entry>
-        <Button Text="sign in"
-                TextColor="LightSlateGray"
-                BackgroundColor="LightGray" Clicked="Button_Clicked"></Button>
-=======
-        <Entry Placeholder="EMAIL"></Entry>
         
         <Grid>
             
@@ -39,9 +32,11 @@
             </Grid.ColumnDefinitions>
 
             <Entry Placeholder="PASSWORD"
-                   IsPassword="True"
-                   Grid.Column="0"
-                   Grid.Row="0"></Entry>
+                    IsPassword="True"
+                    x:Name="lbl_password"
+                    Grid.Column="0"
+                    Grid.Row="0"></Entry>
+            
             <Button Text="HIDE"
                     Grid.Column="1"
                     Grid.Row="0"></Button>
@@ -50,8 +45,7 @@
         
         <Button Text="sign in"
                 TextColor="LightSlateGray"
-                BackgroundColor="LightGray"></Button>
+                BackgroundColor="LightGray" Clicked="Button_Clicked"></Button>
         
->>>>>>> 583399c82538e7a6e1b480ef2aa99f8f36aec07f
     </StackLayout>
 </ContentPage>
