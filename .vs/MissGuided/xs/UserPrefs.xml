@@ -1,9 +1,7 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/SwipePage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/CartPage.xaml">
     <Files>
-      <File FileName="MissGuided/Services/APICaller.cs" Line="112" Column="33" />
-      <File FileName="MissGuided/Views/RegisterPage.xaml.cs" />
-      <File FileName="MissGuided/Views/SwipePage.xaml" Line="20" Column="48" />
+      <File FileName="MissGuided/Views/CartPage.xaml" Line="27" Column="54" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,11 +13,12 @@
               </Node>
               <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="CartPage.xaml" selected="True" />
                 <Node name="HomePage.xaml" expanded="True" />
                 <Node name="MePage.xaml" expanded="True" />
                 <Node name="RegisterPage.xaml" expanded="True" />
                 <Node name="SigninPage.xaml" expanded="True" />
-                <Node name="SwipePage.xaml" expanded="True" selected="True" />
+                <Node name="SwipePage.xaml" expanded="True" />
               </Node>
             </Node>
           </Node>
