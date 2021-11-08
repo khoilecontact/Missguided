@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/ProductDetail.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/ProductDetail.xaml">
     <Files>
-      <File FileName="MissGuided/Views/ProductDetail.xaml" Line="44" Column="80" />
-      <File FileName="MissGuided/Views/ProductDetail.xaml.cs" Line="34" Column="1" />
-      <File FileName="MissGuided/Views/MePage.xaml.cs" Line="32" Column="52" />
+      <File FileName="MissGuided/Views/ProductDetail.xaml" Line="17" Column="57" />
+      <File FileName="MissGuided/Views/ProductDetail.xaml.cs" Line="41" Column="14" />
+      <File FileName="MissGuided/Views/MePage.xaml.cs" Line="33" Column="10" />
       <File FileName="MissGuided/Models/Product.cs" Line="1" Column="1" />
     </Files>
     <Pads>
@@ -14,20 +14,20 @@
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="TextPages" expanded="True">
-                  <Node name="ShippingTextPage.xaml" expanded="True" />
-                </Node>
+                <Node name="TextPages" expanded="True" />
                 <Node name="MePage.xaml" expanded="True" />
-                <Node name="ProductDetail.xaml" expanded="True">
-                  <Node name="ProductDetail.xaml.cs" selected="True" />
-                </Node>
+                <Node name="ProductDetail.xaml" expanded="True" selected="True" />
                 <Node name="SwipePage.xaml" expanded="True" />
                 <Node name="WishlistPage.xaml" expanded="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
               <Node name="AppShell.xaml" expanded="True" />
             </Node>
-            <Node name="MissGuided.Android" expanded="True" />
+            <Node name="MissGuided.Android" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
+            </Node>
             <Node name="MissGuided.iOS" expanded="True">
               <Node name="Resources" expanded="True" />
             </Node>

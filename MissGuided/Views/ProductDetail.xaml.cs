@@ -1,35 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Input;
 using MissGuided.Models;
 using MissGuided.Views.TextPages;
 using Xamarin.Forms;
 
 namespace MissGuided.Views
 {
+
     public partial class ProductDetail : ContentPage
     {
         Product product;
+        public ICommand CarouselItemTapped { get; set; }
 
         public ProductDetail()
         {
             InitializeComponent();
-            testing();
-            initSize();
+            initScreen();
             initSuggestedProducts();
         }
 
         public ProductDetail(Product passedProduct)
         {
             InitializeComponent();
-            //product = passedProduct;
-            testing();
-            initSize();
+            product = passedProduct;
+            initScreen();
             initSuggestedProducts();
+            CarouselItemTapped= new Xamarin.Forms.Command((selectItem)=>{
+                Product selectedProduct = (Product)selectItem;
+                Navigation.PushAsync(new ProductDetail(selectedProduct));
+            });
         }
 
-        void initSize()
+        async void initScreen()
         {
+            if (product == null) {
+                List<Product> products = await APICaller.shared.FetchProductsSwipe(1);
+                product = products[1];
+            } 
+
+            imgProduct.Source = product.images[0];
+            lbl_name.Text = product.name;
+            lbl_sale_price.Text = product.salePrice;
+            lbl_price.Text = product.price;
+
+
             string sizes = "available in:";
             List<string> arrSizes = product.sizes;
 
@@ -59,8 +75,8 @@ namespace MissGuided.Views
 
         async void testing()
         {
-            List<Product> products = await APICaller.shared.FetchProductsSwipe(3);
-            product = products.ElementAt(1);
+            List<Product> products = await APICaller.shared.FetchProductsSwipe(1);
+            product = products[1];
         }
 
         void btnInfo_Clicked(System.Object sender, System.EventArgs e)

@@ -5,9 +5,9 @@
     x:Class="MissGuided.Views.TextPages.ProductInfo">
     <ContentPage.Content>
         <StackLayout>
-            <Label FontFamily="sans-serif-light" x:Name="lblDescription"></Label>
+            <Label FontFamily="sans-serif-light" x:Name="lblDescription" TextColor="Black" Margin="5, 0 ,0 ,0"></Label>
 
-            <Label x:Name="lblSize" TextColor="Black" FontFamily="sans-serif-light"></Label>
+            <Label x:Name="lblSize" TextColor="Black" FontFamily="sans-serif-light" Margin="5, 0 ,0 ,0"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
