@@ -18,10 +18,12 @@
     <None Remove="Models\Authentication_Model\" />
     <None Remove="Json.Net" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Views\TextPages\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Authentication_Model\" />
     <None Remove="MLToolkit.Forms.SwipeCardView" />
+    <Folder Include="Views\TextPages\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\CartPageBlank.xaml">

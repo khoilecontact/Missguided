@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MissGuided.Services;
 using MissGuided.Views;
+using MissGuided.Models;
+using System.Collections.Generic;
 
 namespace MissGuided
 {
@@ -12,7 +14,6 @@ namespace MissGuided
         public App()
         {
             InitializeComponent();
-
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }

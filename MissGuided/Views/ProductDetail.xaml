@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MissGuided.Views.ProductDetail">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{ Binding images[0] }" Aspect="AspectFill" Margin="0, 0, 0, 0"></Image>
+
+                
+                <Label x:Name="lbl_name" FontSize="22" TextColor="Black" FontAttributes="Bold"
+                    HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                       Text="{ Binding name }"></Label>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="lbl_sale_price" Text="{ Binding salePrice }" FontSize="20" TextColor="#ffa5b8"
+                    HorizontalTextAlignment="End"></Label>
+
+                     <Label x:Name="lbl_price" Text="{Binding price }" FontSize="20" TextColor="Black" 
+                        HorizontalTextAlignment="Start">
+                     </Label>
+                </StackLayout>
+                
+                <Button Text="add to bag" TextColor="White" BackgroundColor="Black" FontSize="Medium"
+                        FontAttributes="Bold" HorizontalOptions="Center"></Button>
+
+                <Label x:Name="lblSize" TextColor="Black" FontFamily="sans-serif-light"></Label>
+
+                <Button x:Name="btnInfo" Text="produc info" FontAttributes="Bold" FontSize="Body"
+                        Clicked="btnInfo_Clicked" BorderWidth="2" BorderColor="Black"></Button>
+
+                <Button x:Name="btnSizeGuide" Text="produc info" FontAttributes="Bold" FontSize="Body"
+                        Clicked="btnSizeGuide_Clicked" BorderWidth="2" BorderColor="Black"></Button>
+
+                <Button x:Name="btnDelivery" Text="produc info" FontAttributes="Bold" FontSize="Body"
+                        Clicked="btnDelivery_Clicked" BorderWidth="2" BorderColor="Black"></Button>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Suggested Items" FontFamily="sans-serif-light" HorizontalOptions="Start"
+                           FontSize="10"></Label>
+
+                    <Button x:Name="btnViewAll" Text="View All" FontAttributes="Bold" FontSize="10"
+                            HorizontalOptions="End" Clicked="btnViewAll_Clicked"></Button>
+                </StackLayout>
+                <CarouselView x:Name="crslSuggestedProduct">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                           <AbsoluteLayout>
+                               <StackLayout>
+                                   <Image Source="{Binding images[0]}"></Image>
+
+                                   <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="lbl_sale_price_child" Text="{ Binding salePrice }" FontSize="10" TextColor="#ffa5b8"
+                                        HorizontalTextAlignment="End"></Label>
+
+                                         <Label x:Name="lbl_price_child" Text="{ Binding price }" FontSize="10" TextColor="Black" 
+                                            HorizontalTextAlignment="Start">
+                                         </Label>
+                                    </StackLayout>
+
+                                    <Label x:Name="lbl_name_child" FontSize="12" TextColor="Black"
+                                        HorizontalTextAlignment="Center" HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Text="{ Binding name }"></Label>
+
+                               </StackLayout>
+                           </AbsoluteLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

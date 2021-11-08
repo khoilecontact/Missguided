@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 //Sfbutton
 using Syncfusion.XForms.Buttons;
-
+using MissGuided.Models;
+using System.Linq;
 
 namespace MissGuided.Views
 {
@@ -28,7 +29,7 @@ namespace MissGuided.Views
 
         private void Register_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RegisterPage());
+            Navigation.PushAsync(new ProductDetail());
         }
     }
 }
