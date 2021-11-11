@@ -27,10 +27,6 @@ namespace MissGuided.Views
             product = passedProduct;
             initScreen();
             initSuggestedProducts();
-            CarouselItemTapped= new Xamarin.Forms.Command((selectItem)=>{
-                Product selectedProduct = (Product)selectItem;
-                Navigation.PushAsync(new ProductDetail(selectedProduct));
-            });
         }
 
         async void initScreen()
@@ -73,12 +69,6 @@ namespace MissGuided.Views
 
         }
 
-        async void testing()
-        {
-            List<Product> products = await APICaller.shared.FetchProductsSwipe(1);
-            product = products[1];
-        }
-
         void btnInfo_Clicked(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new ProductInfo(product));
@@ -95,6 +85,14 @@ namespace MissGuided.Views
 
         void btnViewAll_Clicked(System.Object sender, System.EventArgs e)
         {
+            Navigation.PushAsync(new SuggestedItems());
+        }
+
+        void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
+        {
+            Product product = (Product)crslSuggestedProduct.CurrentItem;
+
+            Navigation.PushAsync(new ProductDetail(product));
         }
     }
 }

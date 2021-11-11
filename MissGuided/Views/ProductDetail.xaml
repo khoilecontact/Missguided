@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MissGuided.Views.ProductDetail"
-    Shell.NavBarIsVisible="False"
+    Shell.NavBarIsVisible="False" 
     x:Name="productDetailContentPage">
     <ContentPage.Content>
         <ScrollView>
@@ -64,28 +64,27 @@
 
                 </StackLayout>
 
-                <CarouselView x:Name="crslSuggestedProduct">
+                <CarouselView x:Name="crslSuggestedProduct" >
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
                            <AbsoluteLayout>
                                <StackLayout HorizontalOptions="CenterAndExpand">
                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding CarouselItemTapped,Source={x:Reference productDetailContentPage}}"
-                                                              CommandParameter="{Binding .}"/>
+                                       <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                                    </StackLayout.GestureRecognizers>
 
-                                   <Image Source="{Binding images[0]}" HorizontalOptions="Center"></Image>
+                                   <Image Source="{Binding images[0]}" HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center"></Image>
 
-                                   <StackLayout Orientation="Horizontal">
-                                        <Label x:Name="lbl_sale_price_child" Text="{ Binding salePrice }" FontSize="10" TextColor="#ffa5b8"
+                                   <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label x:Name="lbl_sale_price_child" Text="{ Binding salePrice }" FontSize="15" TextColor="#ffa5b8"
                                         HorizontalTextAlignment="End"></Label>
 
-                                         <Label x:Name="lbl_price_child" Text="{ Binding price }" FontSize="10" TextColor="Black" 
+                                         <Label x:Name="lbl_price_child" Text="{ Binding price }" FontSize="15" TextColor="Black" 
                                             HorizontalTextAlignment="Start">
                                          </Label>
                                     </StackLayout>
 
-                                    <Label x:Name="lbl_name_child" FontSize="12" TextColor="Black"
+                                    <Label x:Name="lbl_name_child" FontSize="18" TextColor="Black"
                                         HorizontalTextAlignment="Center" HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            Text="{ Binding name }"></Label>

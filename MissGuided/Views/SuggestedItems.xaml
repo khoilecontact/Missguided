@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    x:Class="MissGuided.Views.SuggestedItems"
+    Shell.NavBarIsVisible="False" 
+    Shell.BackgroundColor="Black"
+    Title="Suggested Items">
+
+    <ContentPage.Content >
+            <flv:FlowListView x:Name="flwLstViewItems" FlowColumnCount="2"
+                               SeparatorVisibility="None" RowHeight="380"
+                              FlowItemTappedCommand="{Binding ItemTappedCommand}">
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <AbsoluteLayout>
+                            <StackLayout>
+                                <Image Source="{Binding images[0]}" HorizontalOptions="Center" Aspect="AspectFill"
+                                   VerticalOptions="Center"></Image>
+
+                                 <Label x:Name="lbl_name_child" FontSize="16" FontAttributes="Bold"
+                                            TextColor="Black"
+                                    HorizontalTextAlignment="Center" HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Text="{ Binding name }"></Label>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label x:Name="lbl_sale_price_child" Text="{ Binding salePrice }" FontSize="15" TextColor="#ffa5b8"
+                                    HorizontalTextAlignment="End"></Label>
+
+                                        <Label x:Name="lbl_price_child" Text="{ Binding price }" FontSize="15" TextColor="Black" 
+                                        HorizontalTextAlignment="Start">
+                                        </Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </AbsoluteLayout>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+    </ContentPage.Content>
+</ContentPage>
