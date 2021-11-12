@@ -94,5 +94,10 @@ namespace MissGuided.Views
 
             Navigation.PushAsync(new ProductDetail(product));
         }
+
+        void cart_clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CartPage());
+        }
     }
 }

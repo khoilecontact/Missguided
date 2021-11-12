@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/SuggestedItems.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/MePage.xaml.cs">
     <Files>
-      <File FileName="MissGuided/Views/ProductDetail.xaml" Line="67" Column="62" />
-      <File FileName="MissGuided/Views/ProductDetail.xaml.cs" Line="88" Column="56" />
-      <File FileName="MissGuided/Views/SuggestedItems.xaml" Line="28" Column="1" />
-      <File FileName="MissGuided/Views/SuggestedItems.xaml.cs" Line="18" Column="84" />
-      <File FileName="MissGuided/Views/MePage.xaml.cs" Line="31" Column="10" />
+      <File FileName="MissGuided/Views/ProductDetail.xaml" Line="6" Column="63" />
+      <File FileName="MissGuided/Views/ProductDetail.xaml.cs" />
+      <File FileName="MissGuided/Views/SuggestedItems.xaml" Line="1" Column="1" />
+      <File FileName="MissGuided/Views/SuggestedItems.xaml.cs" Line="1" Column="1" />
+      <File FileName="MissGuided/Views/MePage.xaml.cs" Line="32" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,9 +14,12 @@
             <Node name="MissGuided" expanded="True">
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="SuggestedItems.xaml" expanded="True">
-                  <Node name="SuggestedItems.xaml.cs" selected="True" />
+                <Node name="MePage.xaml" expanded="True">
+                  <Node name="MePage.xaml.cs" selected="True" />
                 </Node>
+                <Node name="ProductDetail.xaml" expanded="True" />
+                <Node name="ShopPage.xaml" expanded="True" />
+                <Node name="SuggestedItems.xaml" expanded="True" />
               </Node>
             </Node>
             <Node name="MissGuided.Android" expanded="True">

@@ -4,9 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
     x:Class="MissGuided.Views.SuggestedItems"
-    Shell.NavBarIsVisible="False" 
-    Shell.BackgroundColor="Black"
+    Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
     Title="Suggested Items">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content >
             <flv:FlowListView x:Name="flwLstViewItems" FlowColumnCount="2"

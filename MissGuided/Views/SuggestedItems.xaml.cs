@@ -43,5 +43,10 @@ namespace MissGuided.Views
             flwLstViewItems.FlowItemTappedCommand = ItemTappedCommand;
 
         }
+
+        void cart_clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CartPage());
+        }
     }
 }
