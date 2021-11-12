@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MissGuided.Services;
 using MissGuided.Views;
+using DLToolkit.Forms.Controls;
 
 namespace MissGuided
 {
@@ -12,7 +13,7 @@ namespace MissGuided
         public App()
         {
             InitializeComponent();
-
+            FlowListView.Init();
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }

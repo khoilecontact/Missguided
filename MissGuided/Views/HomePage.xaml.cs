@@ -144,7 +144,7 @@ namespace MissGuided.Views
             List<Product> searchResult = await SearchAPI.shared.FetchProducts(1, searchBar.Text.ToString());
 
             /// Product product_one = content[0];
-            /// PushAsync to ShopUI
+            Navigation.PushAsync(new ShelveItems(searchResult));
         }
     }
 }
