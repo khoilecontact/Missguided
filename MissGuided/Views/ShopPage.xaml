@@ -2,12 +2,37 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="MissGuided.Views.ShopPage"
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
-    Shell.BackgroundColor="white">
+    Shell.BackgroundColor="white"
+    x:Name="TheShopPage">
+
     <ContentPage.Content>
-        <Label Text="ShopPage" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"></Label>
+        <ListView x:Name="Test" IsGroupingEnabled="True" ItemsSource="{Binding Masters}">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Padding="10,0,0,0" BackgroundColor="Purple" Bor>
+                            <Label Text="{Binding Key.Master.masterTitle}" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large"></Label>
+                            <ContentView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference TheShopPage}, Path=BindingContext.HeaderSelectedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                            </ContentView.GestureRecognizers>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <buttons:SfButton Text="{Binding detailTitle}" TextColor="Black" BackgroundColor="Blue" FontSize="Large" HorizontalTextAlignment="Start"></buttons:SfButton>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
+    
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
