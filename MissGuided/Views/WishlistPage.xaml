@@ -6,16 +6,26 @@
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="White" BackgroundColor="#fae9e9">
     <ContentPage.Content>
-        <RelativeLayout BackgroundColor="#FCD9C4">
-            <Label Text="Just hold on whilst we fill up your wishlist ="
+        <RelativeLayout>
+            <Label Text="just hold on whilst we fill"
                    TextColor="Black"
                    FontSize="30"
                    FontAttributes="Bold"
-                   RelativeLayout.XConstraint="70"
-                   RelativeLayout.YConstraint="200"></Label>
-            <Label Text="If you haven't added anything yet, what are you waiting for"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   RelativeLayout.XConstraint="40"
+                   RelativeLayout.YConstraint="170"></Label>
+            <Label Text="up your wishlist"
                    TextColor="Black"
-                   RelativeLayout.XConstraint="130"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   RelativeLayout.XConstraint="100"
+                   RelativeLayout.YConstraint="210"></Label>
+            <Label Text="If you haven't added anything yet, what are you waiting for..."
+                   TextColor="Black"
+                   RelativeLayout.XConstraint="25"
                    RelativeLayout.YConstraint="260"></Label>
             <Button Text="FILL ME UP"
                     TextColor="White"
@@ -24,7 +34,7 @@
                     FontAttributes="Bold"
                     WidthRequest="370"
                     RelativeLayout.XConstraint="20"
-                    RelativeLayout.YConstraint="350"
+                    RelativeLayout.YConstraint="550"
                     Clicked="Button_Clicked"></Button>
         </RelativeLayout>
     </ContentPage.Content>

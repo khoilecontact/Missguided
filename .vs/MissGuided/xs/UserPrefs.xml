@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/WishlistPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/WishlistPage.xaml">
     <Files>
-      <File FileName="MissGuided/Views/WishlistPage.xaml" Line="28" Column="44" />
-      <File FileName="MissGuided/Views/WishlistPage.xaml.cs" Line="21" Column="10" />
-      <File FileName="MissGuided/Views/CartPageBlank.xaml" Line="29" Column="26" />
+      <File FileName="MissGuided/Views/WishlistPage.xaml" Line="10" Column="53" />
+      <File FileName="MissGuided/Views/WishlistPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,9 +15,7 @@
                 <Node name="ProductDetail.xaml" expanded="True" />
                 <Node name="ShopPage.xaml" expanded="True" />
                 <Node name="SuggestedItems.xaml" expanded="True" />
-                <Node name="WishlistPage.xaml" expanded="True">
-                  <Node name="WishlistPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="WishlistPage.xaml" expanded="True" selected="True" />
               </Node>
             </Node>
             <Node name="MissGuided.Android" expanded="True">
