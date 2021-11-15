@@ -11,10 +11,10 @@ namespace MissGuided.Views
         {
             InitializeComponent();
         }
-
         void cart_clicked(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new CartPage());
         }
+        
     }
 }
