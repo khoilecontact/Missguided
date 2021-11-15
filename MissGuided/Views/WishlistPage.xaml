@@ -4,9 +4,39 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MissGuided.Views.WishlistPage"
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
-    Shell.BackgroundColor="white">
+    Shell.BackgroundColor="White" BackgroundColor="#fae9e9">
     <ContentPage.Content>
-        <Label Text="WishList Page" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"></Label>
+        <RelativeLayout>
+            <Label Text="just hold on whilst we fill"
+                   TextColor="Black"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   RelativeLayout.XConstraint="40"
+                   RelativeLayout.YConstraint="170"></Label>
+            <Label Text="up your wishlist"
+                   TextColor="Black"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   RelativeLayout.XConstraint="100"
+                   RelativeLayout.YConstraint="210"></Label>
+            <Label Text="If you haven't added anything yet, what are you waiting for..."
+                   TextColor="Black"
+                   RelativeLayout.XConstraint="25"
+                   RelativeLayout.YConstraint="260"></Label>
+            <Button Text="FILL ME UP"
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    WidthRequest="370"
+                    RelativeLayout.XConstraint="20"
+                    RelativeLayout.YConstraint="550"
+                    Clicked="Button_Clicked"></Button>
+        </RelativeLayout>
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>

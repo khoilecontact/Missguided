@@ -52,8 +52,9 @@
                                FontAttributes="Bold"
                                FontSize="Body"
                                ></Label>
-                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                        <Button x:Name="One" Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
                                 BackgroundColor="{StaticResource maunut}"
+                                Clicked="One_Clicked"
                                 Text="shop now"></Button>
                     </StackLayout>
                     <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -68,8 +69,9 @@
                                FontAttributes="Bold"
                                FontSize="Body"
                                ></Label>
-                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                        <Button x:Name="Two" Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
                                 BackgroundColor="{StaticResource maunut}"
+                                Clicked="Two_Clicked"
                                 Text="shop now"></Button>
                     </StackLayout>
                     <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -84,8 +86,9 @@
                                FontAttributes="Bold"
                                FontSize="Body"
                                ></Label>
-                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                        <Button x:Name="Three" Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
                                 BackgroundColor="{StaticResource maunut}"
+                                Clicked="Three_Clicked"
                                 Text="shop now"></Button>
                     </StackLayout>
                     <Grid ColumnSpacing="20" RowSpacing="20" Padding="20,35,20,35">
@@ -163,8 +166,9 @@
                                FontAttributes="Bold"
                                FontSize="Body"
                                ></Label>
-                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                        <Button x:Name="Four" Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
                                 BackgroundColor="{StaticResource maunut}"
+                                Clicked="Four_Clicked"
                                 Text="shop now"></Button>
                     </StackLayout>
                     <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -179,8 +183,9 @@
                                FontAttributes="Bold"
                                FontSize="Body"
                                ></Label>
-                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                        <Button x:Name="Five" Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
                                 BackgroundColor="{StaticResource maunut}"
+                                Clicked="Five_Clicked"
                                 Text="shop now"></Button>
                     </StackLayout>
                     <StackLayout Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -195,9 +200,11 @@
                                FontAttributes="Bold"
                                FontSize="Body"
                                ></Label>
-                        <Button Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
+                        <Button x:Name="Six" Margin="100,10,100,20" TextColor="{StaticResource mauchu}"
                                 BackgroundColor="{StaticResource maunut}"
-                                Text="shop now"></Button>
+                                Text="shop now"
+                                Clicked="Six_Clicked"
+                                ></Button>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>

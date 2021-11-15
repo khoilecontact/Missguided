@@ -4,6 +4,8 @@ using Xamarin.Forms.Xaml;
 using MissGuided.Services;
 using MissGuided.Views;
 using DLToolkit.Forms.Controls;
+using MissGuided.Models;
+using System.Collections.Generic;
 
 namespace MissGuided
 {

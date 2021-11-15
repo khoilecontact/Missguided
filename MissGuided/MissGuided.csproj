@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.3.0.47" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageReference Include="Prism.Forms" Version="8.1.97" />
+    <PackageReference Include="Prism.Unity.Forms" Version="8.1.97" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.3.0.48" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="MLToolkit.Forms.SwipeCardView" Version="2.2.0" />
@@ -19,11 +22,13 @@
     <None Remove="Models\Authentication_Model\" />
     <None Remove="Json.Net" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Views\TextPages\" />
     <None Remove="DLToolkit.Forms.Controls.FlowListView" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Authentication_Model\" />
     <None Remove="MLToolkit.Forms.SwipeCardView" />
+    <Folder Include="Views\TextPages\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\CartPageBlank.xaml">
