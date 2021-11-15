@@ -14,7 +14,7 @@
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ContentView Padding="10,0,0,0" BackgroundColor="Purple" Bor>
+                        <ContentView Padding="10,0,0,0" BackgroundColor="Purple">
                             <Label Text="{Binding Key.Master.masterTitle}" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large"></Label>
                             <ContentView.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={x:Reference TheShopPage}, Path=BindingContext.HeaderSelectedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
