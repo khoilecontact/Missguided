@@ -144,7 +144,85 @@ namespace MissGuided.Views
             List<Product> searchResult = await SearchAPI.shared.FetchProducts(1, searchBar.Text.ToString());
 
             /// Product product_one = content[0];
-            /// PushAsync to ShopUI
+            Navigation.PushAsync(new ShelveItems(searchResult));
+        }
+
+        async void One_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var query = new
+            {
+                categories = "",
+            };
+
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+
+            /// Product product_one = content[0];
+            Navigation.PushAsync(new ShelveItems(result));
+        }
+
+        async void Two_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var query = new
+            {
+                categories = "",
+            };
+
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+
+            /// Product product_one = content[0];
+            Navigation.PushAsync(new ShelveItems(result));
+        }
+
+        async void Three_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var query = new
+            {
+                categories = "",
+            };
+
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+
+            /// Product product_one = content[0];
+            Navigation.PushAsync(new ShelveItems(result));
+        }
+
+        async void Four_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var query = new
+            {
+                categories = "",
+            };
+
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+
+            /// Product product_one = content[0];
+            Navigation.PushAsync(new ShelveItems(result));
+        }
+
+        async void Five_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var query = new
+            {
+                categories = "",
+            };
+
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+
+            /// Product product_one = content[0];
+            Navigation.PushAsync(new ShelveItems(result));
+        }
+
+        async void Six_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var query = new
+            {
+                categories = "",
+            };
+
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+
+            /// Product product_one = content[0];
+            Navigation.PushAsync(new ShelveItems(result));
         }
     }
 }
