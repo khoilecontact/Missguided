@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MissGuided.Services;
 using MissGuided.Views;
+using DLToolkit.Forms.Controls;
 using MissGuided.Models;
 using System.Collections.Generic;
 
@@ -14,6 +15,7 @@ namespace MissGuided
         public App()
         {
             InitializeComponent();
+            FlowListView.Init();
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
