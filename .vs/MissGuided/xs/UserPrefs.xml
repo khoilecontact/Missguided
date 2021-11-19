@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Views/HomePage.xaml">
     <Files>
-      <File FileName="MissGuided/Views/HomePage.xaml" Line="56" Column="44" />
-      <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="215" Column="31" />
-      <File FileName="MissGuided/Services/APICaller.cs" Line="98" Column="18" />
-      <File FileName="MissGuided/Services/ProductAPI.cs" Line="49" Column="58" />
+      <File FileName="MissGuided/Views/HomePage.xaml" Line="45" Column="42" />
+      <File FileName="MissGuided/Views/HomePage.xaml.cs" />
+      <File FileName="MissGuided/Services/APICaller.cs" />
+      <File FileName="MissGuided/Services/ProductAPI.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
