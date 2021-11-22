@@ -224,5 +224,14 @@ namespace MissGuided.Views
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));
         }
+
+        //string JsonToQuery(this string jsonQuery)
+        //{
+        //    string str = "?";
+        //    str += jsonQuery.Replace(":", "=").Replace("{", "").
+        //                Replace("}", "").Replace(",", "&").
+        //                    Replace("\"", "");
+        //    return str;
+        //}
     }
 }
