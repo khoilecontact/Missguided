@@ -25,7 +25,7 @@ namespace MissGuided.Views
 
         void cart_clicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new CartPageBlank());
+            Navigation.PushAsync(new CartPage());
         }
 
         string[] bannerSrc = new string[]

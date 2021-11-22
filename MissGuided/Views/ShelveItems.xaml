@@ -29,7 +29,7 @@
         <StackLayout>
             <Grid Padding="0,10,0,10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -38,9 +38,9 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="sortBtn" BackgroundColor="White" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Sort" Grid.Row="0" Grid.Column="0"></Button>
-                <Label BackgroundColor="White" TextColor="Gray" Text="|" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
-                <Button x:Name="filterBtn" BackgroundColor="White" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Filter" Grid.Row="0" Grid.Column="2"></Button>
+                <Button x:Name="sortBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Sort" Grid.Row="0" Grid.Column="0"></Button>
+                <Label FontSize="Title" BackgroundColor="Gray" TextColor="Gray" Text="|" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                <Button x:Name="filterBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Filter" Grid.Row="0" Grid.Column="2"></Button>
             </Grid>
 
             <!--<ListView x:Name="listProducts" RowHeight="300">
@@ -69,6 +69,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>-->
+
+            <Label x:Name="productsLength" HorizontalOptions="End" HorizontalTextAlignment="Start" Margin="30,5,30,5" TextColor="Black" Text="8 items"></Label>
 
             <flv:FlowListView FlowColumnCount="2"
                 SeparatorVisibility="Default"   

@@ -58,10 +58,6 @@ namespace MissGuided.ViewModels
             }
         }
 
-        void FlowListView_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
-        {
-            shelvePage.DisplayAlert("Haha", "haha", "ok");
-        }
     }
 }
 

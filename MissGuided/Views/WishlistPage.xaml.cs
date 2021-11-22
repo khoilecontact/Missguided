@@ -43,8 +43,8 @@ namespace MissGuided.Views
 
         async void btn_addToBag_Clicked(System.Object sender, System.EventArgs e)
         {
-            string selectedProductId = (string)((Button)sender).BindingContext;
-            bool result = await CartAPI.shared
+            //string selectedProductId = (string)((Button)sender).BindingContext;
+            //bool result = await CartAPI.shared
         }
     }
 }
