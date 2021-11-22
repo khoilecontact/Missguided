@@ -3,8 +3,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=xamarinstudio,macos,windows
 
 ### Simulator
-.vs/MissGuided
-UserPrefs.xml
+.vs/MissGuided/xs
+.UserPrefs.xml
 .vs
 
 ### macOS ###
