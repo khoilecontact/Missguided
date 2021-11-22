@@ -144,7 +144,7 @@ namespace MissGuided
                 using (var reader = new StreamReader(stream))
                 using (var json = new JsonTextReader(reader))
                 {
-                    var jsonContent = json_serializer.Deserialize<User>(json);
+                    var jsonContent = json_serializer.Deserialize<UserResponse>(json);
                     currentUser = jsonContent.user;
                     return currentUser;
                 } 
@@ -182,7 +182,7 @@ namespace MissGuided
                 using (var reader = new StreamReader(stream))
                 using (var json = new JsonTextReader(reader))
                 {
-                    var jsonContent = json_serializer.Deserialize<Product>(json);
+                    var jsonContent = json_serializer.Deserialize<Products>(json);
                     products = jsonContent.products;
                     return products;
                 }
