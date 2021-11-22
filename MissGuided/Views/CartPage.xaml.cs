@@ -38,5 +38,19 @@ namespace MissGuided
         {
             Navigation.PushAsync(new CartPage());
         }
+
+        void CheckOutBtn_Clicked(System.Object sender, System.EventArgs e)
+        {
+            // push to checkout page
+        }
+
+        void CartLst_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            if (CartLst.SelectedItem != null)
+            {
+                Product product = (Product)CartLst.SelectedItem;
+                Navigation.PushAsync(new ProductDetail(product));
+            }
+        }
     }
 }

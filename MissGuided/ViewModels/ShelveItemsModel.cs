@@ -52,7 +52,6 @@ namespace MissGuided.ViewModels
                 return new Command((data) =>
                              {
                                  Product dataSelected = (Product)data;
-                                 shelvePage.DisplayAlert("FlowListView", dataSelected.name + "", "Ok");
                                  shelvePage.Navigation.PushAsync(new ProductDetail(dataSelected));
                              });
             }
