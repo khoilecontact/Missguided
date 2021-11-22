@@ -225,13 +225,13 @@ namespace MissGuided.Views
             Navigation.PushAsync(new ShelveItems(result));
         }
 
-        string JsonToQuery(this string jsonQuery)
-        {
-            string str = "?";
-            str += jsonQuery.Replace(":", "=").Replace("{", "").
-                        Replace("}", "").Replace(",", "&").
-                            Replace("\"", "");
-            return str;
-        }
+        //string JsonToQuery(this string jsonQuery)
+        //{
+        //    string str = "?";
+        //    str += jsonQuery.Replace(":", "=").Replace("{", "").
+        //                Replace("}", "").Replace(",", "&").
+        //                    Replace("\"", "");
+        //    return str;
+        //}
     }
 }
