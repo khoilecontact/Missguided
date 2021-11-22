@@ -53,7 +53,7 @@ namespace MissGuided.ViewModels
                              {
                                  Product dataSelected = (Product)data;
                                  shelvePage.DisplayAlert("FlowListView", dataSelected.name + "", "Ok");
-                                 //shelvePage.Navigation.PushAsync(new ItemDetailPage(dataSelected));
+                                 shelvePage.Navigation.PushAsync(new ProductDetail(dataSelected));
                              });
             }
         }

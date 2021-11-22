@@ -144,7 +144,7 @@ namespace MissGuided
                 using (var reader = new StreamReader(stream))
                 using (var json = new JsonTextReader(reader))
                 {
-                    var jsonContent = json_serializer.Deserialize<User>(json);
+                    var jsonContent = json_serializer.Deserialize<UserResponse>(json);
                     currentUser = jsonContent.user;
                     return currentUser;
                 } 
@@ -157,6 +157,43 @@ namespace MissGuided
         }
 
         // Wishlist API
+
+        // Get user's wishlist
+        public async Task<List<Product>> GetUserWishlist()
+        {
+            try
+            {
+                string email = Preferences.Get("userEmail", "none");
+
+                var info = new
+                {
+                    email = email
+                };
+
+                var content = new StringContent(
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("/wishlist/get", content);
+                response.EnsureSuccessStatusCode();
+
+                List<Product> products = new List<Product>();
+
+                using (var stream = await response.Content.ReadAsStreamAsync())
+                using (var reader = new StreamReader(stream))
+                using (var json = new JsonTextReader(reader))
+                {
+                    var jsonContent = json_serializer.Deserialize<Products>(json);
+                    products = jsonContent.products;
+                    return products;
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+                return null;
+            }
+
+        } 
 
         // Add to wish list 
         public async Task<bool> AddToWishlist(string productId)
