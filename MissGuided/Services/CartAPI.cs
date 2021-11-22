@@ -17,14 +17,14 @@ namespace MissGuided.Services
         HttpClient client;
         string url = "https://miss-guided-server.herokuapp.com";
         JsonSerializer json_serializer = new JsonSerializer();
-        static ProductAPI _getService;
-        public static ProductAPI shared = new ProductAPI();
+        static CartAPI _getService;
+        public static CartAPI shared = new CartAPI();
         // GET method
-        public static ProductAPI getService
+        public static CartAPI getService
         {
             get
             {
-                _getService = new ProductAPI();
+                _getService = new CartAPI();
                 return _getService;
             }
         }

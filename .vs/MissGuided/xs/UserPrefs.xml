@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{0344D2DF-4F9C-4AEE-9CE7-7D144E569AE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Services/ProductAPI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MissGuided/Services/CartAPI.cs">
     <Files>
       <File FileName="MissGuided/Views/HomePage.xaml" Line="37" Column="1" />
-      <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="157" Column="63" />
-      <File FileName="MissGuided/Services/ProductAPI.cs" Line="40" Column="42" />
+      <File FileName="MissGuided/Views/HomePage.xaml.cs" Line="204" Column="28" />
+      <File FileName="MissGuided/Services/CartAPI.cs" Line="20" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +11,7 @@
           <Node name="MissGuided" expanded="True">
             <Node name="MissGuided" expanded="True">
               <Node name="Services" expanded="True">
-                <Node name="ProductAPI.cs" selected="True" />
+                <Node name="CartAPI.cs" selected="True" />
               </Node>
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
