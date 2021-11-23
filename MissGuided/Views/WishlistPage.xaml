@@ -4,46 +4,74 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MissGuided.Views.WishlistPage"
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
-    Shell.BackgroundColor="White" BackgroundColor="#fae9e9" NavigationPage.HasBackButton="False">
+    Shell.BackgroundColor="White" BackgroundColor="White" NavigationPage.HasBackButton="False">
+
+     <Shell.TitleView>
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="app_logo.jpg" Scale="0.8" Grid.Column="1" Grid.Row="0"
+                   HorizontalOptions="Center"></Image>
+        </Grid>
+    </Shell.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="lbl_total_products" FontSize="Subtitle" VerticalOptions="StartAndExpand"
                    HorizontalOptions="StartAndExpand"></Label>
-            <ListView x:Name="lst_wishlist">
+
+            <ListView x:Name="lst_wishlist" RowHeight="200">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="3*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
 
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="3*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                            </Grid.RowDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
 
-                            <Image Source="{Binding images[0]}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
+                                    <Image Source="{Binding images[0]}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
 
-                            <Label Text="{Binding name}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                                   Grid.Column="1" Grid.Row="0" FontSize="Subtitle" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding name}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                           Grid.Column="1" Grid.Row="0" FontSize="Subtitle" FontAttributes="Bold"
+                                           TextColor="Black"></Label>
 
-                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1"
-                                         HorizontalOptions="EndAndExpand">
-                                <Label TextColor="Pink" Text="{Binding salePrice}"></Label>
+                                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1"
+                                                 HorizontalOptions="EndAndExpand">
+                                        <Label TextColor="Pink" Text="{Binding salePrice}"></Label>
 
-                                <Label TextColor="Black" Text="{Binding price}"></Label>
+                                        <Label TextColor="Black" Text="{Binding price}"></Label>
+                                    </StackLayout>
+
+                                    <Button Text="X" x:Name="btn_remove" Clicked="btn_remove_Clicked" HorizontalOptions="Start"
+                                            VerticalOptions="End" Grid.Row="2" Grid.Column="0" BindingContext="{Binding _id}"
+                                            BackgroundColor="White" TextColor="Black" WidthRequest="35"></Button>
+
+                                    <Button Text="move to bag" TextTransform="Lowercase" FontAttributes="Bold" FontSize="Small"
+                                            BackgroundColor="Black" TextColor="White" x:Name="btn_addToBag"
+                                            Clicked="btn_addToBag_Clicked" VerticalOptions="End" HorizontalOptions="End"
+                                            BindingContext="{Binding _id}" Grid.Row="2" Grid.Column="1"></Button>
+                                </Grid>
                             </StackLayout>
-
-                            <Button Text="X" x:Name="btn_remove" Clicked="btn_remove_Clicked" HorizontalOptions="Start"
-                                    VerticalOptions="End" Grid.Row="2" Grid.Column="0" BindingContext="{Binding _id}"></Button>
-
-                            <Button Text="move to bag" TextTransform="Lowercase" FontAttributes="Bold" FontSize="Small"
-                                    BackgroundColor="Black" TextColor="White" x:Name="btn_addToBag"
-                                    Clicked="btn_addToBag_Clicked" VerticalOptions="End" HorizontalOptions="End"
-                                    BindingContext="{Binding _id}"></Button>
-                        </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

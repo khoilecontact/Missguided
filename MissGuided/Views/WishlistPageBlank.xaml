@@ -5,6 +5,11 @@
     x:Class="MissGuided.Views.WishlistPageBlank"
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="White" BackgroundColor="#fae9e9" NavigationPage.HasBackButton="False">
+
+     <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False"/>
+    </Shell.BackButtonBehavior>
+
     <ContentPage.Content>
         <RelativeLayout>
             <Label Text="just hold on whilst we fill"

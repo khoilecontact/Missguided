@@ -18,7 +18,7 @@ namespace MissGuided.Views
             InitializeComponent();
             CardBindingAsync();
         }
-            
+
         async void CardBindingAsync()
         {
             _Products = await APICaller.shared.FetchProductsSwipe(1);
@@ -47,17 +47,17 @@ namespace MissGuided.Views
             if (noProduct % 20 == 0)
             {
                 int page = noProduct / 20 + 1;
-               
+
                 _Products = await APICaller.shared.FetchProductsSwipe(page);
 
                 SwipeView.ItemsSource = _Products;
             }
-            
+
             var item = (Product)SwipeView.TopItem;
             lbl_name.Text = item.name;
             lbl_price.Text = item.price;
             lbl_sale_price.Text = item.salePrice;
-            
+
 
             switch (e.Direction)
             {

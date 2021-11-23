@@ -10,6 +10,8 @@ namespace MissGuided.Views
 {
     public partial class WishlistPage : ContentPage
     {
+        public List<Product> _Products = new List<Product>();
+
         public WishlistPage()
         {
             InitializeComponent();
@@ -18,20 +20,41 @@ namespace MissGuided.Views
 
         async void initView()
         {
-            List<Product> products = await APICaller.shared.GetUserWishlist();
-            lst_wishlist.ItemsSource = products;
-            int productsCount = products.Count;
-            if (productsCount == 0 || products == null)
+            string email = Preferences.Get("userEmail", "none");
+            if (email == "none" || email == null)
             {
-                Navigation.PushAsync(new WishlistPageBlank());
+                await Navigation.PushAsync(new WishlistPageBlank());
+                return;
             }
-                else if (productsCount == 1)
+
+            //List<Product> products = await APICaller.shared.GetUserWishlist();
+            _Products = await APICaller.shared.FetchProductsSwipe(1);
+
+            lst_wishlist.ItemsSource = _Products;
+
+            int productsCount = _Products.Count();
+
+            if (productsCount == 0 || _Products == null)
             {
-                lbl_total_products.Text = products.Count.ToString() + "Item";
+                await Navigation.PushAsync(new WishlistPageBlank());
+
             }
-                else
+            else if (productsCount == 1)
             {
-                lbl_total_products.Text = products.Count.ToString() + "Items";
+                lbl_total_products.Text = Convert.ToString(productsCount) + " Item";
+            }
+            else
+            {
+                lbl_total_products.Text = productsCount.ToString() + " Items";
+            }
+        }
+
+        public List<Product> Product
+        {
+            get => _Products;
+            set
+            {
+                _Products = value;
             }
         }
 
@@ -44,7 +67,13 @@ namespace MissGuided.Views
         async void btn_addToBag_Clicked(System.Object sender, System.EventArgs e)
         {
             string selectedProductId = (string)((Button)sender).BindingContext;
-            bool result = await CartAPI.shared
+            bool result = await CartAPI.shared.AddToCart(selectedProductId);
+            bool resultRemoveWishlist = await APICaller.shared.RemoveFromWishlist(selectedProductId);
+        }
+
+        void cart_clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CartPage());
         }
     }
 }
