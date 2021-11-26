@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.ChangeCountryPage"
+             Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+             Shell.BackgroundColor="white">
+
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Text="Country Preference"
+                   TextColor="Black"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"></Label>
+        </Grid>
+    </Shell.TitleView>
+    
+    <StackLayout>
+        <Label Text="Your current country is United States"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="Subtitle"
+               HeightRequest="40"
+               BackgroundColor="LightGray"></Label>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </StackLayout>
+</ContentPage>

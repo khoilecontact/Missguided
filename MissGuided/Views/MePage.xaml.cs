@@ -30,5 +30,14 @@ namespace MissGuided.Views
         {
             Navigation.PushAsync(new RegisterPage());
         }
+
+        private void faq_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FAQPage());
+        }
+        private void changecountry_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ChangeCountryPage());
+        }
     }
 }

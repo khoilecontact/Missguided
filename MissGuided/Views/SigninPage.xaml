@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MissGuided.Views.SigninPage"
+             xmlns:local="clr-namespace:MissGuided.Models" 
              Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
              Shell.BackgroundColor="white">
 
@@ -12,37 +12,52 @@
                HorizontalOptions="Center"></Image>
     </Shell.TitleView>
     
-    <StackLayout>
+    <StackLayout
+        Padding="10,0,10,0">
         <Label Text="sign in"
                TextColor="Black"
                FontSize="Large"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"
-               Padding="30"></Label>
+               Padding="30"
+               ></Label>
         <Entry Placeholder="EMAIL" x:Name="lbl_email"></Entry>
-        
+
         <Grid>
-            
+
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="9*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <Entry Placeholder="PASSWORD"
-                    IsPassword="True"
-                    x:Name="lbl_password"
-                    Grid.Column="0"
-                    Grid.Row="0"></Entry>
-            
-            <Button Text="HIDE"
-                    Grid.Column="1"
-                    Grid.Row="0"></Button>
-            
+                   IsPassword="{Binding Source={x:Reference ShowHidePasswordActualTriger}, Path=HidePassword}"
+                   x:Name="lbl_password"
+                   Grid.Column="0"
+                   Grid.Row="0"></Entry>
+
+            <ImageButton VerticalOptions="Center"
+                         Margin="0,0,10,0"
+                         HorizontalOptions="End"
+                         Source="hide.png"
+                         Grid.Column="1"
+                         HeightRequest="30"
+                         WidthRequest="30"
+                         BackgroundColor="White">
+                <ImageButton.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <local:ShowHidePasswordTriggerAction x:Name="ShowHidePasswordActualTriger"
+                                                             ShowIcon="show"
+                                                             HideIcon="hide"></local:ShowHidePasswordTriggerAction>
+                    </EventTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
+
         </Grid>
-        
+
         <Button Text="sign in"
                 TextColor="LightSlateGray"
                 BackgroundColor="LightGray" Clicked="Button_Clicked"></Button>

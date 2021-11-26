@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.SignedinPage"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+             Shell.BackgroundColor="white">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="Cart_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text=" Welcome Fail Ng"
+                       TextColor="Black"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       HeightRequest="100"></Label>
+                <buttons:SfButton x:Name="MyAccount_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White" 
+                                  Text="My Account"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="AddressBook_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White" 
+                                  Text="Address Book"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="OrderHistory_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White" 
+                                  Text="Order History"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="Shipping_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"                    
+                                  Text="Shipping"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="SizeGuide_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Size Guide"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="ContactUs_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Contact Us"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="FAQ_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="FAQ"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="Settings_button"
+                                  HeightRequest="55"
+                                  BorderColor="LightGray"
+                                  BackgroundColor="White"
+                                  Text="Settings"
+                                  TextColor="LightGray"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="TermsandConditions_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Terms and Conditions"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <buttons:SfButton x:Name="ChangeCountry_button"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Change Country"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                <Button x:Name="LOGOUT_button"
+                        Text="LOGOUT"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        BackgroundColor="Black"
+                        Clicked="LOGOUT_Clicked"
+                        Margin="15,0,15,20"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="app_logo.jpg" Scale="0.8" Grid.Column="1" Grid.Row="0"
+                   HorizontalOptions="Center"></Image>
+        </Grid>
+    </Shell.TitleView>
+</ContentPage>

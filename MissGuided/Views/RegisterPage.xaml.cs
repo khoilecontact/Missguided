@@ -29,11 +29,11 @@ namespace MissGuided.Views
 
             if (result)
             {
-                DisplayAlert("Registered In", "Vô rồi", "OK");
+                await DisplayAlert("Registered In", "Vô rồi", "OK");
             }
             else
             {
-                DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
+                await DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
             }
         }
 

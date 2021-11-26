@@ -29,10 +29,12 @@ namespace MissGuided.Views
             if (result)
             {
                 var userId = Preferences.Get("userEmail", string.Empty);
-                DisplayAlert("Logged In", userId, "OK"); 
-            } else
+                await DisplayAlert("Logged In", userId, "OK");
+                await Navigation.PushAsync(new HomePage());
+            }
+            else
             {
-                DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
+                await DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
             }
            
         }
