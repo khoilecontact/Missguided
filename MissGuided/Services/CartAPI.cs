@@ -100,7 +100,7 @@ namespace MissGuided.Services
                 using (var json = new JsonTextReader(reader))
                 {
                     var jsonContent = json_serializer.Deserialize<Products>(json);
-                    products = jsonContent.products;
+                    products = jsonContent.cart;
                     return products;
                 }
             }

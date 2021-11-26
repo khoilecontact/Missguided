@@ -6,27 +6,32 @@
              Shell.BackgroundColor="white">
     
     <ContentPage.Content>
-        <RelativeLayout BackgroundColor="#FCD9C4">
-            <Label Text="Hey, your bag's empty"
-                   TextColor="Black"
-                   FontSize="30"
-                   FontAttributes="Bold"
-                   RelativeLayout.XConstraint="70"
-                   RelativeLayout.YConstraint="200"></Label>
-            <Label Text="Get some new and fill it up"
-                   TextColor="Black"
-                   RelativeLayout.XConstraint="130"
-                   RelativeLayout.YConstraint="260"></Label>
-            <Button Text="FILL ME UP"
-                    TextColor="White"
-                    BackgroundColor="Black"
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                    WidthRequest="370"
-                    RelativeLayout.XConstraint="20"
-                    RelativeLayout.YConstraint="350"
-                    Clicked="fillmeup_Clicked"></Button>
-        </RelativeLayout>
+        <StackLayout BackgroundColor="#FCD9C4">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Label Text="Hey, your bag's empty"
+                       TextColor="Black"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       ></Label>
+                <Label Text="Get some new and fill it up"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       ></Label>
+                <Button Text="FILL ME UP"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        WidthRequest="370"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Clicked="fillmeup_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>

@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MissGuided.Models;
+using MissGuided.Services;
+using MissGuided.Views;
 
 namespace MissGuided
 {
@@ -17,18 +19,38 @@ namespace MissGuided
         public CartPage()
         {
             InitializeComponent();
-            ItemsAdded();
+            ItemsAddedAsync();
         }
-        List<Item> itemsList = new List<Item>();
-        void ItemsAdded()
+        async Task ItemsAddedAsync()
         {
-            itemsList.Add(new Item { Img = "bag.png", Description = "Cai quan que gi ne", SalePrice = "????"});
-            CartLst.ItemsSource = itemsList;
+            List<Product> itemsList = await CartAPI.shared.FetchCart();
+            if (itemsList != null)
+            {
+                CartLst.ItemsSource = itemsList;
+            }
+            else
+            {
+                Navigation.PushAsync(new CartPageBlank());
+            }
         }
 
         private void edit_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CartPage());
+        }
+
+        void CheckOutBtn_Clicked(System.Object sender, System.EventArgs e)
+        {
+            // push to checkout page
+        }
+
+        void CartLst_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            if (CartLst.SelectedItem != null)
+            {
+                Product product = (Product)CartLst.SelectedItem;
+                Navigation.PushAsync(new ProductDetail(product));
+            }
         }
     }
 }

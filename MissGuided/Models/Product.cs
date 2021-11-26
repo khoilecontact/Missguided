@@ -32,8 +32,7 @@ namespace MissGuided.Models
     public class Products
     {
         public List<Product> products { get; set; }
+        public List<Product> cart { get; set; }
     }
-
-
 }
 
