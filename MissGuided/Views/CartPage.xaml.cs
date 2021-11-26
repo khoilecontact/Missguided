@@ -21,6 +21,7 @@ namespace MissGuided
             InitializeComponent();
             ItemsAddedAsync();
         }
+
         async Task ItemsAddedAsync()
         {
             List<Product> itemsList = await CartAPI.shared.FetchCart();
@@ -41,7 +42,7 @@ namespace MissGuided
 
         void CheckOutBtn_Clicked(System.Object sender, System.EventArgs e)
         {
-            // push to checkout page
+            Navigation.PushAsync(new CheckouPage());
         }
 
         void CartLst_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
