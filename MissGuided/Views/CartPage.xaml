@@ -73,14 +73,12 @@
 
                     <Label
                         x:Name="pLength"
-                        Text="8 items"
                         FontSize="Large"
                         Grid.Row="0" Grid.Column="0"
                         ></Label>
 
                     <Label
                         x:Name="totalPrice"
-                        Text="88,88 $"
                         FontSize="Large"
                         FontAttributes="Bold"
                         TextColor="Black"

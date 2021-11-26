@@ -23,10 +23,12 @@ namespace MissGuided
         }
         async Task ItemsAddedAsync()
         {
-            List<Product> itemsList = await CartAPI.shared.FetchCart();
+            Products itemsList = await CartAPI.shared.FetchCart();
             if (itemsList != null)
             {
-                CartLst.ItemsSource = itemsList;
+                CartLst.ItemsSource = itemsList.cart;
+                pLength.Text = itemsList.pLength.ToString()+" items";
+                totalPrice.Text = itemsList.total;
             }
             else
             {

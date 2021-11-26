@@ -5,7 +5,7 @@
     x:Class="MissGuided.Views.HomePage"
     Title="HomePage"
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
-    Shell.BackgroundColor="White" >
+    Shell.BackgroundColor="White" NavigationPage.HasBackButton="False">
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked" />
     </ContentPage.ToolbarItems>
@@ -24,7 +24,6 @@
             <Image Source="app_logo.jpg" Scale="0.7" Grid.Column="1" Grid.Row="0"
                    HorizontalOptions="Center"></Image>
         </Grid>
-        
     </Shell.TitleView>
 
     <ContentPage.Resources>
