@@ -5,6 +5,7 @@ using System.Windows.Input;
 using MissGuided.Models;
 using MissGuided.Services;
 using MissGuided.Views.TextPages;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MissGuided.Views
@@ -104,6 +105,13 @@ namespace MissGuided.Views
 
         async void btn_add_to_bag_Clicked(System.Object sender, System.EventArgs e)
         {
+            string email = Preferences.Get("userEmail", "none");
+
+            if (email == "none")
+            {
+                await Navigation.PushAsync(new MePage());
+                return;
+            }
             bool re = await CartAPI.shared.AddToCart(product._id);
         }
     }
