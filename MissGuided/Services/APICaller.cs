@@ -54,7 +54,8 @@ namespace MissGuided
                     products = jsonContent.products;
                     return products;
                 }
-            } catch(Exception error)
+            }
+            catch (Exception error)
             {
                 Console.WriteLine(error);
                 return null;
@@ -108,7 +109,7 @@ namespace MissGuided
                 var response = await client.PostAsync("/me/registerUser", content);
                 if (response.IsSuccessStatusCode)
                 {
-                    Preferences.Set("userEmail", email);
+                    Preferences.Set("userEmail", info.email);
                     return true;
                 }
                 else
@@ -127,9 +128,14 @@ namespace MissGuided
         {
             try
             {
+                if (email == "none" || email == null)
+                {
+                    return new User();
+                }
+
                 var info = new
                 {
-                    email = email
+                    email
                 };
 
                 var content = new StringContent(
@@ -159,15 +165,19 @@ namespace MissGuided
         // Wishlist API
 
         // Get user's wishlist
-        public async Task<List<Product>> getUserWishlist()
+        public async Task<List<Product>> GetUserWishlist()
         {
             try
             {
                 string email = Preferences.Get("userEmail", "none");
+                if (email == "none")
+                {
+                    return new List<Product>();
+                }
 
                 var info = new
                 {
-                    email = email
+                    email 
                 };
 
                 var content = new StringContent(
@@ -200,7 +210,11 @@ namespace MissGuided
         {
             try
             {
-                string userEmail = Preferences.Get("userEmail", "No email");
+                string userEmail = Preferences.Get("userEmail", "none");
+                if (userEmail == "none")
+                {
+                    return false;
+                }
 
                 var info = new
                 {
@@ -234,7 +248,11 @@ namespace MissGuided
         {
             try
             {
-                string userEmail = Preferences.Get("userEmail", "No email");
+                string userEmail = Preferences.Get("userEmail", "none");
+                if (userEmail == "none")
+                {
+                    return false;
+                }
 
                 var info = new
                 {
@@ -265,6 +283,4 @@ namespace MissGuided
         }
 
     }
-
-    
 }

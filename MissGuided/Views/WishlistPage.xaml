@@ -4,46 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MissGuided.Views.WishlistPage"
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
-    Shell.BackgroundColor="White" BackgroundColor="#fae9e9">
-    <ContentPage.Content>
-        <RelativeLayout>
-            <Label Text="just hold on whilst we fill"
-                   TextColor="Black"
-                   FontSize="30"
-                   FontAttributes="Bold"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   RelativeLayout.XConstraint="40"
-                   RelativeLayout.YConstraint="170"></Label>
-            <Label Text="up your wishlist"
-                   TextColor="Black"
-                   FontSize="30"
-                   FontAttributes="Bold"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   RelativeLayout.XConstraint="100"
-                   RelativeLayout.YConstraint="210"></Label>
-            <Label Text="If you haven't added anything yet, what are you waiting for..."
-                   TextColor="Black"
-                   RelativeLayout.XConstraint="25"
-                   RelativeLayout.YConstraint="260"></Label>
-            <Button Text="FILL ME UP"
-                    TextColor="White"
-                    BackgroundColor="Black"
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                    WidthRequest="370"
-                    RelativeLayout.XConstraint="20"
-                    RelativeLayout.YConstraint="550"
-                    Clicked="Button_Clicked"></Button>
-        </RelativeLayout>
-    </ContentPage.Content>
+    Shell.BackgroundColor="White" BackgroundColor="White" NavigationPage.HasBackButton="False">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
-    </ContentPage.ToolbarItems>
-
-    <Shell.TitleView>
+     <Shell.TitleView>
          <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"></ColumnDefinition>
@@ -58,4 +21,62 @@
                    HorizontalOptions="Center"></Image>
         </Grid>
     </Shell.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lbl_total_products" FontSize="Subtitle" VerticalOptions="StartAndExpand"
+                   HorizontalOptions="StartAndExpand"></Label>
+
+            <ListView x:Name="lst_wishlist" RowHeight="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Source="{Binding images[0]}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
+
+                                    <Label Text="{Binding name}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                           Grid.Column="1" Grid.Row="0" FontSize="Subtitle" FontAttributes="Bold"
+                                           TextColor="Black"></Label>
+
+                                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1"
+                                                 HorizontalOptions="EndAndExpand">
+                                        <Label TextColor="Pink" Text="{Binding salePrice}"></Label>
+
+                                        <Label TextColor="Black" Text="{Binding price}"></Label>
+                                    </StackLayout>
+
+                                    <Button Text="X" x:Name="btn_remove" Clicked="btn_remove_Clicked" HorizontalOptions="Start"
+                                            VerticalOptions="End" Grid.Row="2" Grid.Column="0" BindingContext="{Binding _id}"
+                                            BackgroundColor="White" TextColor="Black" WidthRequest="35"></Button>
+
+                                    <Button Text="move to bag" TextTransform="Lowercase" FontAttributes="Bold" FontSize="Small"
+                                            BackgroundColor="Black" TextColor="White" x:Name="btn_addToBag"
+                                            Clicked="btn_addToBag_Clicked" VerticalOptions="End" HorizontalOptions="End"
+                                            BindingContext="{Binding _id}" Grid.Row="2" Grid.Column="1"></Button>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+   
 </ContentPage>

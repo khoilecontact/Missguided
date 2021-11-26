@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MissGuided.Models;
 using MLToolkit.Forms.SwipeCardView.Core;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MissGuided.Views
@@ -18,7 +19,7 @@ namespace MissGuided.Views
             InitializeComponent();
             CardBindingAsync();
         }
-            
+
         async void CardBindingAsync()
         {
             _Products = await APICaller.shared.FetchProductsSwipe(1);
@@ -47,21 +48,31 @@ namespace MissGuided.Views
             if (noProduct % 20 == 0)
             {
                 int page = noProduct / 20 + 1;
-               
+
                 _Products = await APICaller.shared.FetchProductsSwipe(page);
 
                 SwipeView.ItemsSource = _Products;
             }
-            
+
             var item = (Product)SwipeView.TopItem;
             lbl_name.Text = item.name;
             lbl_price.Text = item.price;
             lbl_sale_price.Text = item.salePrice;
-            
+
 
             switch (e.Direction)
             {
                 case SwipeCardDirection.Right:
+                    string email = Preferences.Get("userEmail", "none");
+
+                    if (email == "none")
+                    {
+                        await Navigation.PushAsync(new MePage());
+                        return;
+                    }
+
+                    Product swipedProduct = (Product)e.Item;
+                    bool re = await APICaller.shared.AddToWishlist(swipedProduct._id);
                     break;
                 case SwipeCardDirection.Left:
                     break;

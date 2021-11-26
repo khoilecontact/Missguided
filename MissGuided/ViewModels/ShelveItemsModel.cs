@@ -52,16 +52,11 @@ namespace MissGuided.ViewModels
                 return new Command((data) =>
                              {
                                  Product dataSelected = (Product)data;
-                                 shelvePage.DisplayAlert("FlowListView", dataSelected.name + "", "Ok");
-                                 //shelvePage.Navigation.PushAsync(new ItemDetailPage(dataSelected));
+                                 shelvePage.Navigation.PushAsync(new ProductDetail(dataSelected));
                              });
             }
         }
 
-        void FlowListView_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
-        {
-            shelvePage.DisplayAlert("Haha", "haha", "ok");
-        }
     }
 }
 
