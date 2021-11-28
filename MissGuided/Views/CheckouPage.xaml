@@ -15,7 +15,7 @@
                     HorizontalOptions="Start" FontSize="Medium" Margin="15, 0, 0, 0"></Label>
 
                     <Label x:Name="lbl_money" TextColor="Black" VerticalOptions="End"
-                    HorizontalOptions="End" FontSize="Medium" FontAttributes="Bold"></Label>
+                    HorizontalOptions="End" FontSize="Small" FontAttributes="Bold"></Label>
             </StackLayout>
 
             <ListView x:Name="lst_products" RowHeight="80">
@@ -31,7 +31,8 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                     <ColumnDefinition Width="4*"></ColumnDefinition>
-                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
                                 <Image Source="{Binding images[0]}" HorizontalOptions="CenterAndExpand"
@@ -44,8 +45,11 @@
                                 <Label x:Name="lbl_size" TextColor="Black" FontSize="Medium" TextTransform="Default"
                                        Grid.Row="1" Grid.Column="1"></Label>
 
-                                 <Label x:Name="lbl_bill" Text="{Binding price}" TextColor="Black" FontSize="Medium" TextTransform="Default"
+                                <Label Text="1 x " TextColor="Black" FontSize="Medium" TextTransform="Default"
                                        Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End"></Label>
+
+                                <Label x:Name="lbl_bill" Text="{Binding price}" TextColor="Black" FontSize="Medium" TextTransform="Default"
+                                       Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="Start"></Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

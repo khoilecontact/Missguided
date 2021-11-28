@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MissGuided.ViewModels;
 using MissGuided.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MissGuided
@@ -11,6 +12,7 @@ namespace MissGuided
         public AppShell()
         {
             InitializeComponent();
+            Preferences.Remove("DeliveryPrice");
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(ShopPage), typeof(ShopPage));

@@ -29,7 +29,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="lbl_total_products" FontSize="Subtitle" VerticalOptions="StartAndExpand"
-                   HorizontalOptions="StartAndExpand"></Label>
+                   HorizontalOptions="StartAndExpand" Margin="5, 0, 0, 0" TextColor="Black"></Label>
 
             <ListView x:Name="lst_wishlist" RowHeight="200">
                 <ListView.ItemTemplate>
@@ -48,7 +48,8 @@
                                         <RowDefinition Height="*"></RowDefinition>
                                     </Grid.RowDefinitions>
 
-                                    <Image Source="{Binding images[0]}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
+                                    <Image Source="{Binding images[0]}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                           Margin="10, 0, 0, 0"></Image>
 
                                     <Label Text="{Binding name}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                            Grid.Column="1" Grid.Row="0" FontSize="Subtitle" FontAttributes="Bold"
@@ -56,9 +57,11 @@
 
                                     <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1"
                                                  HorizontalOptions="EndAndExpand">
-                                        <Label TextColor="Pink" Text="{Binding salePrice}"></Label>
+                                        <Label TextColor="DeepPink" Text="{Binding salePrice}" FontSize="Medium"
+                                               Margin="0, 0, 2, 0"></Label>
 
-                                        <Label TextColor="Black" Text="{Binding price}"></Label>
+                                        <Label TextColor="Black" Text="{Binding price}" FontSize="Medium"
+                                               Margin="0, 0, 5, 0"></Label>
                                     </StackLayout>
 
                                     <Button Text="X" x:Name="btn_remove" Clicked="btn_remove_Clicked" HorizontalOptions="Start"

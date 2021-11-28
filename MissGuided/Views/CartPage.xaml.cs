@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using MissGuided.Models;
 using MissGuided.Services;
 using MissGuided.Views;
+using Xamarin.Essentials;
 
 namespace MissGuided
 {

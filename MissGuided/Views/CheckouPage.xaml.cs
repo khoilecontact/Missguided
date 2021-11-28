@@ -8,6 +8,8 @@ using MissGuided.Services;
 using MissGuided.Views;
 using System.Threading.Tasks;
 using System.Linq;
+using MissGuided.Views.CheckoutFormPages;
+using Xamarin.Essentials;
 
 namespace MissGuided.Views
 {
@@ -32,7 +34,7 @@ namespace MissGuided.Views
             }
             else
             {
-                Navigation.PushAsync(new CartPageBlank());
+                await Navigation.PushAsync(new CartPageBlank());
             }
 
             List<checkoutButton> buttons = new List<checkoutButton>();
@@ -51,15 +53,47 @@ namespace MissGuided.Views
             double totalEnd = total % 100;
             total = (int)(total / 100);
 
+            string strTotalMoney = total.ToString() + "," + totalEnd.ToString() + "€";
+
+            string deliveryPrice = Preferences.Get("DeliveryPrice", "0,00€");
+
+            if (deliveryPrice != "0,00€")
+            {
+                strTotalMoney = total.ToString() + "," + totalEnd.ToString() + "0€";
+                total = addTwoEuroMoney(strTotalMoney, deliveryPrice);
+
+                totalEnd = total % 1;
+                total = (int)(total / 1);
+
+                strTotalMoney = total.ToString() + "," + totalEnd.ToString() + "€";
+            }
+
             lbl_ammount_items.Text = productCount.ToString() + " Items";
             lbl_money.Text = total.ToString() + "," + totalEnd.ToString() + "€";
-            lbl_total_money.Text = total.ToString() + "," + totalEnd.ToString() + "€";
+            lbl_total_money.Text = strTotalMoney;
         }
 
+        // delivery options
         void lst_btn_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
+            checkoutButton selectedButton = (checkoutButton)lst_btn.SelectedItem;
+            switch (selectedButton.no)
+            {
+                case "1":
+                    Navigation.PushAsync(new Deliveryaddress());
+                    break;
+
+                case "2":
+                    Navigation.PushAsync(new DeliveryOptions());
+                    break;
+
+                case "3":
+
+                    break;
+            }
         }
 
+        // pay button clicked
         void btn_pay_Clicked(System.Object sender, System.EventArgs e)
         {
         }
