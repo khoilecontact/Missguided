@@ -58,7 +58,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <StackLayout HeightRequest="111" VerticalOptions="End">
+            <StackLayout x:Name="CartBoard" HeightRequest="111" VerticalOptions="End">
                 <StackLayout HeightRequest="1" BackgroundColor="LightGray"></StackLayout>
                 <Grid Padding="10,0,10,0" HeightRequest="110" BackgroundColor="White" VerticalOptions="End">
                     <Grid.RowDefinitions>
@@ -98,6 +98,33 @@
                         ></Button>
                 </Grid>
             </StackLayout>
+
+            <StackLayout x:Name="blankPage" MinimumHeightRequest="550" HeightRequest="700" BackgroundColor="#FCD9C4">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Label Text="Hey, your bag's empty"
+                       TextColor="Black"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       ></Label>
+                <Label Text="Get some new and fill it up"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       ></Label>
+                <Button Text="FILL ME UP"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        WidthRequest="370"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Clicked="Button_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 
