@@ -84,11 +84,11 @@ namespace MissGuided.Services
             }
         }
 
-        public async Task<List<Product>> FetchCart()
+        public async Task<Products> FetchCart()
         {
             try
             {
-                List<Product> products = new List<Product>();
+                Products products;
                 //var content = new StringContent(JsonConvert.SerializeObject(products), Encoding.UTF8, "application/json");
                 //string strPage = page.ToString();
                 string userEmail = Preferences.Get("userEmail", "No email");
@@ -100,7 +100,7 @@ namespace MissGuided.Services
                 using (var json = new JsonTextReader(reader))
                 {
                     var jsonContent = json_serializer.Deserialize<Products>(json);
-                    products = jsonContent.cart;
+                    products = jsonContent;
                     return products;
                 }
             }

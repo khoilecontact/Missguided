@@ -25,14 +25,23 @@ namespace MissGuided
 
         async Task ItemsAddedAsync()
         {
-            List<Product> itemsList = await CartAPI.shared.FetchCart();
+            blankPage.IsVisible = false;
+            Products itemsList = await CartAPI.shared.FetchCart();
             if (itemsList != null)
             {
-                CartLst.ItemsSource = itemsList;
+                blankPage.IsVisible = false;
+                CartLst.IsVisible = true;
+                CartBoard.IsVisible = true;
+                CartLst.ItemsSource = itemsList.cart;
+                pLength.Text = itemsList.pLength.ToString()+" items";
+                totalPrice.Text = itemsList.total;
             }
             else
             {
-                Navigation.PushAsync(new CartPageBlank());
+                CartLst.IsVisible = false;
+                CartBoard.IsVisible = false;
+                blankPage.IsVisible = true;
+                //await Navigation.PushAsync(new CartPageBlank());
             }
         }
 
@@ -53,6 +62,11 @@ namespace MissGuided
                 Product product = (Product)CartLst.SelectedItem;
                 Navigation.PushAsync(new ProductDetail(product));
             }
+        }
+
+        void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ShopPage());
         }
     }
 }
