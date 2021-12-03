@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MissGuided.Views.TextPages.ShippingTextPage"
+    Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
+    Shell.TitleColor="Black" Title="Shipping">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Start" Margin="5, 0, 0, 0">
+            <Label Text="US Shipping Options" TextColor="Black" FontAttributes="Bold"
+                   FontSize="16"> </Label>
+            <Label Text="US" TextColor="Black" TextDecorations="Underline" FontAttributes="Bold"></Label>
+            <Label TextColor="Black" Text="standard shipping - $8. Orders placed by 5pm ET/12pm West Coast using this service will usually arrive in 6-9 business days"></Label>
+            <Label TextColor="Black" Text="express shipping - $12. Orders placed by 2pm using this service will usually arrive within 3-5 business days with a trackable service from Fedex (excludes weekends, public holidays and federal holidays). "></Label>
+             <Label TextColor="Black" Text="super express shipping - $13. Orders placed by 2pm using this service will usually arrive within 1-2 business days with a trackable service from Fedex (excludes weekends, public holidays and federal holidays). "></Label>
+
+            <Label Text="Canada" TextColor="Black" TextDecorations="Underline" FontAttributes="Bold"></Label>
+            <Label TextColor="Black" Text="standard shipping - $8 / CA $10. Orders placed by 2pm using this service usually arrive in 9-13 business days with a trackable service from Canada Post. (excludes weekends, public holidays and federal holidays). Please note, any import duties and taxes are charged once the parcel has reached the destination country and these charges must be paid by the recipient of the parcel.The admin / brokerage fees will be payable to the courier."></Label>
+            <Label TextColor="Black" Text="express shipping - $31 / CA $42. Orders placed by 2pm using this service will usually arrive within 2-4 business days with a trackable service from UPS. (excludes weekends, public holidays and federal holidays). Please note, any import duties and taxes are charged once the parcel has reached the destination country and these charges must be paid by the recipient of the parcel.The admin / brokerage fees will be payable to the courier."></Label>
+
+            <Label HeightRequest="10"></Label>
+            
+            <Label TextColor="Black" Text="You can also order to these areas from this site:" FontAttributes="Bold"></Label>
+            <Label TextColor="Black" Text="American Samoa"></Label>
+            <Label TextColor="Black" Text="British, Virgin Islands"></Label>
+            <Label TextColor="Black" Text="U.S. Virgin Islands"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+<!--US Shipping Options 
+
+USA
+
+standard shipping - $8. Orders placed by 5pm ET/12pm West Coast using this service will usually arrive in 6-9 business days with a trackable service (excludes weekends, public holidays and federal holidays).
+
+express shipping - $12. Orders placed by 2pm using this service will usually arrive within 3-5 business days with a trackable service from Fedex (excludes weekends, public holidays and federal holidays). 
+
+super express shipping - $13. Orders placed by 2pm using this service will usually arrive within 1-2 business days with a trackable service from Fedex (excludes weekends, public holidays and federal holidays). 
+
+Canada
+
+standard shipping - $8 / CA $10. Orders placed by 2pm using this service usually arrive in 9-13 business days with a trackable service from Canada Post. (excludes weekends, public holidays and federal holidays). Please note, any import duties and taxes are charged once the parcel has reached the destination country and these charges must be paid by the recipient of the parcel.The admin / brokerage fees will be payable to the courier.
+
+express shipping - $31 / CA $42. Orders placed by 2pm using this service will usually arrive within 2-4 business days with a trackable service from UPS. (excludes weekends, public holidays and federal holidays). Please note, any import duties and taxes are charged once the parcel has reached the destination country and these charges must be paid by the recipient of the parcel.The admin / brokerage fees will be payable to the courier.
+
+You can also order to these areas from this site:
+
+American Samoa
+British, Virgin Islands
+U.S. Virgin Islands"-->

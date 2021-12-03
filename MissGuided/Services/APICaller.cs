@@ -54,7 +54,8 @@ namespace MissGuided
                     products = jsonContent.products;
                     return products;
                 }
-            } catch(Exception error)
+            }
+            catch (Exception error)
             {
                 Console.WriteLine(error);
                 return null;
@@ -103,12 +104,12 @@ namespace MissGuided
                 };
 
                 var content = new StringContent(
-                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");;
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");
 
                 var response = await client.PostAsync("/me/registerUser", content);
                 if (response.IsSuccessStatusCode)
                 {
-                    Preferences.Set("userEmail", email);
+                    Preferences.Set("userEmail", info.email);
                     return true;
                 }
                 else
@@ -122,7 +123,164 @@ namespace MissGuided
                 return false;
             }
         }
-    }
 
-    
+        public async Task<User> GetUserInfo(string email)
+        {
+            try
+            {
+                if (email == "none" || email == null)
+                {
+                    return new User();
+                }
+
+                var info = new
+                {
+                    email
+                };
+
+                var content = new StringContent(
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("/user/getInfo", content);
+                response.EnsureSuccessStatusCode();
+
+                User currentUser;
+
+                using (var stream = await response.Content.ReadAsStreamAsync())
+                using (var reader = new StreamReader(stream))
+                using (var json = new JsonTextReader(reader))
+                {
+                    var jsonContent = json_serializer.Deserialize<UserResponse>(json);
+                    currentUser = jsonContent.user;
+                    return currentUser;
+                } 
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+                return null;
+            }
+        }
+
+        // Wishlist API
+
+        // Get user's wishlist
+        public async Task<List<Product>> GetUserWishlist()
+        {
+            try
+            {
+                string email = Preferences.Get("userEmail", "none");
+                if (email == "none")
+                {
+                    return new List<Product>();
+                }
+
+                var info = new
+                {
+                    email 
+                };
+
+                var content = new StringContent(
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("/wishlist/get", content);
+                response.EnsureSuccessStatusCode();
+
+                List<Product> products = new List<Product>();
+
+                using (var stream = await response.Content.ReadAsStreamAsync())
+                using (var reader = new StreamReader(stream))
+                using (var json = new JsonTextReader(reader))
+                {
+                    var jsonContent = json_serializer.Deserialize<Products>(json);
+                    products = jsonContent.products;
+                    return products;
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+                return null;
+            }
+
+        } 
+
+        // Add to wish list 
+        public async Task<bool> AddToWishlist(string productId)
+        {
+            try
+            {
+                string userEmail = Preferences.Get("userEmail", "none");
+                if (userEmail == "none")
+                {
+                    return false;
+                }
+
+                var info = new
+                {
+                    email = userEmail,
+                    productId = productId
+                };
+
+                var content = new StringContent(
+                        JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json"); ;
+
+                var response = await client.PostAsync("/wishlist/add", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                } else
+                {
+                    return false;
+                } 
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+                return false;
+            }
+
+        }
+
+        // Remove from wishlist
+        public async Task<bool> RemoveFromWishlist(string productId)
+        {
+            try
+            {
+                string userEmail = Preferences.Get("userEmail", "none");
+                if (userEmail == "none")
+                {
+                    return false;
+                }
+
+                var info = new
+                {
+                    email = userEmail,
+                    productId = productId
+                };
+
+                var content = new StringContent(
+                        JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json"); ;
+
+                var response = await client.PostAsync("/wishlist/remove", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+                return false;
+            }
+
+        }
+
+    }
 }

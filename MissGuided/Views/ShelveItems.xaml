@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    x:Class="MissGuided.Views.ShelveItems"
+    Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+    Shell.BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                
+            </Grid.RowDefinitions>
+
+            <Image Source="app_logo.jpg" Scale="0.7" Grid.Column="1" Grid.Row="0"
+                   HorizontalOptions="Start" BackgroundColor="Red"></Image>
+        </Grid>
+        
+    </Shell.TitleView>
+
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="0,10,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="1"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="sortBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Sort" Grid.Row="0" Grid.Column="0"></Button>
+                <Label FontSize="Title" BackgroundColor="Gray" TextColor="Gray" Text="|" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                <Button x:Name="filterBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Filter" Grid.Row="0" Grid.Column="2"></Button>
+            </Grid>
+
+            <!--<ListView x:Name="listProducts" RowHeight="300">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10,0,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Row="0" Grid.Column="0">
+                                    <Image Aspect="AspectFit" Source="{Binding images[0]}"></Image>
+                                    <Label HorizontalTextAlignment="Center" Text="{Binding name}"></Label>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <Label x:Name="productsLength" HorizontalOptions="End" HorizontalTextAlignment="Start" Margin="30,5,30,5" TextColor="Black" Text="8 items"></Label>
+
+            <flv:FlowListView FlowColumnCount="2"
+                SeparatorVisibility="Default"   
+                HasUnevenRows="True"  
+                FlowItemTappedCommand="{Binding ItemTappedCommand}"
+                FlowItemsSource="{Binding Products}">
+  
+                <flv:FlowListView.FlowColumnTemplate>  
+                    <DataTemplate>
+                        <StackLayout Margin="10,0,10,0">
+                            <Image Aspect="AspectFit" Source="{Binding images[0]}"></Image>
+                            <Label HorizontalTextAlignment="Center" FontSize="14" FontAttributes="Bold" Text="{Binding name}"></Label>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding price}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+                                <Label Text="{Binding salePrice}" TextColor="#ffa5b8" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>  
+                </flv:FlowListView.FlowColumnTemplate>  
+            </flv:FlowListView>  
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

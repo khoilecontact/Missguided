@@ -8,4 +8,9 @@ namespace MissGuided.Models
         public string email { get; set; }
         public string password { get; set; }
     }
+
+    public class UserResponse
+    {
+        public User user { get; set; }
+    }
 }

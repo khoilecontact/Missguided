@@ -14,6 +14,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="MLToolkit.Forms.SwipeCardView" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.CommunityToolkit" />
@@ -21,10 +23,18 @@
     <None Remove="Models\Authentication_Model\" />
     <None Remove="Json.Net" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Views\TextPages\" />
+    <None Remove="DLToolkit.Forms.Controls.FlowListView" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Models\CheckoutInfo\" />
+    <None Remove="Views\CheckoutFormPages\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Authentication_Model\" />
     <None Remove="MLToolkit.Forms.SwipeCardView" />
+    <Folder Include="Views\TextPages\" />
+    <Folder Include="Models\CheckoutInfo\" />
+    <Folder Include="Views\CheckoutFormPages\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\CartPageBlank.xaml">

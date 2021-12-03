@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 //Sfbutton
 using Syncfusion.XForms.Buttons;
-
+using MissGuided.Models;
+using System.Linq;
 
 namespace MissGuided.Views
 {

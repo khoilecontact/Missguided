@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MissGuided.Views.CheckoutFormPages.AddDeliveryAddress"
+    Shell.BackgroundColor="White"
+    Title="add delivery address">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="160">
+                <Entry Placeholder="first name" TextTransform="None" FontSize="Medium" x:Name="en_first_name"></Entry>
+                 <Entry Placeholder="last name" TextTransform="None" FontSize="Medium" x:Name="en_last_name"
+                        HorizontalOptions="End" VerticalOptions="End"></Entry>
+            </StackLayout>
+
+            <Entry Placeholder="phone numeber" TextTransform="None" FontSize="Medium" x:Name="en_phone"></Entry>
+            <Entry Placeholder="address line 1" TextTransform="None" FontSize="Medium" x:Name="en_addr_1"></Entry>
+            <Entry Placeholder="address line 2" TextTransform="None" FontSize="Medium" x:Name="en_addr_2"></Entry>
+            <Entry Placeholder="zip code" TextTransform="None" FontSize="Medium" x:Name="en_zip"></Entry>
+            <Entry Placeholder="state/province" TextTransform="None" FontSize="Medium" x:Name="en_city"></Entry>
+            <Picker x:Name="pkr_province" Title="city" FontSize="Medium"></Picker>
+            <Picker x:Name="pkr_country" Title="country" FontSize="Medium"></Picker>
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="save" x:Name="btn_save" Clicked="btn_save_Clicked" Order="Primary"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+</ContentPage>

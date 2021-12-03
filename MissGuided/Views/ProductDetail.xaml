@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MissGuided.Views.ProductDetail"
+    Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
+    x:Name="productDetailContentPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Frame Padding="0" HorizontalOptions="Center" VerticalOptions="Center" 
+                                   Background="white" HeightRequest="500" WidthRequest="400"
+                       Margin="0, 0, 0, 0">
+                    <AbsoluteLayout>
+                        <Image x:Name="imgProduct" Aspect="AspectFill"
+                                AbsoluteLayout.LayoutBounds=".5, 0.5, 1, 1"
+                                AbsoluteLayout.LayoutFlags="All" Source="loading.png"></Image>
+                    </AbsoluteLayout>
+                </Frame>
+
+                <Label x:Name="lbl_name" FontSize="22" TextColor="Black" FontAttributes="Bold"
+                    HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" ></Label>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="lbl_sale_price" FontSize="20" TextColor="#ffa5b8"
+                    HorizontalTextAlignment="End"></Label>
+
+                     <Label x:Name="lbl_price" Text="{Binding price }" FontSize="20" TextColor="Black" 
+                        HorizontalTextAlignment="Start">
+                     </Label>
+                </StackLayout>
+                
+                <Button Text="add to bag" TextColor="White" BackgroundColor="Black" FontSize="Medium"
+                        FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextTransform="Lowercase"
+                        WidthRequest="400" Margin="0, 20, 0, 0" x:Name="btn_add_to_bag" Clicked="btn_add_to_bag_Clicked"></Button>
+
+                <Label x:Name="lblSize" TextColor="Black" FontFamily="sans-serif-light" FontSize="18"
+                       TextTransform="Lowercase" HorizontalOptions="Center" Margin="0, 20, 0, 0"></Label>
+
+                <Button x:Name="btnInfo" Text="product info" FontAttributes="Bold" FontSize="Body"
+                        Clicked="btnInfo_Clicked" BorderWidth="0.5" BorderColor="Black"
+                        TextTransform="Lowercase" BackgroundColor="White" TextColor="black"
+                        Padding="0,0,300,0" Margin="0, 0, 0, 0"></Button>
+
+                <Button x:Name="btnSizeGuide" Text="size guide" FontAttributes="Bold" FontSize="Body"
+                        Clicked="btnSizeGuide_Clicked" BorderWidth="0.5" BorderColor="Black"
+                        TextTransform="Lowercase" BackgroundColor="White" TextColor="black"
+                        Padding="0,0,310,0" Margin="0, 0, 0, 0"></Button>
+
+                <Button x:Name="btnDelivery" Text="delivery &amp; returns" FontAttributes="Bold" FontSize="Body"
+                        Clicked="btnDelivery_Clicked" BorderWidth="0.5"  BorderColor="Black"
+                        TextTransform="Lowercase" BackgroundColor="White" TextColor="black"
+                        Padding="0,0,310,0" Margin="0, 0, 0, 0"></Button>
+
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="200">
+
+                    <Label Text="Suggested Items" HorizontalOptions="Start" VerticalTextAlignment="Center"
+                           FontSize="16" TextTransform="None" TextColor="Gray"></Label>
+
+                    <Button x:Name="btnViewAll" Text="View All" FontAttributes="Bold" FontSize="16"
+                            FontFamily="sans-serif-light" HorizontalOptions="End" Clicked="btnViewAll_Clicked"
+                            TextTransform="None" BackgroundColor="White" TextColor="Black"></Button>
+
+                </StackLayout>
+
+                <CarouselView x:Name="crslSuggestedProduct" >
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                           <AbsoluteLayout>
+                               <StackLayout HorizontalOptions="CenterAndExpand">
+                                   <StackLayout.GestureRecognizers>
+                                       <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                   </StackLayout.GestureRecognizers>
+
+                                   <Image Source="{Binding images[0]}" HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center"></Image>
+
+                                   <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label x:Name="lbl_sale_price_child" Text="{ Binding salePrice }" FontSize="15" TextColor="#ffa5b8"
+                                        HorizontalTextAlignment="End"></Label>
+
+                                         <Label x:Name="lbl_price_child" Text="{ Binding price }" FontSize="15" TextColor="Black" 
+                                            HorizontalTextAlignment="Start">
+                                         </Label>
+                                    </StackLayout>
+
+                                    <Label x:Name="lbl_name_child" FontSize="18" TextColor="Black"
+                                        HorizontalTextAlignment="Center" HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Text="{ Binding name }"></Label>
+
+                               </StackLayout>
+                           </AbsoluteLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
