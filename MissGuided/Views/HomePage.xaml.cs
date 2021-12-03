@@ -154,7 +154,7 @@ namespace MissGuided.Views
                 categories = "",
             };
 
-            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, "?categories=Clothing");
 
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));

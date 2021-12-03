@@ -40,8 +40,15 @@ namespace MissGuided.Services
         {
             try
             {
+                string userEmail = Preferences.Get("userEmail", "No email");
+
+                var info = new {
+                    productID = productID,
+                    email = userEmail
+                };
+
                 var content = new StringContent(
-                    JsonConvert.SerializeObject(productID), Encoding.UTF8, "application/json");
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");
 
                 var response = await client.PostAsync("/user/addToCart", content);
                 if (response.IsSuccessStatusCode)
@@ -64,8 +71,16 @@ namespace MissGuided.Services
         {
             try
             {
+                string userEmail = Preferences.Get("userEmail", "No email");
+
+                var info = new
+                {
+                    productID = productID,
+                    email = userEmail
+                };
+
                 var content = new StringContent(
-                    JsonConvert.SerializeObject(productID), Encoding.UTF8, "application/json");
+                    JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json");
 
                 var response = await client.PostAsync("/user/removeFromCart", content);
                 if (response.IsSuccessStatusCode)
