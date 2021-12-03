@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MissGuided.Models"
+             x:Class="MissGuided.Views.TextPages.WhereIsMyOrderPage"
+             Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
+             Shell.TitleColor="Black" Title="Where is my order?">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Where's my order?"
+                   TextColor="Black"
+                   FontSize="30"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,30,0,0"></Label>
+
+            <Label Padding="15,15,15,10">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="When your order's ready to leave our warehouse we'll email to let you know. Then you can "
+                              TextColor="Black"></Span>
+                        <local:HyperlinkSpan Text="Track your order"
+                                             Url="https://www.missguidedus.com/track-my-order"></local:HyperlinkSpan>
+                        <Span Text=" for regular updates."
+                              TextColor="Black"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Padding="15,10,15,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Only just ordered? You can check your order status and contact details in "
+                              TextColor="Black"></Span>
+                        <local:HyperlinkSpan Text="My Account"
+                                            Url="https://www.missguidedus.com//customer/account/login"></local:HyperlinkSpan>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

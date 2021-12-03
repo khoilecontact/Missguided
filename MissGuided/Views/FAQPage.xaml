@@ -11,24 +11,12 @@
     </ContentPage.ToolbarItems>
 
     <Shell.TitleView>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <Label Text="FAQ"
-                   TextColor="Black"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   Grid.Column="1" Grid.Row="0"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"></Label>
-        </Grid>
+        <Label Text="FAQ"
+               TextColor="Black"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"></Label>
     </Shell.TitleView>
 
     <StackLayout Margin="0,5,0,5">
@@ -54,7 +42,7 @@
                           Margin="0,5,0,5"
                           Clicked="whereismyorder_Clicked"></buttons:SfButton>
         <buttons:SfButton BackgroundColor="White"
-                          Text="Have yout received my return"
+                          Text="Have you received my return"
                           TextColor="Black"
                           FontSize="Large"
                           HorizontalOptions="Start"

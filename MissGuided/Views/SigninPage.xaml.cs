@@ -31,9 +31,9 @@ namespace MissGuided.Views
 
             if (result)
             {
-                string userEmail = Preferences.Get("userEmail", string.Empty);
-                await DisplayAlert("Thông báo", "Đăng nhập "+ userEmail + " thành công", "OK");
-                await Navigation.PushAsync(new SignedinPage(user));
+                User userinfo = await APICaller.shared.GetUserInfo();
+                await DisplayAlert("Thông báo", "Đăng nhập "+ userinfo.firstName + " thành công", "OK");
+                await Navigation.PushAsync(new SignedinPage(userinfo));
             }
             else
             {

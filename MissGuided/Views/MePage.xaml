@@ -52,7 +52,8 @@
                                   TextColor="Gray"
                                   FontSize="Large"
                                   FontAttributes="Bold"
-                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                                  HorizontalTextAlignment="Start"
+                                  IsEnabled="False"></buttons:SfButton>
                 <buttons:SfButton WidthRequest="415"
                                   BackgroundColor="White"
                                   Text="FAQ"
