@@ -23,7 +23,8 @@ namespace MissGuided.Views
 
         async void ItemsAddedAsync()
         {
-            List<Product> itemsList = await CartAPI.shared.FetchCart();
+            Products getProduct = await CartAPI.shared.FetchCart();
+            List<Product> itemsList = getProduct.products;
 
             int productCount = itemsList.Count();
             //lbl_ammount_items.Text = productCount.ToString();
