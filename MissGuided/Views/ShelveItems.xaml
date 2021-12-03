@@ -24,7 +24,7 @@
             </Grid.RowDefinitions>
 
             <Image Source="app_logo.jpg" Scale="0.7" Grid.Column="1" Grid.Row="0"
-                   HorizontalOptions="Start" BackgroundColor="Red"></Image>
+                   HorizontalOptions="Start"></Image>
         </Grid>
         
     </Shell.TitleView>

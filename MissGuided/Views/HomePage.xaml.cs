@@ -154,7 +154,7 @@ namespace MissGuided.Views
                 categories = "",
             };
 
-            List<Product> result = await ProductAPI.shared.FetchProducts(1, "?categories=Clothing");
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, "categories=Brands");
 
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));
@@ -167,7 +167,7 @@ namespace MissGuided.Views
                 categories = "",
             };
 
-            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, "categories=Dresses");
 
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));
@@ -180,7 +180,7 @@ namespace MissGuided.Views
                 categories = "",
             };
 
-            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, "categories=Clothing");
 
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));
@@ -193,7 +193,7 @@ namespace MissGuided.Views
                 categories = "",
             };
 
-            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, "categories=Petite");
 
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));
@@ -206,7 +206,7 @@ namespace MissGuided.Views
                 categories = "",
             };
 
-            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, "categories=Tops");
 
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));
@@ -219,8 +219,7 @@ namespace MissGuided.Views
                 categories = "",
             };
 
-            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
-
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, "categories=Jeans");
             /// Product product_one = content[0];
             Navigation.PushAsync(new ShelveItems(result));
         }
