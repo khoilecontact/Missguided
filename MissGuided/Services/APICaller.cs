@@ -305,7 +305,7 @@ namespace MissGuided
                 var content = new StringContent(
                         JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json"); ;
 
-                var response = await client.PostAsync("/addToOrdered", content);
+                var response = await client.PostAsync("/user/addToOrdered", content);
 
                 if (response.IsSuccessStatusCode)
                 {

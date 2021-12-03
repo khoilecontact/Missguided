@@ -91,6 +91,13 @@ namespace MissGuided.Views
         {
             string selectedProductId = (string)((Button)sender).BindingContext;
             bool result = await CartAPI.shared.AddToCart(selectedProductId);
+            if (result)
+            {
+                await DisplayAlert("Added to bag", "", "OK");
+            } else
+            {
+                await DisplayAlert("Failed to add to bag", "", "OK");
+            }
             //bool resultRemoveWishlist = await APICaller.shared.RemoveFromWishlist(selectedProductId);
         }
 
