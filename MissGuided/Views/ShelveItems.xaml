@@ -7,12 +7,16 @@
     Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="White">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
 
     <Shell.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -20,10 +24,12 @@
             </Grid.RowDefinitions>
 
             <Image Source="app_logo.jpg" Scale="0.7" Grid.Column="1" Grid.Row="0"
-                   HorizontalOptions="Center"></Image>
+                   HorizontalOptions="Start" BackgroundColor="Red"></Image>
         </Grid>
         
     </Shell.TitleView>
+
+
 
     <ContentPage.Content>
         <StackLayout>

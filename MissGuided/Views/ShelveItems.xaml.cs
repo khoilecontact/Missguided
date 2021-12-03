@@ -30,5 +30,10 @@ namespace MissGuided.Views
         {
             //list.Add(originalProducts);
         }
+
+        void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CartPage());
+        }
     }
 }

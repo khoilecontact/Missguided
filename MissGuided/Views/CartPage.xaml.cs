@@ -25,7 +25,7 @@ namespace MissGuided
         {
             blankPage.IsVisible = false;
             Products itemsList = await CartAPI.shared.FetchCart();
-            if (itemsList != null)
+            if (itemsList.pLength != 0)
             {
                 blankPage.IsVisible = false;
                 CartLst.IsVisible = true;
