@@ -103,6 +103,15 @@ namespace MissGuided.Views
             Navigation.PushAsync(new CartPage());
         }
 
+        async void wishlist_clicked(object sender, System.EventArgs e)
+        {
+            bool addToWishlist = await APICaller.shared.AddToWishlist(product._id);
+            if (addToWishlist)
+            {
+                btn_wishlist.IconImageSource = "likeheart.png";
+            }
+        }
+
         async void btn_add_to_bag_Clicked(System.Object sender, System.EventArgs e)
         {
             string email = Preferences.Get("userEmail", "none");

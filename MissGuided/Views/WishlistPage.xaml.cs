@@ -18,6 +18,12 @@ namespace MissGuided.Views
             initView();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            initView();
+        }
+
         async void initView()
         {
             string email = Preferences.Get("userEmail", "none");
@@ -104,6 +110,12 @@ namespace MissGuided.Views
         void cart_clicked(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new CartPage());
+        }
+
+        void lst_wishlist_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            Product selectedProduct = (Product)lst_wishlist.SelectedItem;
+            Navigation.PushAsync(new ProductDetail(selectedProduct));
         }
     }
 }

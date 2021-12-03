@@ -31,7 +31,7 @@
             <Label x:Name="lbl_total_products" FontSize="Subtitle" VerticalOptions="StartAndExpand"
                    HorizontalOptions="StartAndExpand" Margin="5, 0, 0, 0" TextColor="Black"></Label>
 
-            <ListView x:Name="lst_wishlist" RowHeight="200">
+            <ListView x:Name="lst_wishlist" RowHeight="200" ItemSelected="lst_wishlist_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
