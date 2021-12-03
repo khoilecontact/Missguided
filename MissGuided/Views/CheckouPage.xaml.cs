@@ -95,8 +95,23 @@ namespace MissGuided.Views
         }
 
         // pay button clicked
-        void btn_pay_Clicked(System.Object sender, System.EventArgs e)
+        async void btn_pay_Clicked(System.Object sender, System.EventArgs e)
         {
+            Products getProduct = await CartAPI.shared.FetchCart();
+            List<Product> itemsList = getProduct.products;
+
+            foreach (Product product in itemsList)
+            {
+                // Add to ordered of user
+                bool addResult = await APICaller.shared.AddToOrderd(product._id);
+
+                if (addResult)
+                {
+                    // Remove from cart
+                    bool removeResult = await CartAPI.shared.RemoveFromCart(product._id);
+                }
+
+            }
         }
 
         double addTwoEuroMoney(string num1, string num2)
