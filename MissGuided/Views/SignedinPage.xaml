@@ -10,8 +10,8 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text=" Welcome Fail Ng"
+            <StackLayout x:Name="stack">
+                <Label x:Name="lblwelcome"
                        TextColor="Black"
                        FontSize="30"
                        FontAttributes="Bold"

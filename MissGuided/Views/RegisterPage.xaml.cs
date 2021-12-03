@@ -7,29 +7,32 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MissGuided.Services;
+using MissGuided.Models;
 
 namespace MissGuided.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
+        User user;
         public RegisterPage()
         {
             InitializeComponent();
+            user = new User();
         }
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            string firstName = lbl_firstName.Text;
-            string lastName = lbl_lastName.Text;
-            string email = lbl_email.Text;
-            string password = lbl_password.Text;
-
-            bool result = await APICaller.shared.Register(firstName, lastName, email, password);
+            user.firstName = lbl_firstName.Text;
+            user.lastName = lbl_lastName.Text;
+            user.email = lbl_email.Text;
+            user.password = lbl_password.Text;
+            bool result = await APICaller.shared.Register(user.firstName, user.lastName, user.email, user.password);
 
             if (result)
             {
                 await DisplayAlert("Registered In", "Vô rồi", "OK");
+                await Navigation.PushAsync(new SignedinPage(user));
             }
             else
             {

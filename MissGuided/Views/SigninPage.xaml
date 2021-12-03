@@ -21,7 +21,7 @@
                HorizontalTextAlignment="Center"
                Padding="30"
                ></Label>
-        <Entry Placeholder="EMAIL" x:Name="lbl_email"></Entry>
+        <Entry Placeholder="EMAIL" x:Name="lblEmail"></Entry>
 
         <Grid>
 
@@ -35,7 +35,7 @@
 
             <Entry Placeholder="PASSWORD"
                    IsPassword="{Binding Source={x:Reference ShowHidePasswordActualTriger}, Path=HidePassword}"
-                   x:Name="lbl_password"
+                   x:Name="lblPassword"
                    Grid.Column="0"
                    Grid.Row="0"></Entry>
 
@@ -60,7 +60,7 @@
 
         <Button Text="sign in"
                 TextColor="LightSlateGray"
-                BackgroundColor="LightGray" Clicked="Button_Clicked"></Button>
+                BackgroundColor="LightGray" Clicked="signin_Clicked"></Button>
         
     </StackLayout>
 </ContentPage>

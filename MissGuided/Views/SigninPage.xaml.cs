@@ -8,35 +8,37 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using MissGuided.Services;
+using MissGuided.Models;
 
 namespace MissGuided.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SigninPage : ContentPage
     {
+        User user;
         public SigninPage()
         {
             InitializeComponent();
+            user = new User();
         }
 
-        async void Button_Clicked(System.Object sender, System.EventArgs e)
+        async void signin_Clicked(System.Object sender, System.EventArgs e)
         {
-            string email = lbl_email.Text;
-            string password = lbl_password.Text;
+            user.email = lblEmail.Text;
+            user.password = lblPassword.Text;
 
-            bool result = await APICaller.shared.Login(email, password);
+            bool result = await APICaller.shared.Login(user.email, user.password);
 
             if (result)
             {
-                var userId = Preferences.Get("userEmail", string.Empty);
-                await DisplayAlert("Logged In", userId, "OK");
-                await Navigation.PushAsync(new HomePage());
+                string userEmail = Preferences.Get("userEmail", string.Empty);
+                await DisplayAlert("Thông báo", "Đăng nhập "+ userEmail + " thành công", "OK");
+                await Navigation.PushAsync(new SignedinPage(user));
             }
             else
             {
-                await DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
+                await DisplayAlert("Thông báo", "Đăng nhập thất bại", "OK");
             }
-           
         }
     }
 }
