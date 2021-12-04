@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MissGuided.Models"
+             x:Class="MissGuided.Views.TextPages.CanIChangeMyAddressPage"
+             Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
+             Shell.TitleColor="Black" Title="Can I change my address?">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Have you received my return?"
+                   TextColor="Black"
+                   FontSize="30"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,30,0,10"></Label>
+
+            <Label TextColor="Black"
+                   Padding="15,15,15,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="We're super quick at processing orders so any changes must be made before you click "></Span>
+                        <Span Text="'Pay Securely'"
+                              FontAttributes="Bold"></Span>
+                        <Span Text="."></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Padding="15,15,15,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="After this point If your delivery address is incorrect please "
+                              TextColor="Black"></Span>
+                        <local:HyperlinkSpan Text="get in touch"
+                                             Url="https://www.missguidedus.com//help"></local:HyperlinkSpan>
+                        <Span Text=" asap to let us know."
+                              TextColor="Black"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="Address changes will be attempted but cannot be guaranteed."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

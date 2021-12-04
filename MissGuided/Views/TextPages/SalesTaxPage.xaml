@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.TextPages.SalesTaxPage"
+             Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
+             Shell.TitleColor="Black" Title="Sales Tax">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="What is sales tax?"
+                           TextColor="Black"
+                           FontAttributes="Bold"></Label>
+
+                <Label Text="Sales Tax is charged on items shipped to the US. In States where we have an obligation to collect, you'll see sales tax applied to your order in our checkout and again in the order confirmation screen, which will be correct for the shipping address that you've selected."
+                       TextColor="Black"></Label>
+
+                <Label Text="How is Sales Tax Calculated?"
+                           TextColor="Black"
+                           FontAttributes="Bold"></Label>
+
+                <Label Text="Sales tax is calculated on the total value of your order, after discount. The amount of tax charged is calculated based on your shipping address. The tax is calculated based on State rates and the items you are purchasing. We'll always show you how much Sales Tax you'll be charged when you go to checkout."
+                           TextColor="Black"></Label>
+
+                <Label Text="You can find out more info about Sales Tax by visiting your State or US territories department of revenue website."
+                           TextColor="Black"></Label>
+
+                <Label Text="What will I Pay Sales Tax for?"
+                           TextColor="Black"
+                           FontAttributes="Bold"></Label>
+
+                <Label Text="Sales Tax is calculated based on your shipping address. Here's a list of what you'll pay Sales Tax for if liable."
+                           TextColor="Black"></Label>
+
+                <Label Text="The products you purchase"
+                           TextColor="Black"></Label>
+
+                <Label Text="Your shipping location"
+                           TextColor="Black"></Label>
+
+                <Label Text="Your shipping method"
+                           TextColor="Black"></Label>
+
+                <Label Text="Will you update Sales Tax when there's a Tax Holiday?"
+                           TextColor="Black"
+                           FontAttributes="Bold"></Label>
+
+                <Label Text="Yes, we'll always charge the correct amount of Sales Tax, including when there is a tax holiday. Sales Tax holidays may only apply to specific items, so tax may still be calculated on items if they do not qualify."
+                           TextColor="Black"></Label>
+
+                <Label Text="For more information on sales tax holidays, including qualifying items, you can visit your state or US territories department of revenue website."
+                           TextColor="Black"></Label>
+
+                <Label Text="Is Sales Tax refundable?"
+                           TextColor="Black"
+                           FontAttributes="Bold"></Label>
+
+                <Label Text="If you return your order/ item the Sales Tax you paid for the products in your order will also be refunded. We won't refund the cost of shipping."
+                       TextColor="Black"></Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

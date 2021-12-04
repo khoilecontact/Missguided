@@ -10,32 +10,40 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <RelativeLayout>
+                <AbsoluteLayout>
                     <Image x:Name="Img"
-                           Aspect="AspectFill"
-                           WidthRequest="408"
+                           Aspect="Fill"
                            HeightRequest="580"
-                           RelativeLayout.XConstraint="0"
-                           RelativeLayout.YConstraint="0"></Image>
-                    <Button Text="signin"
-                            TextColor="White"
-                            TextTransform="Lowercase"
-                            WidthRequest="380"
-                            BackgroundColor="Black"
-                            RelativeLayout.XConstraint="15"
-                            RelativeLayout.YConstraint="430"
-                            Clicked="Signin_Clicked"></Button>
-                    <Button Text="register"
-                            TextColor="Black"
-                            TextTransform="Lowercase"
-                            BorderWidth="2"
-                            BorderColor="Black"
-                            WidthRequest="380"
-                            BackgroundColor="White"
-                            RelativeLayout.XConstraint="15"
-                            RelativeLayout.YConstraint="500"
-                            Clicked="Register_Clicked"></Button>
-                </RelativeLayout>
+                           AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                           AbsoluteLayout.LayoutFlags="All"></Image>
+                    <StackLayout                           
+                        AbsoluteLayout.LayoutBounds="0.5, 0.8, 420, 120"
+                        AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Button Text="sign in"
+                                TextColor="White"
+                                TextTransform="Lowercase"
+                                FontSize="17"
+                                FontAttributes="Bold"
+                                BackgroundColor="Black"
+                                Clicked="Signin_Clicked"
+                                HorizontalOptions="Fill"
+                                Margin="20,0,20,10"
+                                HeightRequest="50"
+                                ></Button>
+                        <Button Text="register"
+                                TextColor="Black"
+                                TextTransform="Lowercase"
+                                FontSize="17"
+                                FontAttributes="Bold"
+                                BorderWidth="2"
+                                BorderColor="Black"
+                                BackgroundColor="White"
+                                HorizontalOptions="Fill"
+                                Margin="20,10,20,0"
+                                HeightRequest="50"
+                                Clicked="Register_Clicked"></Button>
+                    </StackLayout>
+                </AbsoluteLayout>
 
                 <buttons:SfButton x:Name="setting_button"
                                   WidthRequest="415"
@@ -44,15 +52,16 @@
                                   TextColor="Gray"
                                   FontSize="Large"
                                   FontAttributes="Bold"
-                                  HorizontalTextAlignment="Start"></buttons:SfButton>
-                <buttons:SfButton x:Name="faq_button"
-                                  WidthRequest="415"
+                                  HorizontalTextAlignment="Start"
+                                  IsEnabled="False"></buttons:SfButton>
+                <buttons:SfButton WidthRequest="415"
                                   BackgroundColor="White"
                                   Text="FAQ"
                                   TextColor="Black"  
                                   FontSize="Large"
                                   FontAttributes="Bold"
-                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="faq_Clicked"></buttons:SfButton>
                 <buttons:SfButton x:Name="termandcondition_button"
                                   WidthRequest="415"
                                   BackgroundColor="White" 
@@ -69,14 +78,14 @@
                                   FontSize="Large"
                                   FontAttributes="Bold"
                                   HorizontalTextAlignment="Start"></buttons:SfButton>
-                <buttons:SfButton x:Name="changecountry_button"
-                                  WidthRequest="415"
+                <buttons:SfButton WidthRequest="415"
                                   BackgroundColor="White"
                                   Text="Change Country" 
                                   TextColor="Black"
                                   FontSize="Large"
                                   FontAttributes="Bold"
-                                  HorizontalTextAlignment="Start"></buttons:SfButton>
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="changecountry_Clicked"></buttons:SfButton>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

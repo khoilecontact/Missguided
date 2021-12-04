@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MissGuided.Models"
+             x:Class="MissGuided.Views.TextPages.HowDoIReturnAnItemPage"
+             Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
+             Shell.TitleColor="Black" Title="How do I return an Item?">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="How do I return something?"
+                   TextColor="Black"
+                   FontSize="30"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,30,0,10"></Label>
+
+            <Label Text="You have 28 days from the date of delivery to return your items. You will need your email address and the order number from your confirmation email."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+            <Label Text="1. When you're ready to return, select 'create a return'."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+            <Label Text="2. Enter your order number and email address and choose the items to return."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+            <Label Text="3. Choose your most convenient return method. Pay for and print your personalised return label."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+            <Label Text="4. Return your parcel at your nearest drop-off point."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+            <Label Padding="15,15,15,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <local:HyperlinkSpan Text="Create a return"
+                                             Url="https://missguided.intelligentreturns.net/main/step1?lang=en-US;store_id=us_en"></local:HyperlinkSpan>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Padding="15,15,15,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <local:HyperlinkSpan Text="Track your return"
+                                             Url="https://missguided.intelligentreturns.net/tracking?lang=en-US;store_id=us_en"></local:HyperlinkSpan>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
