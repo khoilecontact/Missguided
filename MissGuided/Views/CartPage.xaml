@@ -39,15 +39,31 @@
                                        Grid.Row="0"
                                        FontSize="Large"
                                        TextColor="Black"></Label>
-                                <Label Text="{Binding price}"
+                                <!--<Label Text="{Binding price}"
                                        Grid.Column="1"
                                        Grid.Row="1"
                                        FontSize="Large"
-                                       TextColor="Black"></Label>
+                                       TextColor="Black"></Label>-->
+                                <Button
+                                    Padding="0,0,0,0"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    Text="x"
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    FontSize="18"
+                                    TextColor="Black"
+                                    BackgroundColor="White"
+                                    VerticalOptions="End"
+                                    HorizontalOptions="Start"
+                                    BindingContext="{Binding _id}"
+                                    Clicked="Remove_Button_Clicked"
+                                    ></Button>
                                 <Label Text="{Binding salePrice}"
                                        Grid.Column="2"
                                        Grid.Row="1"
                                        FontSize="Large"
+                                       VerticalTextAlignment="End"
                                        TextColor="#ffa5b8"
                                        FontAttributes="Bold"></Label>
                             
@@ -129,8 +145,7 @@
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="edit"
-                     Clicked="edit_Clicked"></ToolbarItem>
+        <ToolbarItem Text="" ></ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <Shell.TitleView>
