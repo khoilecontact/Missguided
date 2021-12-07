@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.FAQPage"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+             Shell.BackgroundColor="white">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="cart_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <Shell.TitleView>
+        <Label Text="FAQ"
+               TextColor="Black"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"></Label>
+    </Shell.TitleView>
+
+    <StackLayout Margin="0,5,0,5">
+        <buttons:SfButton BackgroundColor="White"
+                          Text="Sales Tax"
+                          TextColor="Black"
+                          FontSize="Large"
+                          HorizontalOptions="Start"
+                          Margin="0,15,0,5"
+                          Clicked="salesTax_Clicked"></buttons:SfButton>
+        <buttons:SfButton BackgroundColor="White"
+                          Text="What is Klarma"
+                          TextColor="Black"
+                          FontSize="Large"
+                          HorizontalOptions="Start"
+                          Margin="0,5,0,5"
+                          Clicked="whatisKlamar_Clicked"></buttons:SfButton>
+        <buttons:SfButton BackgroundColor="White"
+                          Text="Where is my order"
+                          TextColor="Black"
+                          FontSize="Large"
+                          HorizontalOptions="Start"
+                          Margin="0,5,0,5"
+                          Clicked="whereismyorder_Clicked"></buttons:SfButton>
+        <buttons:SfButton BackgroundColor="White"
+                          Text="Have you received my return"
+                          TextColor="Black"
+                          FontSize="Large"
+                          HorizontalOptions="Start"
+                          Margin="0,5,0,5"
+                          Clicked="haveyourecievedmyreturn_Clicked"></buttons:SfButton>
+        <buttons:SfButton BackgroundColor="White"
+                          Text="How do I return an Item"
+                          TextColor="Black"
+                          FontSize="Large"
+                          HorizontalOptions="Start"
+                          Margin="0,5,0,5"
+                          Clicked="howdoIreturnanItem_Clicked"></buttons:SfButton>
+        <buttons:SfButton BackgroundColor="White"
+                          Text="Can I change my address"
+                          TextColor="Black"
+                          FontSize="Large"
+                          HorizontalOptions="Start"
+                          Margin="0,5,0,5"
+                          Clicked="canIchangemyadddress_Clicked"></buttons:SfButton>
+        <buttons:SfButton BackgroundColor="White"
+                          Text="What size should I order"
+                          TextColor="Black"
+                          FontSize="Large"
+                          HorizontalOptions="Start"
+                          Margin="0,5,0,5"
+                          Clicked="whatsizeshouldIorder_Clicked"></buttons:SfButton>                  
+    </StackLayout>
+</ContentPage>

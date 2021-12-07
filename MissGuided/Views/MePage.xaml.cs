@@ -29,7 +29,16 @@ namespace MissGuided.Views
 
         private void Register_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ProductDetail());
+            Navigation.PushAsync(new RegisterPage());
+        }
+
+        private void faq_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FAQPage());
+        }
+        private void changecountry_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ChangeCountryPage());
         }
     }
 }

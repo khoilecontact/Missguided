@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MissGuided.Models"
              x:Class="MissGuided.Views.RegisterPage"
              Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
              Shell.BackgroundColor="white">
@@ -16,41 +16,83 @@
                FontSize="30"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"
-               Padding="30"></Label>
-        <Grid>
+               Padding="0,20,0,30"></Label>
+        <Grid Padding="15,0,0,0">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="208"></ColumnDefinition>
                 <ColumnDefinition Width="208"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
             <Entry Placeholder="FIRSTNAME"
-                   Grid.Column="0" x:Name="lbl_firstName"></Entry>
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   x:Name="lbl_firstName"></Entry>
             <Entry Placeholder="LASTNAME"
-                   Grid.Column="1" x:Name="lbl_lastName"></Entry>
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   x:Name="lbl_lastName"></Entry>
+            <Entry Placeholder="EMAIL" 
+                   x:Name="lbl_email"
+                   Grid.Column="0"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"></Entry>
         </Grid>
-        <Entry Placeholder="EMAIL" x:Name="lbl_email"></Entry>
-        <Entry Placeholder="PASSWORD"
-               IsPassword="True" x:Name="lbl_password"></Entry>
+        
         <Grid>
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="300"></ColumnDefinition>
-                <ColumnDefinition Width="115"></ColumnDefinition>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Entry Placeholder="PASSWORD"
+                   IsPassword="{Binding Source={x:Reference ShowHidePasswordActualTriger}, Path=HidePassword}"
+                   x:Name="lbl_password"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Margin="15,0,0,0"></Entry>
+            <ImageButton HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Source="hide.png"
+                         Grid.Column="1"
+                         Grid.Row="0"
+                         HeightRequest="25"
+                         WidthRequest="25"
+                         BackgroundColor="White">
+                <ImageButton.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <local:ShowHidePasswordTriggerAction x:Name="ShowHidePasswordActualTriger"
+                                                             ShowIcon="show"
+                                                             HideIcon="hide"></local:ShowHidePasswordTriggerAction>
+                    </EventTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
             <Label Text="i'd like to receive exclusive offers and style advice by email and sms from missguided"
                    FontSize="20"
                    TextColor="Black"
                    Grid.Column="0"
+                   Grid.Row="1"
                    Padding="10,0,0,0"></Label>
             <Switch IsToggled="True"
                     Grid.Column="1"
-                    OnColor="Green"
+                    Grid.Row="1"
+                    OnColor="#00FF00"
                     ThumbColor="White"
-                    HorizontalOptions="Center"></Switch>
+                    HorizontalOptions="Center"
+                    ></Switch>
         </Grid>
         <Button Text="register"
                 TextTransform="Lowercase"
                 FontSize="Medium"
-                TextColor="LightGray"
-                BackgroundColor="Gray"
-                Margin="0,40,0,0" Clicked="Button_Clicked"></Button>
+                BackgroundColor="LightGray"
+                Margin="10,40,10,0"
+                Clicked="Button_Clicked"></Button>
     </StackLayout>
 </ContentPage>

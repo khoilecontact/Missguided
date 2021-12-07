@@ -18,6 +18,12 @@ namespace MissGuided.Views
             initView();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            initView();
+        }
+
         async void initView()
         {
             string email = Preferences.Get("userEmail", "none");
@@ -27,8 +33,8 @@ namespace MissGuided.Views
                 return;
             }
 
-            //List<Product> products = await APICaller.shared.GetUserWishlist();
-            _Products = await APICaller.shared.FetchProductsSwipe(1);
+            _Products = await APICaller.shared.GetUserWishlist();
+            //_Products = await APICaller.shared.FetchProductsSwipe(1);
 
             lst_wishlist.ItemsSource = _Products;
 
@@ -62,18 +68,54 @@ namespace MissGuided.Views
         {
             string selectedProductId = (string)((Button)sender).BindingContext;
             bool result = await APICaller.shared.RemoveFromWishlist(selectedProductId);
+
+            if (result)
+            {
+                _Products = await APICaller.shared.GetUserWishlist();
+
+                lst_wishlist.ItemsSource = _Products;
+
+                int productsCount = _Products.Count();
+
+                if (productsCount == 0 || _Products == null)
+                {
+                    await Navigation.PushAsync(new WishlistPageBlank());
+
+                }
+                else if (productsCount == 1)
+                {
+                    lbl_total_products.Text = Convert.ToString(productsCount) + " Item";
+                }
+                else
+                {
+                    lbl_total_products.Text = productsCount.ToString() + " Items";
+                }
+            }
         }
 
         async void btn_addToBag_Clicked(System.Object sender, System.EventArgs e)
         {
             string selectedProductId = (string)((Button)sender).BindingContext;
             bool result = await CartAPI.shared.AddToCart(selectedProductId);
-            bool resultRemoveWishlist = await APICaller.shared.RemoveFromWishlist(selectedProductId);
+            if (result)
+            {
+                await DisplayAlert("Added to bag", "", "OK");
+            } else
+            {
+                await DisplayAlert("Failed to add to bag", "", "OK");
+            }
+            //bool resultRemoveWishlist = await APICaller.shared.RemoveFromWishlist(selectedProductId);
         }
 
         void cart_clicked(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new CartPage());
+        }
+
+        void lst_wishlist_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            Product selectedProduct = (Product)lst_wishlist.SelectedItem;
+            Navigation.PushAsync(new ProductDetail(selectedProduct));
         }
     }
 }

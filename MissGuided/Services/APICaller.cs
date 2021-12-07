@@ -124,13 +124,15 @@ namespace MissGuided
             }
         }
 
-        public async Task<User> GetUserInfo(string email)
+        public async Task<User> GetUserInfo()
         {
             try
             {
+                string email = Preferences.Get("userEmail", "none");
+
                 if (email == "none" || email == null)
                 {
-                    return new User();
+                    return null;
                 }
 
                 var info = new
@@ -280,6 +282,77 @@ namespace MissGuided
                 return false;
             }
 
+        }
+
+        // Order history
+
+        public async Task<bool> AddToOrderd(string productId)
+        {
+            try
+            {
+                string userEmail = Preferences.Get("userEmail", "none");
+                if (userEmail == "none")
+                {
+                    return false;
+                }
+
+                var info = new
+                {
+                    email = userEmail,
+                    productId = productId
+                };
+
+                var content = new StringContent(
+                        JsonConvert.SerializeObject(info), Encoding.UTF8, "application/json"); ;
+
+                var response = await client.PostAsync("/user/addToOrdered", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+                return false;
+            }
+
+        }
+
+        public async Task<List<Product>> GetOrdered()
+        {
+            try
+            {
+                string userEmail = Preferences.Get("userEmail", "none");
+                if (userEmail == "none")
+                {
+                    return new List<Product>();
+                }
+
+                List<Product> products = new List<Product>();
+                
+                var response = await client.GetAsync("/product/getOrder/" + userEmail);
+
+                response.EnsureSuccessStatusCode();
+                using (var stream = await response.Content.ReadAsStreamAsync())
+                using (var reader = new StreamReader(stream))
+                using (var json = new JsonTextReader(reader))
+                {
+                    var jsonContent = json_serializer.Deserialize<Products>(json);
+                    products = jsonContent.products;
+                    return products;
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+                return null;
+            }
         }
 
     }

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MissGuided.Models"
+             x:Class="MissGuided.Views.TextPages.HaveYouReceivedMyReturnPage"
+             Shell.NavBarIsVisible="True" Shell.BackgroundColor="White"
+             Shell.TitleColor="Black" Title="Have you received my return?">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Have you received my return?"
+                       TextColor="Black"
+                       FontSize="30"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       Padding="0,30,0,10"></Label>
+
+            <Label Text="Please allow up to 10 business days for your returned parcel to be processed by Missguided."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+
+            <Label TextColor="Black"
+                   Padding="15,15,15,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="You will receive an email once your return has been processed. If you haven't heard from us after 10 business days, please "
+                              TextColor="Black"></Span>
+                        <local:HyperlinkSpan Text="get in touch"
+                                             Url="https://www.missguidedus.com//help"></local:HyperlinkSpan>
+                        <Span Text=" with your order number and details of the items returned."></Span>        
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="If you are returning items from multiple orders in the same parcel, please ensure you include all relevant delivery notes with your return."
+                   TextColor="Black"
+                   Padding="15,15,15,0"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

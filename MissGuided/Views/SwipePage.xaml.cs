@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MissGuided.Models;
 using MLToolkit.Forms.SwipeCardView.Core;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MissGuided.Views
@@ -62,6 +63,16 @@ namespace MissGuided.Views
             switch (e.Direction)
             {
                 case SwipeCardDirection.Right:
+                    string email = Preferences.Get("userEmail", "none");
+
+                    if (email == "none")
+                    {
+                        await Navigation.PushAsync(new MePage());
+                        return;
+                    }
+
+                    Product swipedProduct = (Product)e.Item;
+                    bool re = await APICaller.shared.AddToWishlist(swipedProduct._id);
                     break;
                 case SwipeCardDirection.Left:
                     break;

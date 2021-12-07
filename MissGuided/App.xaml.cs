@@ -15,6 +15,10 @@ namespace MissGuided
         public App()
         {
             InitializeComponent();
+
+            Database db = new Database();
+            db.createDatabase();
+
             FlowListView.Init();
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();

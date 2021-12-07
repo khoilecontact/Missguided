@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using MissGuided.Models;
 using MissGuided.Services;
 using MissGuided.Views;
+using Xamarin.Essentials;
 
 namespace MissGuided
 {
@@ -23,6 +24,7 @@ namespace MissGuided
             showDelBtn = false;
             ItemsAddedAsync();
         }
+
         async Task ItemsAddedAsync()
         {
             blankPage.IsVisible = false;
@@ -52,7 +54,7 @@ namespace MissGuided
 
         void CheckOutBtn_Clicked(System.Object sender, System.EventArgs e)
         {
-            // push to checkout page
+            Navigation.PushAsync(new CheckouPage());
         }
 
         void CartLst_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)

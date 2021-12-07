@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.SignedinPage"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+             Shell.BackgroundColor="white">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="bag.png" Clicked="Cart_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="stack">
+                <Label x:Name="lblwelcome"
+                       TextColor="Black"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       HeightRequest="100"></Label>
+                <buttons:SfButton x:Name="MyAccountBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White" 
+                                  Text="My Account"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="MyAccountBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="AddressBookBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White" 
+                                  Text="Address Book"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="AddressBookBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="OrderHistoryBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White" 
+                                  Text="Order History"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="OrderHistoryBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="ShippingBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"                    
+                                  Text="Shipping"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="ShippingBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="SizeGuideBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Size Guide"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="SizeGuideBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="ContactUsBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Contact Us"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="ContactUsBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="FAQBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="FAQ"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="FAQBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="SettingsBtn"
+                                  HeightRequest="55"
+                                  BorderColor="LightGray"
+                                  BackgroundColor="White"
+                                  Text="Settings"
+                                  TextColor="LightGray"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"
+                                  IsEnabled="False"></buttons:SfButton>
+                <buttons:SfButton x:Name="TermsandConditionsBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Terms and Conditions"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="TermsandConditionsBtn_Clicked"></buttons:SfButton>
+                <buttons:SfButton x:Name="ChangeCountryBtn"
+                                  HeightRequest="55"
+                                  BackgroundColor="White"
+                                  Text="Change Country"
+                                  TextColor="Black"
+                                  FontSize="Large"
+                                  FontAttributes="Bold"
+                                  HorizontalTextAlignment="Start"
+                                  Clicked="ChangeCountryBtn_Clicked"></buttons:SfButton>
+                <Button x:Name="LOGOUT_button"
+                        Text="LOGOUT"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        BackgroundColor="Black"
+                        Clicked="LOGOUT_Clicked"
+                        Margin="15,0,15,20"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="app_logo.jpg" Scale="0.8" Grid.Column="1" Grid.Row="0"
+                   HorizontalOptions="Center"></Image>
+        </Grid>
+    </Shell.TitleView>
+</ContentPage>

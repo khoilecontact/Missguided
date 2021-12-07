@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MissGuided.Views.CheckouPage"
+    Title="order summary" BackgroundColor="White" Shell.BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="  review order" FontSize="Subtitle" TextColor="Black" HorizontalOptions="StartAndExpand"
+                   BackgroundColor="LightGray" WidthRequest="450" HeightRequest="70" VerticalOptions="CenterAndExpand"
+                   Margin="0, 0, 0, 0" VerticalTextAlignment="Center"></Label>
+
+             <StackLayout Orientation="Horizontal" Spacing="280">
+                    <Label x:Name="lbl_ammount_items" Text="items" TextColor="Black" VerticalOptions="Center"
+                    HorizontalOptions="Start" FontSize="Medium" Margin="15, 0, 0, 0"></Label>
+
+                    <Label x:Name="lbl_money" TextColor="Black" VerticalOptions="End"
+                    HorizontalOptions="End" FontSize="Small" FontAttributes="Bold"></Label>
+            </StackLayout>
+
+            <ListView x:Name="lst_products" RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding images[0]}" HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                       Margin="10, 0, 0, 0"></Image>
+
+                                <Label Text="{Binding name}" TextColor="Black" FontSize="Medium" TextTransform="Default"
+                                       Grid.Row="0" Grid.Column="1"></Label>
+
+                                <Label x:Name="lbl_size" TextColor="Black" FontSize="Medium" TextTransform="Default"
+                                       Grid.Row="1" Grid.Column="1"></Label>
+
+                                <Label Text="1 x " TextColor="Black" FontSize="Medium" TextTransform="Default"
+                                       Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End"></Label>
+
+                                <Label x:Name="lbl_bill" Text="{Binding salePrice}" TextColor="Black" FontSize="Medium" TextTransform="Default"
+                                       Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="Start"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="checkout steps" FontSize="Subtitle" TextColor="Black" HorizontalOptions="Start"
+                   BackgroundColor="LightGray" WidthRequest="450" HeightRequest="70" VerticalTextAlignment="Center"></Label>
+
+            <ListView x:Name="lst_btn" ItemSelected="lst_btn_ItemSelected" RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding no}" FontSize="Title" FontAttributes="Bold" TextColor="Black"
+                                       Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="CenterAndExpand"></Label>
+
+                                <Label Text="{Binding title}" FontSize="Medium" TextTransform="None" FontAttributes="Bold"
+                                       Grid.Column="1" Grid.Row="0" TextColor="Black"></Label>
+
+                                <Label Text="{Binding subtitle}" FontSize="Small" TextTransform="None" TextColor="Black"
+                                       Grid.Column="1" Grid.Row="1"></Label>
+
+                                <Label Text=">" FontSize="Title" TextColor="Black"
+                                       Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="120">
+                <Label Text="    total to pay (excluding delivery)" FontSize="Small" FontAttributes="Bold" TextColor="Black"
+                       VerticalOptions="Center" HorizontalOptions="Start"></Label>
+
+                <Label x:Name="lbl_total_money" FontSize="Large" FontAttributes="Bold" TextColor="Black"
+                       VerticalOptions="Center" HorizontalOptions="End" Text="00"></Label>
+            </StackLayout>
+
+            <Label Text="I agree to the Terms &amp; Conditions and Privacy Policy" HorizontalOptions="CenterAndExpand"
+                   TextColor="Gray"></Label>
+
+            <Button Text="pay" TextTransform="None" x:Name="btn_pay" Clicked="btn_pay_Clicked"
+                    Margin="20, 10, 20, 10" BackgroundColor="Black" FontAttributes="Bold"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
