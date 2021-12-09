@@ -16,6 +16,8 @@ namespace MissGuided.Views
         }
 
         List<Product> list = new List<Product>();
+        List<string> sortOptions = new List<string>();
+
 
         public ShelveItems(List<Product> products)
         {
@@ -23,6 +25,7 @@ namespace MissGuided.Views
             originalProducts = products;
             pageModel = new ShelveItemsModel(this, originalProducts);
             BindingContext = pageModel;
+            initPicker();
             //listProducts.ItemsSource = products;
         }
 
@@ -31,9 +34,23 @@ namespace MissGuided.Views
             //list.Add(originalProducts);
         }
 
+        void initPicker()
+        {
+            sortOptions.Add("Most wanted");
+            sortOptions.Add("Price - low to high");
+            sortOptions.Add("Price - high to low");
+            sortPrk.ItemsSource = sortOptions;
+            sortPrk.SelectedIndex = 0;
+        }
+
         void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new CartPage());
+        }
+
+        void sortPrk_SelectedIndexChanged(System.Object sender, System.EventArgs e)
+        {
+            // sort products 
         }
     }
 }

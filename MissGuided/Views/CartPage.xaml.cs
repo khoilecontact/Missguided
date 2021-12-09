@@ -75,7 +75,7 @@ namespace MissGuided
         {
             string selectedProductId = (string)((Button)sender).BindingContext;
             bool result = await CartAPI.shared.RemoveFromCart(selectedProductId);
-            await DisplayAlert("Result", result.ToString(), "OK");
+            
             if (result)
             {
                 Products _Products = await CartAPI.shared.FetchCart();
