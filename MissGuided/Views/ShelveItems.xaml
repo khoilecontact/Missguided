@@ -45,10 +45,9 @@
                 </Grid.ColumnDefinitions>
 
                 <Picker x:Name="sortPrk" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"
-                    TextTransform="None" SelectedIndexChanged="sortPrk_SelectedIndexChanged" Title="Sort by"></Picker>
+                        TextTransform="None" SelectedIndexChanged="sortPrk_SelectedIndexChanged" Title="Sort by" TitleColor="Black"></Picker>
                 <Label FontSize="Title" BackgroundColor="Gray" TextColor="Gray" Text="|" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
-                <Button x:Name="filterBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Filter"
-                        Grid.Row="0" Grid.Column="2"></Button>
+                <Button x:Name="filterBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Filter" Grid.Row="0" Grid.Column="2" Clicked="filterBtn_Clicked"></Button>
             </Grid>
 
             <!--<ListView x:Name="listProducts" RowHeight="300">

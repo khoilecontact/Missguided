@@ -26,6 +26,14 @@ namespace MissGuided.Views
             InitializeComponent();
             originalProducts = products;
             queryPath = queryString;
+            if (originalProducts.Count <= 1)
+            {
+                productsLength.Text = originalProducts.Count.ToString() + " Item";
+            }
+            else
+            {
+                productsLength.Text = originalProducts.Count.ToString() + " Items";
+            }
             pageModel = new ShelveItemsModel(this, originalProducts);
             BindingContext = pageModel;
             initPicker();
@@ -59,6 +67,11 @@ namespace MissGuided.Views
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
             pageModel = new ShelveItemsModel(this, result);
             BindingContext = pageModel;
+        }
+
+        void filterBtn_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new FilterPage(queryPath));
         }
     }
 }
