@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using MissGuided.Models;
 using Xamarin.Forms;
 
 namespace MissGuided.Views
@@ -10,6 +11,16 @@ namespace MissGuided.Views
         public WishlistPageBlank()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            List<Product> products = await APICaller.shared.GetUserWishlist();
+            if (products.Count() > 0)
+            {
+                await Navigation.PopAsync();
+            }
         }
 
         void cart_clicked(object sender, System.EventArgs e)

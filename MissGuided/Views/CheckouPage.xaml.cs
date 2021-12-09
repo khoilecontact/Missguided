@@ -24,7 +24,7 @@ namespace MissGuided.Views
         async void ItemsAddedAsync()
         {
             Products getProduct = await CartAPI.shared.FetchCart();
-            List<Product> itemsList = getProduct.products;
+            List<Product> itemsList = getProduct.cart;
 
             int productCount = itemsList.Count();
             //lbl_ammount_items.Text = productCount.ToString();
@@ -48,7 +48,7 @@ namespace MissGuided.Views
             double total = 0;
             foreach (Product product in itemsList)
             {
-                string strPrice = product.price.Remove(product.price.Length - 1);
+                string strPrice = product.salePrice.Remove(product.salePrice.Length - 1);
                 total += double.Parse(strPrice);
             }
             double totalEnd = total % 100;
@@ -98,8 +98,9 @@ namespace MissGuided.Views
         async void btn_pay_Clicked(System.Object sender, System.EventArgs e)
         {
             Products getProduct = await CartAPI.shared.FetchCart();
-            List<Product> itemsList = getProduct.products;
-
+            List<Product> itemsList = getProduct.cart;
+            bool result = true;
+            
             foreach (Product product in itemsList)
             {
                 // Add to ordered of user
@@ -109,8 +110,25 @@ namespace MissGuided.Views
                 {
                     // Remove from cart
                     bool removeResult = await CartAPI.shared.RemoveFromCart(product._id);
+                    if (removeResult == false)
+                    {
+                        await DisplayAlert("Failed in remove", "Please try again later", "OK");
+                        result = false;
+                    } 
+                } else
+                {
+                    await DisplayAlert("Failed in add", "Please try again later", "OK");
+                    result = false;
                 }
 
+            }
+
+            if (result)
+            {
+                await Navigation.PopToRootAsync();
+            } else
+            {
+                await DisplayAlert("Failed", "Please try again later", "OK");
             }
         }
 

@@ -37,7 +37,7 @@ namespace MissGuided.Services
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<Product>> FetchProducts(int page, object filter)
+        public async Task<List<Product>> FetchProducts(int page, string query)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace MissGuided.Services
                 //var content = new StringContent(JsonConvert.SerializeObject(products), Encoding.UTF8, "application/json");
                 string strPage = page.ToString();
                 //string searchQuery = filter.ToString();
-                string queryString = "/" + strPage;
+                string queryString = "/" + strPage + "?" + query;
                 var response = await client.GetAsync("/product" + queryString);
 
                 response.EnsureSuccessStatusCode();

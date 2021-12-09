@@ -17,9 +17,11 @@ namespace MissGuided
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CartPage : ContentPage
     {
+        bool showDelBtn;
         public CartPage()
         {
             InitializeComponent();
+            showDelBtn = false;
             ItemsAddedAsync();
         }
 
@@ -47,7 +49,7 @@ namespace MissGuided
 
         private void edit_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CartPage());
+            showDelBtn = true;
         }
 
         void CheckOutBtn_Clicked(System.Object sender, System.EventArgs e)
@@ -67,6 +69,44 @@ namespace MissGuided
         void Button_Clicked(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new ShopPage());
+        }
+
+        async void Remove_Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            string selectedProductId = (string)((Button)sender).BindingContext;
+            bool result = await CartAPI.shared.RemoveFromCart(selectedProductId);
+
+            if (result)
+            {
+                Products _Products = await CartAPI.shared.FetchCart();
+
+                CartLst.ItemsSource = _Products.cart;
+                pLength.Text = _Products.pLength.ToString() + " items";
+                totalPrice.Text = _Products.total;
+
+                int productsCount = _Products.cart.Count();
+
+                if (productsCount == 0 || _Products == null)
+                {
+                    CartLst.IsVisible = false;
+                    CartBoard.IsVisible = false;
+                    blankPage.IsVisible = true;
+
+                }
+                else if (productsCount == 1)
+                {
+                    pLength.Text = Convert.ToString(productsCount) + " Item";
+                }
+                else
+                {
+                    pLength.Text = productsCount.ToString() + " Items";
+                }
+            } else
+            {
+                CartLst.IsVisible = false;
+                CartBoard.IsVisible = false;
+                blankPage.IsVisible = true;
+            }
         }
     }
 }

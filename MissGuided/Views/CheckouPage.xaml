@@ -48,7 +48,7 @@
                                 <Label Text="1 x " TextColor="Black" FontSize="Medium" TextTransform="Default"
                                        Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End"></Label>
 
-                                <Label x:Name="lbl_bill" Text="{Binding price}" TextColor="Black" FontSize="Medium" TextTransform="Default"
+                                <Label x:Name="lbl_bill" Text="{Binding salePrice}" TextColor="Black" FontSize="Medium" TextTransform="Default"
                                        Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="Start"></Label>
                             </Grid>
                         </ViewCell>

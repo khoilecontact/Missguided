@@ -39,7 +39,7 @@
                     FontAttributes="Bold"
                     WidthRequest="370"
                     RelativeLayout.XConstraint="20"
-                    RelativeLayout.YConstraint="550"
+                    RelativeLayout.YConstraint="450"
                     Clicked="Button_Clicked"></Button>
         </RelativeLayout>
     </ContentPage.Content>

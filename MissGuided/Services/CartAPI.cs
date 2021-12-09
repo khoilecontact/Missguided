@@ -43,7 +43,7 @@ namespace MissGuided.Services
                 string userEmail = Preferences.Get("userEmail", "No email");
 
                 var info = new {
-                    productID = productID,
+                    productId = productID,
                     email = userEmail
                 };
 
@@ -75,7 +75,7 @@ namespace MissGuided.Services
 
                 var info = new
                 {
-                    productID = productID,
+                    productId = productID,
                     email = userEmail
                 };
 
