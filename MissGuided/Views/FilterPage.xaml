@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.FilterPage" BarBackgroundColor="White"
+            BarTextColor="Black" Title="Filter Results" Shell.BackgroundColor="White">
+  <!--Pages can be added as references or inline-->
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="done" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+    </TabbedPage.ToolbarItems>
+
+  <ContentPage Title="category">
+      <StackLayout>
+           <ListView x:Name="lst_category" BackgroundColor="#FFF5EE">
+           </ListView>
+
+          <Button x:Name="btn_reset" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"
+                  TextTransform="None" FontAttributes="Bold" Clicked="btn_reset_Clicked" BackgroundColor="White"
+                TextColor="Black" Text="reset filter" WidthRequest="100"></Button>
+      </StackLayout>
+  </ContentPage>
+
+  <ContentPage Title="size">
+      <StackLayout>
+        <ListView x:Name="lst_size" BackgroundColor="#FFF5EE">
+        </ListView>
+
+        <Button x:Name="btn_reset_2" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"
+                  TextTransform="None" FontAttributes="Bold" Clicked="btn_reset_2_Clicked" BackgroundColor="White"
+                TextColor="Black" Text="reset filter" WidthRequest="100"></Button>
+      </StackLayout>
+  </ContentPage>
+  
+</TabbedPage>

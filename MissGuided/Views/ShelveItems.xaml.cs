@@ -52,5 +52,10 @@ namespace MissGuided.Views
         {
             // sort products 
         }
+
+        void filterBtn_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new FilterPage());
+        }
     }
 }
