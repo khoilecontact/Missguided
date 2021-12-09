@@ -45,9 +45,10 @@
                 </Grid.ColumnDefinitions>
 
                 <Picker x:Name="sortPrk" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"
-                        TextTransform="None" SelectedIndexChanged="sortPrk_SelectedIndexChanged" Title="Sort by"></Picker>
+                    TextTransform="None" SelectedIndexChanged="sortPrk_SelectedIndexChanged" Title="Sort by"></Picker>
                 <Label FontSize="Title" BackgroundColor="Gray" TextColor="Gray" Text="|" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
-                <Button x:Name="filterBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Filter" Grid.Row="0" Grid.Column="2"></Button>
+                <Button x:Name="filterBtn" BackgroundColor="White" FontSize="Body" TextColor="Gray" Margin="0" HorizontalOptions="FillAndExpand" Text="Filter"
+                        Grid.Row="0" Grid.Column="2"></Button>
             </Grid>
 
             <!--<ListView x:Name="listProducts" RowHeight="300">
@@ -77,7 +78,7 @@
                 </ListView.ItemTemplate>
             </ListView>-->
 
-            <Label x:Name="productsLength" HorizontalOptions="End" HorizontalTextAlignment="Start" Margin="30,5,30,5" TextColor="Black" Text="8 items"></Label>
+            <Label x:Name="productsLength" HorizontalOptions="End" HorizontalTextAlignment="Start" Margin="30,5,30,5" TextColor="Black" Text="20 Items"></Label>
 
             <flv:FlowListView FlowColumnCount="2"
                 SeparatorVisibility="Default"   

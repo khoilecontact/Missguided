@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MissGuided.Models;
+using MissGuided.Services;
 using MissGuided.ViewModels;
 using Xamarin.Forms;
 
@@ -10,6 +11,7 @@ namespace MissGuided.Views
     {
         List<Product> originalProducts;
         ShelveItemsModel pageModel;
+        string queryPath = "";
         public ShelveItems()
         {
             InitializeComponent();
@@ -19,10 +21,11 @@ namespace MissGuided.Views
         List<string> sortOptions = new List<string>();
 
 
-        public ShelveItems(List<Product> products)
+        public ShelveItems(List<Product> products, string queryString)
         {
             InitializeComponent();
             originalProducts = products;
+            queryPath = queryString;
             pageModel = new ShelveItemsModel(this, originalProducts);
             BindingContext = pageModel;
             initPicker();
@@ -48,9 +51,14 @@ namespace MissGuided.Views
             Navigation.PushAsync(new CartPage());
         }
 
-        void sortPrk_SelectedIndexChanged(System.Object sender, System.EventArgs e)
+        async void sortPrk_SelectedIndexChanged(System.Object sender, System.EventArgs e)
         {
-            // sort products 
+            // sort products
+            string sortStatus = (string)sortPrk.SelectedItem;
+            string query = queryPath + "&sort=" + sortStatus;
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+            pageModel = new ShelveItemsModel(this, result);
+            BindingContext = pageModel;
         }
     }
 }

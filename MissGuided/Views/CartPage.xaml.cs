@@ -35,7 +35,21 @@ namespace MissGuided
                 CartLst.IsVisible = true;
                 CartBoard.IsVisible = true;
                 CartLst.ItemsSource = itemsList.cart;
-                pLength.Text = itemsList.pLength.ToString()+" items";
+                if (itemsList.pLength == 0 || itemsList == null)
+                {
+                    CartLst.IsVisible = false;
+                    CartBoard.IsVisible = false;
+                    blankPage.IsVisible = true;
+
+                }
+                else if (itemsList.pLength == 1)
+                {
+                    pLength.Text = itemsList.pLength.ToString() + " item";
+                }
+                else
+                {
+                    pLength.Text = itemsList.pLength.ToString() + " items";
+                }
                 totalPrice.Text = itemsList.total;
             }
             else
