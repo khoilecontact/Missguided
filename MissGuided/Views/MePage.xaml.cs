@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Syncfusion.XForms.Buttons;
 using MissGuided.Models;
 using System.Linq;
+using MissGuided.Views.TextPages;
 
 namespace MissGuided.Views
 {
@@ -39,6 +40,16 @@ namespace MissGuided.Views
         private void changecountry_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ChangeCountryPage());
+        }
+
+        private void termandcondition_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TermOfUsePage());
+        }
+
+        private void privalcypolicy_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PrivacyPolicyPage());
         }
     }
 }
