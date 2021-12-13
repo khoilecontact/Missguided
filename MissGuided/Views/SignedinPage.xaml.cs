@@ -18,7 +18,6 @@ namespace MissGuided.Views
         {
             InitializeComponent();
             lblwelcome.Text = "welcome " + user.firstName;
-            NavigationPage.SetHasBackButton(this, false);
         }
         private void Cart_Clicked(object sender, EventArgs e)
         {
@@ -31,7 +30,7 @@ namespace MissGuided.Views
 
         private void MyAccountBtn_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new MyAccountPage());
         }
 
         private void AddressBookBtn_Clicked(object sender, EventArgs e)
@@ -61,7 +60,7 @@ namespace MissGuided.Views
 
         private void FAQBtn_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new FAQPage());
         }
 
         private void TermsandConditionsBtn_Clicked(object sender, EventArgs e)

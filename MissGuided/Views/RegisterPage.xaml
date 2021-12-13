@@ -85,9 +85,9 @@
                     Grid.Row="1"
                     OnColor="#00FF00"
                     ThumbColor="White"
-                    HorizontalOptions="Center"
-                    ></Switch>
+                    HorizontalOptions="Center"></Switch>
         </Grid>
+        
         <Button Text="register"
                 TextTransform="Lowercase"
                 FontSize="Medium"
