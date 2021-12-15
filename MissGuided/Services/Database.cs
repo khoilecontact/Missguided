@@ -28,7 +28,7 @@ namespace MissGuided.Services
 
                 return true;
             }
-            catch (SQLiteException ex)
+            catch (Exception)
             {
                 return false;
                 throw;

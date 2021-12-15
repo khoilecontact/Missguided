@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.OrderHistoryBlankPage"
+             Shell.NavBarIsVisible="True"
+             NavigationPage.HasNavigationBar="True"
+             Shell.BackgroundColor="white">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FCD9C4"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+            <Label Text="You haven't ordered"
+                   TextColor="Black"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Margin="0,150,0,0"></Label>
+            <Label Text="anything yet"
+                   TextColor="Black"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"></Label>
+            <Label Text="Get some new and fill it up"
+                   TextColor="Black"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"></Label>
+            <Button Text="FILL ME UP"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    Background="Black"
+                    VerticalOptions="Center"
+                    Margin="15,180,15,0"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="edit"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <Shell.TitleView>
+        <Image Source="app_logo.jpg" Scale="0.8"></Image>
+    </Shell.TitleView>
+</ContentPage>

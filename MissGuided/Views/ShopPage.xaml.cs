@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Syncfusion.XForms.Buttons;
+using MissGuided.Views;
 using Xamarin.Forms;
+using System.Windows.Input;
 
 namespace MissGuided.Views
 {
@@ -15,6 +17,10 @@ namespace MissGuided.Views
         {
             Navigation.PushAsync(new CartPage());
         }
-        
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MePage());
+        }
     }
 }

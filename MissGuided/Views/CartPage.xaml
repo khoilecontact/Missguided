@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MissGuided.CartPage"
-    Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+    Shell.NavBarIsVisible="True"
+    NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="white">
 
     <ContentPage.Content>
@@ -138,7 +139,7 @@
                         WidthRequest="370"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
-                        Clicked="Button_Clicked"></Button>
+                        Clicked="fillmemup_Clicked"></Button>
             </StackLayout>
         </StackLayout>
         </StackLayout>

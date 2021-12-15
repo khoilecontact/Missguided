@@ -7,21 +7,26 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using MissGuided.Models;
+using MissGuided.Views.Community;
 
 namespace MissGuided.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MyAccountPage : ContentPage
+    public partial class ContacUsPage : ContentPage
     {
-        public MyAccountPage(User user)
+        public ContacUsPage()
         {
             InitializeComponent();
         }
 
-        private void save_Clicked(object sender, EventArgs e)
+        private void facebook_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Message", "Update successfully", "OK");
+            Navigation.PushAsync(new FacebookPage());
+        }
+
+        private void twitter_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

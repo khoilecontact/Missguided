@@ -51,7 +51,6 @@ namespace MissGuided.Views.CheckoutFormPages
             address.addressLine2 = en_addr_2.Text;
             address.zipCode = en_zip.Text;
             address.city = en_city.Text;
-            address.province = cites[pkr_province.SelectedIndex];
             address.country = cites[pkr_country.SelectedIndex];
 
             Database db = new Database();
