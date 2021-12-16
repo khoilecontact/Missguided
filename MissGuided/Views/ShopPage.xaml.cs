@@ -28,8 +28,15 @@ namespace MissGuided.Views
             string query = "categories="+title;
 
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
-            Product product_one = result[0];
-            await Navigation.PushAsync(new ShelveItems(result, query));
+
+            if (result != null)
+            {
+                await Navigation.PushAsync(new ShelveItems(result, query));
+            }
+            else
+            {
+                await Navigation.PushAsync(new BlankShelvesItem());
+            }
         }
     }
 }
