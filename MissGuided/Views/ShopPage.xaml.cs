@@ -4,6 +4,8 @@ using Syncfusion.XForms.Buttons;
 using MissGuided.Views;
 using Xamarin.Forms;
 using System.Windows.Input;
+using MissGuided.Models;
+using MissGuided.Services;
 
 namespace MissGuided.Views
 {
@@ -18,9 +20,16 @@ namespace MissGuided.Views
             Navigation.PushAsync(new CartPage());
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MePage());
+            string title = (string)((Button)sender).Text.Split(' ')[0];
+
+
+            string query = "categories="+title;
+
+            List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
+            Product product_one = result[0];
+            await Navigation.PushAsync(new ShelveItems(result, query));
         }
     }
 }

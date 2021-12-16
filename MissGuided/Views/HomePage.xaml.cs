@@ -144,7 +144,7 @@ namespace MissGuided.Views
             List<Product> searchResult = await SearchAPI.shared.FetchProducts(1, searchBar.Text.ToString());
 
             /// Product product_one = content[0];
-            Navigation.PushAsync(new ShelveItems(searchResult, searchBar.Text.ToString()));
+            await Navigation.PushAsync(new ShelveItems(searchResult, searchBar.Text.ToString()));
         }
 
         async void One_Clicked(System.Object sender, System.EventArgs e)
@@ -154,7 +154,7 @@ namespace MissGuided.Views
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
 
             /// Product product_one = content[0];
-            Navigation.PushAsync(new ShelveItems(result, query));
+            await Navigation.PushAsync(new ShelveItems(result, query));
         }
 
         async void Two_Clicked(System.Object sender, System.EventArgs e)
@@ -164,7 +164,7 @@ namespace MissGuided.Views
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
 
             /// Product product_one = content[0];
-            Navigation.PushAsync(new ShelveItems(result, query));
+            await Navigation.PushAsync(new ShelveItems(result, query));
         }
 
         async void Three_Clicked(System.Object sender, System.EventArgs e)
@@ -174,7 +174,7 @@ namespace MissGuided.Views
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
 
             /// Product product_one = content[0];
-            Navigation.PushAsync(new ShelveItems(result, query));
+            await Navigation.PushAsync(new ShelveItems(result, query));
         }
 
         async void Four_Clicked(System.Object sender, System.EventArgs e)
@@ -184,7 +184,7 @@ namespace MissGuided.Views
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
 
             /// Product product_one = content[0];
-            Navigation.PushAsync(new ShelveItems(result, query));
+            await Navigation.PushAsync(new ShelveItems(result, query));
         }
 
         async void Five_Clicked(System.Object sender, System.EventArgs e)
@@ -194,7 +194,7 @@ namespace MissGuided.Views
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
 
             /// Product product_one = content[0];
-            Navigation.PushAsync(new ShelveItems(result, query));
+            await Navigation.PushAsync(new ShelveItems(result, query));
         }
 
         async void Six_Clicked(System.Object sender, System.EventArgs e)
@@ -203,7 +203,7 @@ namespace MissGuided.Views
 
             List<Product> result = await ProductAPI.shared.FetchProducts(1, query);
             /// Product product_one = content[0];
-            Navigation.PushAsync(new ShelveItems(result, query));
+            await Navigation.PushAsync(new ShelveItems(result, query));
         }
 
         //string JsonToQuery(this string jsonQuery)
