@@ -7,6 +7,7 @@ namespace MissGuided.Models
         public string lastName { get; set; }
         public string email { get; set; }
         public string password { get; set; }
+        public DateTime DOB { get; set; }
     }
 
     public class UserResponse

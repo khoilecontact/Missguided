@@ -18,7 +18,6 @@ namespace MissGuided.Models
         public string addressLine2 { get; set; }
         public string zipCode { get; set; }
         public string city { get; set; }
-        public string province { get; set; }
         public string country { get; set; }
     }
 }

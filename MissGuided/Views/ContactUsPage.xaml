@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MissGuided.Views.ContacUsPage"
+             Shell.BackgroundColor="White"
+             Shell.TitleColor="Black"
+             Title="Contact Us">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Wanna talk?"
+                   TextColor="Black"
+                   FontSize="Large"
+                   Padding="15"></Label>
+            <Label Text="Send us a DM - We'll get back to you within the hour"
+                   TextColor="Black"
+                   Padding="15"></Label>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Source="twitter.png"
+                             BackgroundColor="White"
+                             Grid.Row="0"
+                             Grid.Column="0"></ImageButton>
+                <ImageButton Source="messenger.png"
+                             BackgroundColor="White"
+                             Grid.Row="0"
+                             Grid.Column="1"></ImageButton>
+            </Grid>
+            
+            <Label Text="We are pretty social"
+                   TextColor="Black"
+                   FontSize="Large"
+                   Padding="15"></Label>
+            <Label Text="Get in touch we're around 24/7"
+                   TextColor="Black"
+                   Padding="15"></Label>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Source="facebook.png"
+                             BackgroundColor="White"
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             Clicked="facebook_Clicked"></ImageButton>
+                <ImageButton Source="twwiter.png"
+                             BackgroundColor="White"
+                             Grid.Row="0"
+                             Grid.Column="1"
+                             Clicked="twitter_Clicked"></ImageButton>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

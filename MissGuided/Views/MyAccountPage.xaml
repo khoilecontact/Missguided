@@ -39,19 +39,14 @@
                        Grid.Row="0"
                        x:Name="txtlastName"></Entry>
                 <Entry Placeholder="EMAIL" 
-                       x:Name="txt_email"
+                       x:Name="txtemail"
                        Grid.Column="0"
                        Grid.Row="1"
                        Grid.ColumnSpan="2"></Entry>
             </Grid>
-            
-            <Button Text="DOB"
-                    TextColor="LightGray"
-                    FontSize="Large"
-                    BackgroundColor="White"
-                    Padding="0,0,0,10"
-                    HorizontalOptions="Start"></Button> 
-            
+
+            <DatePicker x:Name="DOBPrk"
+                       Format="D"></DatePicker>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="6*"></ColumnDefinition>

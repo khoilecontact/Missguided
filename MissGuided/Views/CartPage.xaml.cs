@@ -80,7 +80,7 @@ namespace MissGuided
             }
         }
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
+        void fillmemup_Clicked(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new ShopPage());
         }

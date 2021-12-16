@@ -32,7 +32,8 @@ namespace MissGuided.Views
             if (result)
             {
                 User userinfo = await APICaller.shared.GetUserInfo();
-                await DisplayAlert("Thông báo", "Đăng nhập "+ userinfo.firstName + " thành công", "OK");
+                Preferences.Set("user", userinfo.firstName);
+                await DisplayAlert("Thông báo", "Đăng nhập " + userinfo.firstName + " thành công", "OK");
                 await Navigation.PushAsync(new SignedinPage(userinfo));
             }
             else

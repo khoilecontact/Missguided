@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using MissGuided.Models;
+using MissGuided.Views.CheckoutFormPages;
 
 namespace MissGuided.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MyAccountPage : ContentPage
+    public partial class AddressBookBlankPage : ContentPage
     {
-        public MyAccountPage(User user)
+        public AddressBookBlankPage()
         {
             InitializeComponent();
         }
 
-        private void save_Clicked(object sender, EventArgs e)
+        private void add_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Message", "Update successfully", "OK");
+            Navigation.PushAsync(new AddDeliveryAddress());
         }
     }
 }

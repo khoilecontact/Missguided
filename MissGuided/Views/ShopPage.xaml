@@ -3,22 +3,25 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="MissGuided.Views.ShopPage"
-    Shell.NavBarIsVisible="True" NavigationPage.HasNavigationBar="True"
+    Shell.NavBarIsVisible="True"
+    NavigationPage.HasNavigationBar="True"
     Shell.BackgroundColor="white"
     x:Name="TheShopPage">
 
     <ContentPage.Content>
         <ListView x:Name="DropDownButton"
                   IsGroupingEnabled="True"
-                  ItemsSource="{Binding Masters}">
+                  ItemsSource="{Binding Masters}"
+                  BackgroundColor="White"
+                  Background="White">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ContentView Padding="10,0,0,0" 
-                                     BackgroundColor="#FFF5EE">
+                        <ContentView Padding="10,0,0,0"
+                                     BackgroundColor="#FFF5EE"
+                                     Background="#FFF5EE">
                             <Label Text="{Binding Key.Master.masterTitle}"
                                    TextColor="Black"
                                    FontAttributes="Bold"
@@ -35,25 +38,32 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <buttons:SfButton Text="{Binding detailTitle}"
-                                          TextColor="Black"
-                                          FontSize="Large"
-                                          BackgroundColor="#FFDAB9"
-                                          BorderColor="White"
-                                          HorizontalTextAlignment="Start"></buttons:SfButton>
+                        <ContentView BackgroundColor="#FFDAB9"
+                                     Background="#FFDAB9">
+                            <Button x:Name="button"
+                                    Text="{Binding detailTitle}"
+                                    TextColor="Black"
+                                    FontSize="Large"
+                                    BackgroundColor="#FFDAB9"
+                                    Background="#FFDAB9"
+                                    Clicked="Button_Clicked"></Button>
+                            <!--<ContentView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference TheShopPage}, Path=BindingContext.DetailSelectedCommand}" 
+                                                      CommandParameter="{Binding .}"></TapGestureRecognizer>
+                            </ContentView.GestureRecognizers>  #FFF5EE-->
+                        </ContentView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </ContentPage.Content>
-    
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="bag.png" Clicked="cart_clicked"/>
     </ContentPage.ToolbarItems>
 
     <Shell.TitleView>
-         <Grid>
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -66,7 +76,7 @@
             <Image Source="app_logo.jpg" Scale="0.8" Grid.Column="1" Grid.Row="0"
                    HorizontalOptions="Center"></Image>
 
-             <!--<SearchBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></SearchBar>-->
+            <!--<SearchBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></SearchBar>-->
         </Grid>
     </Shell.TitleView>
 </ContentPage>

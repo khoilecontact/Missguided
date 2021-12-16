@@ -87,10 +87,8 @@
                                   Clicked="FAQBtn_Clicked"></buttons:SfButton>
                 <buttons:SfButton x:Name="SettingsBtn"
                                   HeightRequest="55"
-                                  BorderColor="LightGray"
-                                  BackgroundColor="White"
+                                  BackgroundColor="LightGray"
                                   Text="Settings"
-                                  TextColor="LightGray"
                                   FontSize="Large"
                                   FontAttributes="Bold"
                                   HorizontalTextAlignment="Start"

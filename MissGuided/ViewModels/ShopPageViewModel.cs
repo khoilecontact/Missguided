@@ -8,6 +8,8 @@ using System.Linq;
 using MissGuided.Infrastructure;
 using MissGuided.Models;
 using Xamarin.Forms.Internals;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MissGuided.ViewModels
 {
@@ -16,7 +18,12 @@ namespace MissGuided.ViewModels
         public Master Master { get; set; }
         public bool Selected { get; set; }
     }
-    public class ShopPageViewModel: BindableBase
+    public class SelectDetailViewModel
+    {
+        public Detail Detail { get; set; }
+        public bool Selected { get; set; }
+    }
+    public class ShopPageViewModel : BindableBase
     {
         public ObservableCollection<Grouping<SelectMasterViewModel, Detail>> Masters { get; set; }
         public DelegateCommand<Grouping<SelectMasterViewModel, Detail>> HeaderSelectedCommand
