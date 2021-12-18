@@ -41,12 +41,18 @@
                         <ContentView BackgroundColor="#FFDAB9"
                                      Background="#FFDAB9">
                             <Button x:Name="button"
-                                    Text="{Binding detailTitle}"
                                     TextColor="Black"
                                     FontSize="Large"
                                     BackgroundColor="#FFDAB9"
                                     Background="#FFDAB9"
-                                    Clicked="Button_Clicked"></Button>
+                                    Clicked="Button_Clicked">
+                                <Button.Text>
+                                    <MultiBinding StringFormat="{}{0} {1}">
+                                        <Binding Path="detailMaster.masterTitle" />
+                                        <Binding Path="detailTitle" />
+                                    </MultiBinding>
+                                </Button.Text>
+                            </Button>
                             <!--<ContentView.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={x:Reference TheShopPage}, Path=BindingContext.DetailSelectedCommand}" 
                                                       CommandParameter="{Binding .}"></TapGestureRecognizer>

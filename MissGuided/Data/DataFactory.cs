@@ -12,28 +12,28 @@ namespace MissGuided.Data
    public static class DataFactory
     {
         public static IList<Detail> detailData { get; private set; }
-        private static readonly Master Master1 = new Master { masterID = 1, masterTitle = "new in" };
-        private static readonly Master Master2 = new Master { masterID = 2, masterTitle = "mg kids" };
-        private static readonly Master Master3 = new Master { masterID = 3, masterTitle = "fall fits" };
-        private static readonly Master Master4 = new Master { masterID = 4, masterTitle = "carli bybel x missguided" };
-        private static readonly Master Master5 = new Master { masterID = 5, masterTitle = "dresses" };
-        private static readonly Master Master6 = new Master { masterID = 6, masterTitle = "tops" };
-        private static readonly Master Master7 = new Master { masterID = 7, masterTitle = "pants" };
-        private static readonly Master Master8 = new Master { masterID = 8, masterTitle = "coats & jackets" };
-        private static readonly Master Master9 = new Master { masterID = 9, masterTitle = "denim" };
-        private static readonly Master Master10 = new Master { masterID = 10, masterTitle = "jeans" };
-        private static readonly Master Master11 = new Master { masterID = 11, masterTitle = "playboy x missguided" };
-        private static readonly Master Master12 = new Master { masterID = 12, masterTitle = "loungewear" };
-        private static readonly Master Master13 = new Master { masterID = 13, masterTitle = "clothing" };
-        private static readonly Master Master14 = new Master { masterID = 14, masterTitle = "shop by fit" };
-        private static readonly Master Master15 = new Master { masterID = 15, masterTitle = "accessories" };
-        private static readonly Master Master16 = new Master { masterID = 16, masterTitle = "shoes" };
-        private static readonly Master Master17 = new Master { masterID = 17, masterTitle = "restyld" };
-        private static readonly Master Master18 = new Master { masterID = 18, masterTitle = "beauty" };
-        private static readonly Master Master19 = new Master { masterID = 19, masterTitle = "shop by trend" };
-        private static readonly Master Master20 = new Master { masterID = 20, masterTitle = "shop by occasion" };
-        private static readonly Master Master21 = new Master { masterID = 21, masterTitle = "sale" };
-        private static readonly Master Master22 = new Master { masterID = 22, masterTitle = "clearance" };
+        private static readonly Master Master1 = new Master { masterID = 1, masterTitle = "New In" };
+        private static readonly Master Master2 = new Master { masterID = 2, masterTitle = "Mg Kids" };
+        private static readonly Master Master3 = new Master { masterID = 3, masterTitle = "Fall Fits" };
+        private static readonly Master Master4 = new Master { masterID = 4, masterTitle = "Carli Bybel x Missguided" };
+        private static readonly Master Master5 = new Master { masterID = 5, masterTitle = "Dresses" };
+        private static readonly Master Master6 = new Master { masterID = 6, masterTitle = "Tops" };
+        private static readonly Master Master7 = new Master { masterID = 7, masterTitle = "Pants" };
+        private static readonly Master Master8 = new Master { masterID = 8, masterTitle = "Coats & Jackets" };
+        private static readonly Master Master9 = new Master { masterID = 9, masterTitle = "Denim" };
+        private static readonly Master Master10 = new Master { masterID = 10, masterTitle = "Jeans" };
+        private static readonly Master Master11 = new Master { masterID = 11, masterTitle = "Playboy x Missguided" };
+        private static readonly Master Master12 = new Master { masterID = 12, masterTitle = "Loungewear" };
+        private static readonly Master Master13 = new Master { masterID = 13, masterTitle = "Clothing" };
+        private static readonly Master Master14 = new Master { masterID = 14, masterTitle = "Shop by Fit" };
+        private static readonly Master Master15 = new Master { masterID = 15, masterTitle = "Accessories" };
+        private static readonly Master Master16 = new Master { masterID = 16, masterTitle = "Shoes" };
+        private static readonly Master Master17 = new Master { masterID = 17, masterTitle = "Restyld" };
+        private static readonly Master Master18 = new Master { masterID = 18, masterTitle = "Beauty" };
+        private static readonly Master Master19 = new Master { masterID = 19, masterTitle = "Shop by Trend" };
+        private static readonly Master Master20 = new Master { masterID = 20, masterTitle = "Shop by Occasion" };
+        private static readonly Master Master21 = new Master { masterID = 21, masterTitle = "Sale" };
+        private static readonly Master Master22 = new Master { masterID = 22, masterTitle = "Clearance" };
         static DataFactory()
         {
             detailData = new ObservableCollection<Detail>()
