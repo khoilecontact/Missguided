@@ -24,6 +24,8 @@ namespace MissGuided.Views
 
         async void signin_Clicked(System.Object sender, System.EventArgs e)
         {
+            siginBtn.IsEnabled = false;
+
             user.email = lblEmail.Text;
             user.password = lblPassword.Text;
 

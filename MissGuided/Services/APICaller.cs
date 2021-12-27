@@ -286,7 +286,7 @@ namespace MissGuided
 
         // Order history
 
-        public async Task<bool> AddToOrderd(string productId)
+        public async Task<bool> AddToOrdered(string productId)
         {
             try
             {
@@ -336,7 +336,7 @@ namespace MissGuided
 
                 List<Product> products = new List<Product>();
                 
-                var response = await client.GetAsync("/product/getOrder/" + userEmail);
+                var response = await client.GetAsync("/user/getOrder/" + userEmail);
 
                 response.EnsureSuccessStatusCode();
                 using (var stream = await response.Content.ReadAsStreamAsync())

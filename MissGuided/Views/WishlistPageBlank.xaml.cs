@@ -22,12 +22,10 @@ namespace MissGuided.Views
                 await Navigation.PopAsync();
             }
         }
-
         void cart_clicked(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new CartPage());
         }
-
         void Button_Clicked(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new ShopPage());

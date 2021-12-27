@@ -58,7 +58,8 @@
 
         </Grid>
 
-        <Button Text="sign in"
+        <Button x:Name="siginBtn"
+                Text="sign in"
                 TextColor="LightSlateGray"
                 BackgroundColor="LightGray" Clicked="signin_Clicked"></Button>
         

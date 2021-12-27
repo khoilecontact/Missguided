@@ -2,126 +2,50 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MissGuided.Views.OrderHistoryPage"
-             Shell.BackgroundColor="White"
-             Shell.TitleColor="Black"
-             Title="Your order history">
+             Shell.BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="OrderedLst" HasUnevenRows="True" ItemSelected="OrderedLst_ItemSelected">
+            <ListView x:Name="orderedLst"
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-
-                            <Grid Margin="5">
-
+                            <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="60"></RowDefinition>
                                     <RowDefinition Height="60"></RowDefinition>
                                 </Grid.RowDefinitions>
-
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
                                 <Image Source="{Binding images[0]}"
+                                       HeightRequest="100"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       Grid.Row="0"
                                        Grid.Column="0"
-                                       Grid.Row="0"
-                                       Grid.RowSpan="2"
-                                       VerticalOptions="StartAndExpand"
-                                       HorizontalOptions="CenterAndExpand"
-                                       ></Image>
+                                       Grid.RowSpan="2"></Image>
                                 <Label Text="{Binding name}"
-                                       Grid.Column="1"
-                                       Grid.ColumnSpan="2"
+                                       TextColor="Black"
+                                       FontSize="20"
+                                       HorizontalTextAlignment="End"
+                                       VerticalTextAlignment="Center"
                                        Grid.Row="0"
-                                       FontSize="Large"
-                                       TextColor="Black"></Label>
-                                <!--<Label Text="{Binding price}"
-                                       Grid.Column="1"
-                                       Grid.Row="1"
-                                       FontSize="Large"
-                                       TextColor="Black"></Label>-->
+                                       Grid.Column="1"></Label>
                                 <Label Text="{Binding salePrice}"
-                                       Grid.Column="2"
-                                       Grid.Row="1"
+                                       TextColor="Black"
                                        FontSize="Large"
-                                       VerticalTextAlignment="End"
-                                       TextColor="#ffa5b8"
-                                       FontAttributes="Bold"></Label>
-
+                                       HorizontalTextAlignment="End"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Row="1"
+                                       Grid.Column="1"></Label>
                             </Grid>
-
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-            <StackLayout x:Name="OrderedBoard" HeightRequest="111" VerticalOptions="End">
-                <StackLayout HeightRequest="1" BackgroundColor="LightGray"></StackLayout>
-                <Grid Padding="10,0,10,0" HeightRequest="110" BackgroundColor="White" VerticalOptions="End">
-                    
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <Label x:Name="pLength"
-                           FontSize="Large"
-                           Grid.Row="0" Grid.Column="0"></Label>
-
-                    <Label x:Name="totalPrice"
-                           FontSize="Large"
-                           FontAttributes="Bold"
-                           TextColor="Black"
-                           HorizontalTextAlignment="End"
-                           Grid.Row="0" Grid.Column="1"></Label>
-
-                </Grid>
-            </StackLayout>
-            
-            <StackLayout x:Name="blankPage" MinimumHeightRequest="550" HeightRequest="700" BackgroundColor="#FCD9C4">
-                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                    <Label Text="You haven't ordered"
-                           TextColor="Black"
-                           FontSize="30"
-                           FontAttributes="Bold"
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center"
-                           Margin="0,150,0,0"></Label>
-                    <Label Text="anything yet"
-                           TextColor="Black"
-                           FontSize="30"
-                           FontAttributes="Bold"
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center"></Label>
-                    <Label Text="Get some new and fill it up"
-                           TextColor="Black"
-                           FontSize="18"
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center"></Label>
-                    <Button Text="FILL ME UP"
-                            FontSize="Large"
-                            FontAttributes="Bold"
-                            Background="Black"
-                            VerticalOptions="Center"
-                            Margin="15,180,15,0"
-                            Clicked="fillmeup_Clicked"></Button>
-                </StackLayout>
-            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="" ></ToolbarItem>
-    </ContentPage.ToolbarItems>
-
-    <Shell.TitleView>
-        <Image Source="app_logo.jpg" Scale="0.8"></Image>
-    </Shell.TitleView>
 </ContentPage>

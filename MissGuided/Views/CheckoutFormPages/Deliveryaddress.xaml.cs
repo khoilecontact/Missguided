@@ -14,7 +14,6 @@ namespace MissGuided.Views.CheckoutFormPages
             InitializeComponent();
             initView();
         }
-
         void initView()
         {
             Database db = new Database();
@@ -25,7 +24,6 @@ namespace MissGuided.Views.CheckoutFormPages
             }
             lst_address.ItemsSource = addresses;
         }
-
         void btn_add_Clicked(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new AddDeliveryAddress());

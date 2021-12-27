@@ -4,12 +4,17 @@
              x:Class="MissGuided.Views.SignedinPage"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              Shell.BackgroundColor="white"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.BackButtonTitle="false">
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="bag.png" Clicked="Cart_Clicked"/>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+    
+    <ContentPage.Content>      
         <ScrollView>
             <StackLayout x:Name="stack">
                 <Label x:Name="lblwelcome"

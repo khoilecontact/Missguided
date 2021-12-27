@@ -104,7 +104,7 @@ namespace MissGuided.Views
             foreach (Product product in itemsList)
             {
                 // Add to ordered of user
-                bool addResult = await APICaller.shared.AddToOrderd(product._id);
+                bool addResult = await APICaller.shared.AddToOrdered(product._id);
 
                 if (addResult)
                 {
@@ -120,7 +120,6 @@ namespace MissGuided.Views
                     await DisplayAlert("Failed in add", "Please try again later", "OK");
                     result = false;
                 }
-
             }
 
             if (result)

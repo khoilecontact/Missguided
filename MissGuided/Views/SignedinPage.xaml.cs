@@ -44,7 +44,7 @@ namespace MissGuided.Views
 
         private void AddressBookBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddressBookBlankPage());
+            Navigation.PushAsync(new AddressBookPage());
         }
 
         private void OrderHistoryBtn_Clicked(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace MissGuided.Views
 
         private void ShippingBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ShippingPage());
+            Navigation.PushAsync(new ShippingTextPage());
         }
 
         private void SizeGuideBtn_Clicked(object sender, EventArgs e)
