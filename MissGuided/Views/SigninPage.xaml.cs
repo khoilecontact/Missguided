@@ -35,12 +35,12 @@ namespace MissGuided.Views
             {
                 User userinfo = await APICaller.shared.GetUserInfo();
                 Preferences.Set("user", userinfo.firstName);
-                await DisplayAlert("Thông báo", "Đăng nhập " + userinfo.firstName + " thành công", "OK");
+                //await DisplayAlert("Thông báo", "Đăng nhập " + userinfo.firstName + " thành công", "OK");
                 await Navigation.PushAsync(new SignedinPage(userinfo));
             }
             else
             {
-                await DisplayAlert("Thông báo", "Đăng nhập thất bại", "OK");
+                //await DisplayAlert("Thông báo", "Đăng nhập thất bại", "OK");
             }
         }
     }

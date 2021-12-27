@@ -115,7 +115,7 @@ namespace MissGuided.Views
         async void btn_add_to_bag_Clicked(System.Object sender, System.EventArgs e)
         {
             string email = Preferences.Get("userEmail", "none");
-            await DisplayAlert("id", product._id.ToString(), "OK");
+            //await DisplayAlert("id", product._id.ToString(), "OK");
             if (email == "none")
             {
                 await Navigation.PushAsync(new MePage());

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MissGuided.Models.CheckoutInfo;
 using MissGuided.Services;
 using Xamarin.Essentials;
@@ -19,6 +20,10 @@ namespace MissGuided.Views.CheckoutFormPages
         {
             Database db = new Database();
             List<DeliveryOption> deliveryOptions = db.getDeliveryOptions();
+            if (deliveryOptions.Count() == 0)
+            {
+                createData();
+            }
             lst_option.ItemsSource = deliveryOptions;
         }
 
@@ -35,14 +40,6 @@ namespace MissGuided.Views.CheckoutFormPages
 
             bool re1 = db.addNewDeliveryOptions(option1);
             bool re2 = db.addNewDeliveryOptions(option2);
-
-            if (re1 || re2)
-            {
-                DisplayAlert("Added", "", "OK");
-            } else
-            {
-                DisplayAlert(re1.ToString(), "", "OK");
-            }
         }
 
         void lst_option_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
