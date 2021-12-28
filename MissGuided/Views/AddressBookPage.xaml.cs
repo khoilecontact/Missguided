@@ -15,6 +15,7 @@ namespace MissGuided.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddressBookPage : ContentPage
     {
+        Database db = new Database();
         public AddressBookPage()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace MissGuided.Views
         }
         void InitAddressList()
         {
-            Database db = new Database();
             List<Address> addresses = db.getAddresses();
             if(addresses.Count() == 0)
             {
@@ -38,6 +38,27 @@ namespace MissGuided.Views
                 BlankPage.IsVisible = false;
                 addressesLst.IsVisible = true;
                 addressesLst.ItemsSource = addresses;
+            }
+        }
+
+        private void addressesLst_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Address address = (Address)e.SelectedItem;
+            OnAlertYesNoClicked(address);
+        }
+        async void OnAlertYesNoClicked(Address address)
+        {
+            bool choice = await DisplayAlert("Question?", "Would you like to delete this address?", "Yes", "No");
+            if (choice)
+            {
+                db.delAnAddress(address);
+                await DisplayAlert("Message", "Delete sucessfully", "OK");
+                await Navigation.PushAsync(new AddressBookPage());
+            }
+            else
+            {
+                await DisplayAlert("Message", "Delete failed", "OK");
+                await Navigation.PushAsync(new AddressBookPage());
             }
         }
     }

@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MissGuided.Views.Community.TwitterPage">
+             x:Class="MissGuided.Views.Community.TwitterPage"
+             Shell.NavBarIsVisible="True"
+             Shell.BackgroundColor="White"
+             Shell.TitleColor="Black"
+             Title="Twitter">
     <ContentPage.Content>
         <StackLayout>
             <WebView Source="https://twitter.com/missguided_help"
-                     VerticalOptions="CenterAndExpand"
-                     HorizontalOptions="CenterAndExpand"></WebView>
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"></WebView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,7 +4,8 @@
              x:Class="MissGuided.Views.TextPages.PrivacyPolicyPage"
              Shell.NavBarIsVisible="True"
              Shell.BackgroundColor="White"
-             Shell.TitleColor="Black" Title="Privacy Policy">
+             Shell.TitleColor="Black"
+             Title="Privacy Policy">
     <ContentPage.Content>
         <StackLayout>
             <WebView Source="https://www.missguidedus.com/privacy-notices"

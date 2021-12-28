@@ -25,10 +25,14 @@
                 </Grid.ColumnDefinitions>
 
                 <ImageButton Source="twitter.png"
+                             HeightRequest="60"
+                             WidthRequest="60"
                              BackgroundColor="White"
                              Grid.Row="0"
                              Grid.Column="0"></ImageButton>
                 <ImageButton Source="messenger.png"
+                             HeightRequest="60"
+                             WidthRequest="60"
                              BackgroundColor="White"
                              Grid.Row="0"
                              Grid.Column="1"></ImageButton>
@@ -52,11 +56,15 @@
                 </Grid.ColumnDefinitions>
 
                 <ImageButton Source="facebook.png"
+                             HeightRequest="60"
+                             WidthRequest="60"
                              BackgroundColor="White"
                              Grid.Row="0"
                              Grid.Column="0"
                              Clicked="facebook_Clicked"></ImageButton>
-                <ImageButton Source="twwiter.png"
+                <ImageButton Source="twitter.png"
+                             HeightRequest="60"
+                             WidthRequest="60"
                              BackgroundColor="White"
                              Grid.Row="0"
                              Grid.Column="1"

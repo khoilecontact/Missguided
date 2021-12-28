@@ -6,6 +6,10 @@
              NavigationPage.HasNavigationBar="True"
              Shell.BackgroundColor="white"
              Title="address book">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="plus_icon.png"
                      Clicked="add_Clicked"></ToolbarItem>
@@ -36,11 +40,22 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center"></Label>
             </StackLayout>
-            <ListView x:Name="addressesLst">
+            <ListView x:Name="addressesLst"
+                      ItemSelected="addressesLst_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Spacing="0" Padding="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                                
                                 <Label Text="{Binding addressLine1}" TextColor="Black" FontSize="Medium"></Label>
                                 <Label Text=", " TextColor="Black" FontSize="Medium"></Label>
                                 <Label Text="{Binding addressLine2}" TextColor="Black" FontSize="Medium"></Label>
