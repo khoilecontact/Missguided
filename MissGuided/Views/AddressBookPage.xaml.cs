@@ -53,12 +53,12 @@ namespace MissGuided.Views
             {
                 db.delAnAddress(address);
                 await DisplayAlert("Message", "Delete sucessfully", "OK");
-                await Navigation.PushAsync(new AddressBookPage());
+                InitAddressList();
             }
             else
             {
                 await DisplayAlert("Message", "Delete failed", "OK");
-                await Navigation.PushAsync(new AddressBookPage());
+                InitAddressList();
             }
         }
     }
