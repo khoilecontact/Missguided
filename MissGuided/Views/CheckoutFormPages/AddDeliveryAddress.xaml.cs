@@ -56,7 +56,7 @@ namespace MissGuided.Views.CheckoutFormPages
             Database db = new Database();
             bool re = db.addNewAddress(address);
 
-            Navigation.PopAsync();
+            Navigation.PushAsync(new AddressBookPage());
         }
     }
 }

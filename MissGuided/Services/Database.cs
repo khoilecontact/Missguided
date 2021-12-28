@@ -54,6 +54,23 @@ namespace MissGuided.Services
             }
         }
 
+        public bool delAnAddress(Address address)
+        {
+            try
+            {
+                string path = System.IO.Path.Combine(folder, "MissguidedSQLiteDatabase.db");
+                var connection = new SQLiteConnection(path);
+
+                connection.Delete(address);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
         public List<Address> getAddresses()
         {
             try
