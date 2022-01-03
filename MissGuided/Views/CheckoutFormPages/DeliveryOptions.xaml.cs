@@ -20,10 +20,14 @@ namespace MissGuided.Views.CheckoutFormPages
         {
             Database db = new Database();
             List<DeliveryOption> deliveryOptions = db.getDeliveryOptions();
+
             if (deliveryOptions.Count() == 0)
             {
                 createData();
             }
+
+            deliveryOptions = db.getDeliveryOptions();
+
             lst_option.ItemsSource = deliveryOptions;
         }
 
