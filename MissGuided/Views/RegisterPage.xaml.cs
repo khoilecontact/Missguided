@@ -31,14 +31,8 @@ namespace MissGuided.Views
 
             if (result)
             {
-                await DisplayAlert("Registered In", "Vô rồi", "OK");
                 await Navigation.PushAsync(new SignedinPage(user));
             }
-            else
-            {
-                await DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
-            }
         }
-
     }
 }

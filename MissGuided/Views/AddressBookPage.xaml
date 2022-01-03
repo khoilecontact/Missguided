@@ -6,10 +6,7 @@
              NavigationPage.HasNavigationBar="True"
              Shell.BackgroundColor="white"
              Title="address book">
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior IsEnabled="False"></BackButtonBehavior>
-    </Shell.BackButtonBehavior>
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="plus_icon.png"
                      Clicked="add_Clicked"></ToolbarItem>
