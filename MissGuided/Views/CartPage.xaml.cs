@@ -22,7 +22,17 @@ namespace MissGuided
         {
             InitializeComponent();
             showDelBtn = false;
-            ItemsAddedAsync();
+            string email = Preferences.Get("userEmail", "none");
+            if (email == "none")
+            {
+                CartLst.IsVisible = false;
+                CartBoard.IsVisible = false;
+                blankPage.IsVisible = true;
+            }
+            else
+            {
+                ItemsAddedAsync();
+            }
         }
 
         async Task ItemsAddedAsync()
