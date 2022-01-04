@@ -27,6 +27,7 @@ namespace MissGuided.Views
         async void initView()
         {
             string email = Preferences.Get("userEmail", "none");
+
             if (email == "none" || email == null)
             {
                 await Navigation.PushAsync(new WishlistPageBlank());

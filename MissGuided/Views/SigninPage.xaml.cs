@@ -36,6 +36,10 @@ namespace MissGuided.Views
                 User userinfo = await APICaller.shared.GetUserInfo();
                 Preferences.Set("user", userinfo.firstName);
                 await Navigation.PushAsync(new SignedinPage(userinfo));
+            } else
+            {
+                await DisplayAlert("Sign in failed", "Your informations are wrong!!!", "OK");
+                siginBtn.IsEnabled = true;
             }
         }
     }

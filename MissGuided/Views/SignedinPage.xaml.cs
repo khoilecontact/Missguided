@@ -33,7 +33,7 @@ namespace MissGuided.Views
         }
         private void LOGOUT_Clicked(object sender, EventArgs e)
         {
-            Preferences.Remove("user");
+            Preferences.Clear();
             Navigation.PushAsync(new MePage());
         }
 
