@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MissGuided.Services;
 using MissGuided.Models;
+using Xamarin.Essentials;
 
 namespace MissGuided.Views
 {
@@ -31,14 +32,9 @@ namespace MissGuided.Views
 
             if (result)
             {
-                await DisplayAlert("Registered In", "Vô rồi", "OK");
+                Preferences.Set("user", user.firstName);
                 await Navigation.PushAsync(new SignedinPage(user));
             }
-            else
-            {
-                await DisplayAlert("Sai cmnr", "Sai cmn rồi", "Bó tay");
-            }
         }
-
     }
 }
