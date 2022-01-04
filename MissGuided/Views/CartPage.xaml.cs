@@ -99,7 +99,7 @@ namespace MissGuided
         {
             string selectedProductId = (string)((Button)sender).BindingContext;
             bool result = await CartAPI.shared.RemoveFromCart(selectedProductId);
-            
+
             if (result)
             {
                 Products _Products = await CartAPI.shared.FetchCart();
@@ -125,7 +125,8 @@ namespace MissGuided
                 {
                     pLength.Text = productsCount.ToString() + " Items";
                 }
-            } else
+            }
+            else
             {
                 CartLst.IsVisible = false;
                 CartBoard.IsVisible = false;
